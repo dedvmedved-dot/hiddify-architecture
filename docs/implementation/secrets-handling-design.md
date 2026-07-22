@@ -25,6 +25,7 @@ See `docs/implementation/secrets-inventory.md` for full placeholder inventory.
 ## Validation
 
 `safety_guard.py` scans for:
+
 - Private key blocks (BEGIN PRIVATE KEY)
 - Access tokens (ghp_, github_pat_, etc.)
 - Passwords in config files

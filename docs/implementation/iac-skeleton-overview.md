@@ -9,7 +9,7 @@ All artifacts are offline validation skeletons only — no production deployment
 
 ## Structure
 
-```
+```text
 iac/
   schemas/config-schema.json    — JSON Schema for configuration validation
   examples/config.example.yml   — Example configuration (RFC 5737 docs IPs only)
@@ -31,6 +31,7 @@ tests/stage04/                   — Unit tests
 ## Safety Flags
 
 All example configurations enforce safety flags = false:
+s enforce safety flags = false:
 - deployment_enabled: false
 - production_mode: false
 - allow_remote_execution: false
