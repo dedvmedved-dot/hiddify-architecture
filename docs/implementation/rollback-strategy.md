@@ -51,10 +51,12 @@ Per FR-055, FR-056:
 ## Rollback Testing
 
 Before production deployment:
+
 1. Execute rollback in test/lab environment (if available)
 2. Verify rollback procedures are complete and correct
 3. Time each rollback step for planning
 
 If test environment unavailable:
+
 1. Document procedures with exact commands
 2. Owner acknowledges increased rollback risk
