@@ -1,7 +1,7 @@
 # Repository Access
 
 - **Repository:** dedvmedved-dot/hiddify-architecture
-- **URL:** https://github.com/dedvmedved-dot/hiddify-architecture.git
+- **URL:** <https://github.com/dedvmedved-dot/hiddify-architecture.git>
 - **Clone protocol:** HTTPS
 - **Read access:** PASS
 - **Write access:** PASS

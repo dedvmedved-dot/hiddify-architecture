@@ -9,6 +9,7 @@ The project name "hiddify-architecture" does not commit to using Hiddify — all
 ## Current Stage
 
 **Stage 00 — Repository Baseline and Governance Structure** is complete:
+
 - Status: PASSED, CONNECTOR VERIFIED
 - Merge commit: `3ee42503689f17360efd08a956f3b705f825b585`
 - Current main HEAD: `dafa6aee1d377393e271879c0463c41359894a58`
@@ -55,6 +56,7 @@ Hermes does NOT have authority to assign PASSED status to any stage.
 ## Evidence Requirements
 
 Every stage must provide evidence in `evidence/stage-NN/`:
+
 - Command outputs showing work performed
 - Validation results
 - Secret scan results
@@ -75,6 +77,7 @@ Evidence must be timestamped (UTC), reproducible, sanitized (no secrets), and in
 ## Expected Next Step
 
 Stage 01 scope must be provided by ChatGPT. No implementation work should begin until:
+
 1. Current onboarding verification is complete
 2. Stage 01 task is defined by ChatGPT
 3. Stage 00 remains PASSED/CONNECTOR VERIFIED
