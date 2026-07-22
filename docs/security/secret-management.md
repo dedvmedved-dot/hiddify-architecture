@@ -23,6 +23,7 @@ This document describes how secrets are managed in this project.
 ## Secret Storage (TBD)
 
 Options to evaluate:
+
 - HashiCorp Vault
 - Environment variables on target hosts
 - Encrypted files (SOPS, age)

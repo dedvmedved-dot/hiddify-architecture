@@ -31,6 +31,7 @@
 - **N-00-03**: Acceptance metadata commit field was PENDING
 
 **Corrective Action 01**:
+
 - N-00-01: Fixed - validation now treats missing evidence as FAIL
 - N-00-02: Fixed - workflow now exits with error on missing validation script
 - N-00-03: Fixed - commit field explicitly marked as "TO BE VERIFIED FROM RETURNED SHA"

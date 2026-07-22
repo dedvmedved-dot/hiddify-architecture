@@ -21,30 +21,36 @@ External audit identified blocking findings requiring corrective action.
 
 - Created complete directory structure as specified
 - Created all required root files (README.md, LICENSE, CHANGELOG.md,
+
   CONTRIBUTING.md, SECURITY.md, .gitignore, .editorconfig, .gitattributes,
   Makefile)
 
 - Created documentation files in docs/ subdirectories
 - Created stage templates in stages/templates/
 - Created GitHub Actions workflows (markdown-lint, shellcheck, secret-scan,
+
   repository-validation)
 
 - Created validation script in tools/validation/
 - Added .gitkeep files to empty directories
 - Created Stage 00 artifacts (task.md, report.md, acceptance.md,
+
   evidence-index.md)
 
 ### Corrective Action 01
 
 - **B-00-01**: Restored complete task.md with all 15 sections from
+
   original specification
 
 - **B-00-02**: Updated report with actual commit SHAs
 - **B-00-03**: Improved validation script to FAIL (not WARN) on missing
+
   evidence files
 
 - **B-00-04**: Documented all deviations found by external audit
 - **B-00-05**: Added `workflow_dispatch` trigger to all workflows for
+
   manual execution
 
 ## Files Created
@@ -55,6 +61,7 @@ complete list)
 **Key files**:
 
 - Root: 9 files (README.md, LICENSE, CHANGELOG.md, CONTRIBUTING.md,
+
   SECURITY.md, .gitignore, .editorconfig, .gitattributes, Makefile)
 
 - Documentation: 50+ files in docs/
@@ -166,28 +173,34 @@ baseline implementation:**
 ### DEV-00-01: task.md was incomplete
 
 - **Issue**: task.md contained only sections 1-3 and a placeholder
+
   reference to external document
 
 - **Impact**: Violated traceability and reproducibility requirements
 - **Correction**: Restored complete task.md with all 15 sections from
+
   original specification document
 
 ### DEV-00-02: report contained stale evidence commit SHA
 
 - **Issue**: Report listed evidence commit as `d7bbb2a` (abbreviated)
+
   with placeholder note about SHA pending finalization
 
 - **Impact**: Report did not reflect actual final state
 - **Correction**: Updated report with actual evidence commit SHA:
+
   `ddbfe0bb59dbfa8094f416c49bd99350ea6698e7`
 
 ### DEV-00-03: validation was not rerun against final evidence tree
 
 - **Issue**: validation.txt showed 3 WARN for missing evidence files
+
   that were added in second commit
 
 - **Impact**: Evidence did not confirm final repository state
 - **Correction**: Improved validation script to treat missing evidence
+
   as FAIL (not WARN); corrective evidence will be collected after
   final commit
 
@@ -195,18 +208,25 @@ baseline implementation:**
 
 - **Issue**: GitHub Actions showed no completed runs for final commit
 - **Impact**: Could not confirm markdown-lint, shellcheck, secret-scan,
+
   and repository-validation passed
 
 - **Correction**: Added `workflow_dispatch` trigger to all workflows;
+
   manual execution required after PR creation
 
 ## Known Issues
 
 1. **Gitleaks not installed locally** - used grep-based secret scan
+
    instead; GitHub Actions secret-scan workflow uses gitleaks-action@v2
+
 2. **GitHub Actions require manual trigger** - workflows have
+
    `workflow_dispatch` for manual execution after PR creation
+
 3. **Markdown lint configuration** - may require `.markdownlint-cli2.yaml`
+
    if lint failures occur (to be verified by CI)
 
 ## Risks
@@ -236,6 +256,7 @@ git push origin main --force  # Force push required (not performed)
 
 - **SHA**: 9d528343ad3b244eaf63907f6fb33dd53f3b2bd7
 - **Message**: chore(repo): establish project baseline and governance
+
   structure
 
 - **Files**: 121 files changed, 4159 insertions(+)
@@ -253,8 +274,11 @@ git push origin main --force  # Force push required (not performed)
 As per correction instruction, used two commits:
 
 1. **Baseline commit**: All structure, documentation, and Stage 00
+
    artifacts
+
 2. **Evidence commit**: Post-commit evidence files (git-log, git-status,
+
    checksums)
 
 This ensures clean working tree after all commits while capturing
@@ -273,6 +297,7 @@ All blocking findings from external audit have been addressed:
 - ✅ B-00-01: Complete task.md restored with all 15 sections
 - ✅ B-00-02: Report updated with actual commit SHAs
 - ✅ B-00-03: Validation script improved; corrective evidence will be
+
   collected
 
 - ✅ B-00-04: All deviations documented in this report

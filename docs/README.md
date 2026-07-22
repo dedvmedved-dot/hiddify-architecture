@@ -22,6 +22,7 @@ security/          - Security architecture and policies
 All documents in this directory are **DRAFT** unless explicitly marked as approved.
 
 Do not treat any document here as final architecture until:
+
 1. The relevant stage is marked **PASSED**
 2. The document is explicitly approved by ChatGPT architect
 3. The approval is recorded in the stage report

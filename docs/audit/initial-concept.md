@@ -39,6 +39,7 @@ Clients → MikroTik (classification) → VPS1 (RU egress)
 ## Disclaimer
 
 This concept is a starting point only. The final architecture may:
+
 - Use different technologies
 - Have a different topology
 - Implement different routing strategies

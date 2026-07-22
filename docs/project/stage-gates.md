@@ -60,6 +60,7 @@ stages/stage-NN-name/
 ## Evidence Requirements
 
 Every stage must provide:
+
 - Command outputs showing work performed
 - Validation results
 - Secret scan results
@@ -69,6 +70,7 @@ Every stage must provide:
 ## Rollback
 
 Every stage must document:
+
 - What was changed
 - How to reverse the changes
 - Git revert/restore commands
@@ -76,6 +78,7 @@ Every stage must document:
 ## Escalation
 
 If Hermes encounters:
+
 - **Technical blocker:** Document in report, notify Owner
 - **Ambiguity in task:** Ask Owner for clarification (via ChatGPT)
 - **Security concern:** Stop immediately, document, notify Owner

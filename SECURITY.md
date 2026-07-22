@@ -32,6 +32,7 @@ api_key: <REPLACE_WITH_SECRET>
 ```
 
 Acceptable placeholder formats:
+
 - `<REPLACE_WITH_SECRET>`
 - `<PASSWORD_HERE>`
 - `<API_KEY>`

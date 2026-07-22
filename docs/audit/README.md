@@ -9,6 +9,7 @@ This directory contains audit-related documents, including the initial concept t
 ## Audit Process
 
 Each stage produces audit artifacts:
+
 - Stage report (`stages/stage-NN/report.md`)
 - Acceptance record (`stages/stage-NN/acceptance.md`)
 - Evidence files (`evidence/stage-NN/`)

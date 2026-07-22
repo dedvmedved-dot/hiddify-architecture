@@ -21,6 +21,7 @@ stage-NN-short-name
 ```
 
 Examples:
+
 - `stage-00-repository-baseline`
 - `stage-01-requirements-analysis`
 - `stage-02-architecture-design`
@@ -34,6 +35,7 @@ See: `stage-00-repository-baseline/`
 ## Templates
 
 Stage templates are available in `stages/templates/`:
+
 - `task-template.md`
 - `report-template.md`
 - `acceptance-template.md`
@@ -42,6 +44,7 @@ Stage templates are available in `stages/templates/`:
 ## Stage Status
 
 Check each stage's `acceptance.md` for current status:
+
 - NOT STARTED
 - IN PROGRESS
 - READY FOR EXTERNAL AUDIT

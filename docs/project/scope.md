@@ -41,6 +41,7 @@
 ## Deliverables
 
 For each stage, deliverables include:
+
 - Documentation in `docs/`
 - Configurations in `configs/`
 - Scripts in `scripts/`
