@@ -4,7 +4,7 @@ This directory contains project-specific tooling.
 
 ## Structure
 
-```
+```text
 tools/
   lint/            - Linting configuration
   validation/      - Repository validation scripts

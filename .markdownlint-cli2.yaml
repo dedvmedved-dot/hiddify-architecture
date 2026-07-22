@@ -1,0 +1,32 @@
+# Markdownlint configuration
+# See: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+config:
+  # MD013 - Line length
+  # task.md contains original assignment text - long lines are acceptable
+  MD013:
+    line_length: 80
+    heading_line_length: 80
+    code_block_line_length: 120
+    stern: true
+
+  # MD024 - Multiple headings with the same content
+  # Allow duplicate headings in different sections
+  MD024:
+    siblings_only: true
+
+  # MD033 - Inline HTML
+  # Allow inline HTML for formatting
+  MD033: false
+
+  # MD041 - First line in file should be a top-level heading
+  # Some files start with comments or frontmatter
+  MD041: false
+
+  # MD060 - Table column style
+  # Use compact style (no spaces around pipes)
+  MD060: false
+
+ignores:
+  # task.md is preserved original assignment - exclude from line-length checks
+  - "stages/stage-00-repository-baseline/task.md"

@@ -4,7 +4,7 @@ This directory contains test scenarios and test automation.
 
 ## Structure
 
-```
+```text
 tests/
   static/          - Static analysis tests
   functional/      - Functional tests

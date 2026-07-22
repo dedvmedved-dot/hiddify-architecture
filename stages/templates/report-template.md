@@ -46,7 +46,7 @@ Document secret scan results.
 
 ## Commit Information
 
-```
+```text
 Commit: <FULL_40_CHARACTER_SHA>
 Branch: main
 Timestamp: YYYY-MM-DD HH:MM:SS UTC
