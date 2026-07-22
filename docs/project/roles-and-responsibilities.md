@@ -7,6 +7,7 @@
 **Role:** Lead Architect, Critic, Task Setter, External Auditor, Stage Acceptance Authority
 
 ### Responsibilities
+
 - Define architectural direction and standards
 - Set tasks for each stage
 - Review and critique implementation
@@ -16,6 +17,7 @@
 - Identify risks and gaps in the approach
 
 ### Authority
+
 - Sole authority to assign PASSED status to stages
 - Final say on architectural decisions
 - Can block stage progression if criteria not met
@@ -25,6 +27,7 @@
 **Role:** Implementation Agent
 
 ### Responsibilities
+
 - Execute stage tasks as defined by ChatGPT
 - Collect evidence of implementation
 - Create configurations (sanitized)
@@ -34,6 +37,7 @@
 - Maintain repository structure
 
 ### Limitations
+
 - **Hermes + Qwen does NOT have authority to assign PASSED status**
 - Cannot make architectural decisions independently
 - Must follow stage-gate process strictly
@@ -44,6 +48,7 @@
 **Role:** Project Sponsor and Decision Maker
 
 ### Responsibilities
+
 - Provide access to infrastructure (SSH, credentials)
 - Transfer tasks from ChatGPT to Hermes
 - Provide source data and requirements
@@ -53,13 +58,14 @@
 - Review and approve project charter
 
 ### Authority
+
 - Final business decision maker
 - Controls access to production infrastructure
 - Can override technical decisions for business reasons
 
 ## Interaction Model
 
-```
+```text
 ChatGPT (Architect)
     ↓ defines task
 Owner (Sponsor)

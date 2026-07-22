@@ -348,6 +348,7 @@ evidence/stage-NN/
 
 ```text
 [Unreleased]
+
 - Repository baseline created.
 ```
 
@@ -445,6 +446,7 @@ Thumbs.db
 Минимально:
 
 ```gitattributes
+
 * text=auto eol=lf
 *.sh text eol=lf
 *.md text eol=lf

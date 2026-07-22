@@ -17,12 +17,14 @@ This stage establishes the foundational repository structure, governance process
 ## Roles
 
 ### ChatGPT
+
 - Lead architect and critic
 - Task definition and assignment
 - External auditor
 - Stage acceptance authority
 
 ### Hermes + Qwen 3.7 Max
+
 - Implementation
 - Evidence collection
 - Configuration creation
@@ -31,6 +33,7 @@ This stage establishes the foundational repository structure, governance process
 - Git commit and push
 
 ### Owner
+
 - Provides access and credentials
 - Transfers tasks to Hermes
 - Provides source data
@@ -56,7 +59,7 @@ Transition to next stage requires: **PASSED** or **CONNECTOR VERIFIED**
 
 ## Repository Structure
 
-```
+```text
 docs/              - Project documentation (DRAFT until approved)
 stages/            - Stage tasks, reports, and acceptance records
 configs/           - Templates and sanitized configurations

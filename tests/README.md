@@ -19,9 +19,11 @@ tests/
 
 ```bash
 # Run all tests
+
 make validate
 
 # Run specific test category
+
 bash tests/static/run-all.sh
 ```
 

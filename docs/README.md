@@ -6,7 +6,7 @@ This directory contains all project documentation. Documents here are in DRAFT s
 
 ## Directory Structure
 
-```
+```text
 project/           - Project governance and management
 requirements/      - Functional and non-functional requirements
 architecture/      - Architecture documentation (system, logical, physical)

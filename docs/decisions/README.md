@@ -12,7 +12,7 @@ This directory contains Architecture Decision Records (ADRs) for the project.
 
 ## ADR Naming Convention
 
-```
+```text
 ADR-NNN-short-description.md
 ```
 

@@ -16,7 +16,7 @@ This document describes how secrets are managed in this project.
 
 ## Placeholder Format
 
-```
+```text
 <REPLACE_WITH_SECRET>
 ```
 

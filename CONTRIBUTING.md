@@ -17,7 +17,7 @@ Examples:
 
 Follow conventional commits:
 
-```
+```text
 type(scope): brief description
 
 Longer explanation if needed.
@@ -45,6 +45,7 @@ stage(01): complete requirements analysis
 ## Security Rules
 
 ### NEVER commit:
+
 - Passwords, tokens, or API keys
 - Private keys (SSH, WireGuard, TLS)
 - SSH host keys
@@ -55,6 +56,7 @@ stage(01): complete requirements analysis
 - Database connection strings with credentials
 
 ### Safe placeholders:
+
 Use `<REPLACE_WITH_SECRET>` for all secret values.
 
 Example:
@@ -65,6 +67,7 @@ private_key: <REPLACE_WITH_SECRET>
 ```
 
 ### If you accidentally commit a secret:
+
 1. **Immediately** rotate the compromised credential
 2. Remove from Git history (requires force push — coordinate with team)
 3. Document incident in stage report

@@ -6,7 +6,7 @@ This directory contains all stage artifacts: tasks, reports, acceptance records,
 
 Each stage follows this structure:
 
-```
+```text
 stages/stage-NN-name/
   task.md           - Stage requirements (from ChatGPT)
   report.md         - Implementation report (from Hermes)
@@ -16,7 +16,7 @@ stages/stage-NN-name/
 
 ## Stage Naming Convention
 
-```
+```text
 stage-NN-short-name
 ```
 

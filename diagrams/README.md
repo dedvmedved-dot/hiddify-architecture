@@ -4,7 +4,7 @@ This directory contains architecture and network diagrams.
 
 ## Structure
 
-```
+```text
 diagrams/
   source/          - Diagram source files
   rendered/        - Rendered PNG/SVG/PDF files
@@ -25,9 +25,11 @@ Diagrams are rendered automatically or manually:
 
 ```bash
 # Render Mermaid diagram
+
 mmdc -i diagrams/source/architecture.mmd -o diagrams/rendered/architecture.svg
 
 # Render PlantUML
+
 plantuml diagrams/source/sequence.puml
 ```
 

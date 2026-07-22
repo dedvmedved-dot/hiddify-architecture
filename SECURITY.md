@@ -21,10 +21,12 @@ All configuration examples must use placeholders:
 
 ```yaml
 # WRONG - DO NOT COMMIT
+
 password: SuperSecret123!
 api_key: sk-1234567890abcdef
 
 # CORRECT - USE PLACEHOLDERS
+
 password: <REPLACE_WITH_SECRET>
 api_key: <REPLACE_WITH_SECRET>
 ```
@@ -40,18 +42,21 @@ Acceptable placeholder formats:
 If a secret is accidentally committed:
 
 ### Immediate Actions:
+
 1. **Rotate the credential immediately** — assume it is compromised
 2. **Do NOT delete the repository** — preserve audit trail
 3. **Notify the Owner** — coordinate response
 4. **Document in stage report** — include incident details
 
 ### Remediation Steps:
+
 1. Remove from Git history using `git filter-branch` or `BFG Repo-Cleaner`
 2. Force push cleaned history (coordinate with team)
 3. Add pattern to `.gitignore` to prevent recurrence
 4. Verify no cached copies exist (CI/CD, mirrors, forks)
 
 ### Post-Incident:
+
 1. Review how the secret was exposed
 2. Update validation scripts to catch similar patterns
 3. Add to secret scanning rules
@@ -68,6 +73,7 @@ Evidence files may contain sensitive information:
 - Command outputs (sanitize secrets before saving)
 
 **Never include:**
+
 - Production credentials
 - Personal data (PII)
 - Real customer information
@@ -76,17 +82,20 @@ Evidence files may contain sensitive information:
 ## Allowed Content
 
 ### Configuration Templates
+
 - Sanitized `.rsc` files (MikroTik templates)
 - Example configurations with placeholders
 - Test environment configs (no production secrets)
 
 ### Scripts
+
 - Deployment scripts (must not hardcode secrets)
 - Validation scripts
 - Test automation
 - Backup/restore scripts (must sanitize output)
 
 ### Documentation
+
 - Architecture diagrams
 - Network flow descriptions
 - Test plans and results

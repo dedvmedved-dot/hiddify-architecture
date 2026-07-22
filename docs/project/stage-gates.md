@@ -17,11 +17,13 @@
 ## Stage Transition Rules
 
 ### To begin a stage:
+
 1. Previous stage must be `PASSED` or `CONNECTOR VERIFIED`
 2. Stage task document must be available
 3. Owner must transfer the task to Hermes
 
 ### To complete a stage:
+
 1. All required artifacts must be created
 2. Evidence must be collected and indexed
 3. Stage report must be written with commit hash
@@ -30,13 +32,14 @@
 6. Commit must be pushed to GitHub
 
 ### To receive PASSED status:
+
 1. ChatGPT must review the commit via GitHub connector
 2. All blocking findings must be resolved
 3. ChatGPT must explicitly assign PASSED status
 
 ## Hermes + Qwen Limitations
 
-```
+```text
 Hermes + Qwen не имеет права самостоятельно присваивать стадии статус PASSED.
 ```
 
@@ -46,7 +49,7 @@ This rule is absolute and cannot be overridden by Hermes.
 
 Each stage follows:
 
-```
+```text
 stages/stage-NN-name/
   task.md           - Stage requirements (from ChatGPT)
   report.md         - Implementation report (from Hermes)

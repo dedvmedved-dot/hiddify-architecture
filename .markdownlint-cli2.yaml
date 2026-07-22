@@ -3,7 +3,7 @@
 
 config:
   # MD013 - Line length
-  # task.md contains original assignment text - long lines are acceptable
+  # Many files contain long lines from original specifications
   MD013:
     line_length: 80
     heading_line_length: 80
@@ -28,5 +28,5 @@ config:
   MD060: false
 
 ignores:
-  # task.md is preserved original assignment - exclude from line-length checks
+  # task.md is preserved original assignment - exclude from all checks
   - "stages/stage-00-repository-baseline/task.md"
