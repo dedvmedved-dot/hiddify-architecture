@@ -7,6 +7,7 @@
 **Out of scope:** Architecture implementation, infrastructure configuration, technology selection, production deployment.
 
 **Requirements counts:**
+
 - Stakeholders: 7
 - Use cases: 12
 - Functional: 42
@@ -24,6 +25,7 @@
 **Missing infrastructure data:** Router model/specs/version, VPS OS/sizing, traffic categories, DNS preferences, monitoring platform, RTO/RPO
 
 **Architecture decisions intentionally deferred:**
+
 - VPN/proxy technology selection
 - Tunnel protocol
 - Egress topology

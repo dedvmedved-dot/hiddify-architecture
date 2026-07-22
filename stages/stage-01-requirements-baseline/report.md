@@ -48,6 +48,7 @@ See `evidence/stage-01/source-files-reviewed.txt` for complete list (15 files).
 ## Blocking Open Questions (17)
 
 See `docs/requirements/open-questions.md` for complete list. Key blockers include:
+
 - Router model and capabilities
 - Traffic classification rules
 - Egress fail behavior (fail-open vs fail-closed)
@@ -97,7 +98,7 @@ git branch -D stage/01-requirements-baseline
 
 ## Commit Information
 
-Commit SHA: TO BE PROVIDED AFTER COMMIT
+Commit SHA: 418f4558eb10cc28473704993a1f6952236142b6
 
 ## Readiness
 
