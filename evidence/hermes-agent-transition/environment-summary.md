@@ -2,11 +2,11 @@
 
 ## Host Information
 
-- **Hostname:** skhome01
+- **Hostname:** <INTERNAL_HERMES_HOST>
 - **OS:** Ubuntu 24.04.4 LTS (Noble Numbat)
 - **Architecture:** x86_64
 - **Kernel:** Linux 7.0.0-28-generic
-- **User:** sk
+- **User:** <LOCAL_SERVICE_USER>
 
 ## Tool Versions
 
@@ -18,7 +18,10 @@
 
 ## GitHub Authentication
 
-- **Method:** HTTPS (read-only for onboarding)
-- **SSH Authentication:** not configured (no deploy key)
-- **Credential scope:** not applicable for HTTPS read-only clone
-- **Write access:** NOT REQUESTED for onboarding
+- **Method:** HTTPS with Git credential helper (store)
+- **Clone protocol:** HTTPS
+- **Read access:** PASS
+- **Write access:** PASS (branch push succeeded)
+- **Credential storage:** external to repository (credential.helper=store)
+- **Credential value exposed in evidence:** NO
+- **Remote URL contains embedded credential:** NO
