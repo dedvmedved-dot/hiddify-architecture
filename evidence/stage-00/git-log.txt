@@ -1,0 +1,261 @@
+Timestamp UTC: 2026-07-22T00:44:56Z
+Baseline commit: 9d528343ad3b244eaf63907f6fb33dd53f3b2bd7
+
+commit 9d528343ad3b244eaf63907f6fb33dd53f3b2bd7 (HEAD -> main)
+Author: Hermes Agent <hermes-agent@nousresearch.com>
+Date:   Wed Jul 22 03:44:45 2026 +0300
+
+    chore(repo): establish project baseline and governance structure
+
+ .editorconfig                                      |  41 +++
+ .gitattributes                                     |  24 ++
+ .github/CODEOWNERS                                 |  17 +
+ .github/ISSUE_TEMPLATE/.gitkeep                    |   0
+ .github/ISSUE_TEMPLATE/architecture-change.yml     |  49 +++
+ .github/ISSUE_TEMPLATE/bug-report.yml              |  54 +++
+ .github/ISSUE_TEMPLATE/test-failure.yml            |  39 ++
+ .github/pull_request_template.md                   |  46 +++
+ .github/workflows/markdown-lint.yml                |  29 ++
+ .github/workflows/repository-validation.yml        | 114 ++++++
+ .github/workflows/secret-scan.yml                  |  21 ++
+ .github/workflows/shellcheck.yml                   |  40 +++
+ .gitignore                                         |  67 ++++
+ CHANGELOG.md                                       |  17 +
+ CONTRIBUTING.md                                    | 120 +++++++
+ LICENSE                                            |  27 ++
+ Makefile                                           |  68 ++++
+ README.md                                          |  95 +++++
+ SECURITY.md                                        | 139 ++++++++
+ configs/README.md                                  |  43 +++
+ configs/dns/.gitkeep                               |   0
+ configs/mikrotik/generated/.gitkeep                |   0
+ configs/mikrotik/templates/.gitkeep                |   0
+ configs/monitoring/.gitkeep                        |   0
+ configs/nftables/.gitkeep                          |   0
+ configs/routing/.gitkeep                           |   0
+ configs/systemd/.gitkeep                           |   0
+ configs/vps1/generated/.gitkeep                    |   0
+ configs/vps1/templates/.gitkeep                    |   0
+ configs/vps3/generated/.gitkeep                    |   0
+ configs/vps3/templates/.gitkeep                    |   0
+ diagrams/README.md                                 |  40 +++
+ diagrams/rendered/.gitkeep                         |   0
+ diagrams/source/.gitkeep                           |   0
+ docs/README.md                                     |  35 ++
+ docs/architecture/addressing-plan.md               |  23 ++
+ docs/architecture/availability-architecture.md     |  21 ++
+ docs/architecture/candidate-solutions.md           |  35 ++
+ docs/architecture/dns-architecture.md              |  19 +
+ docs/architecture/logical-architecture.md          |  29 ++
+ docs/architecture/network-flows.md                 |  24 ++
+ docs/architecture/physical-architecture.md         |  27 ++
+ docs/architecture/routing-policy.md                |  22 ++
+ docs/architecture/security-architecture.md         |  26 ++
+ docs/architecture/system-context.md                |  42 +++
+ docs/audit/README.md                               |  16 +
+ docs/audit/initial-concept.md                      |  48 +++
+ docs/decisions/ADR-000-template.md                 |  52 +++
+ docs/decisions/README.md                           |  30 ++
+ docs/operations/backup-and-restore.md              |  23 ++
+ docs/operations/deployment-guide.md                |  26 ++
+ docs/operations/incident-response.md               |  37 ++
+ docs/operations/monitoring-guide.md                |  23 ++
+ docs/operations/operations-guide.md                |  23 ++
+ docs/operations/rollback-guide.md                  |  22 ++
+ docs/operations/troubleshooting.md                 |  26 ++
+ docs/project/definition-of-done.md                 |  62 ++++
+ docs/project/project-charter.md                    |  55 +++
+ docs/project/roles-and-responsibilities.md         |  87 +++++
+ docs/project/scope.md                              |  47 +++
+ docs/project/stage-gates.md                        |  79 +++++
+ docs/project/terminology.md                        |  62 ++++
+ docs/requirements/assumptions.md                   |  34 ++
+ docs/requirements/constraints.md                   |  34 ++
+ docs/requirements/functional-requirements.md       |  37 ++
+ docs/requirements/non-functional-requirements.md   |  38 ++
+ docs/requirements/traceability-matrix.md           |  33 ++
+ docs/security/firewall-policy.md                   |  27 ++
+ docs/security/hardening-standard.md                |  37 ++
+ docs/security/logging-policy.md                    |  31 ++
+ docs/security/secret-management.md                 |  42 +++
+ docs/security/security-test-plan.md                |  28 ++
+ docs/security/threat-model.md                      |  33 ++
+ docs/testing/acceptance-criteria.md                |  33 ++
+ docs/testing/test-case-template.md                 |  42 +++
+ docs/testing/test-environments.md                  |  27 ++
+ docs/testing/test-strategy.md                      |  42 +++
+ evidence/README.md                                 |  41 +++
+ evidence/stage-00/markdown-files.txt               |  65 ++++
+ evidence/stage-00/repository-tree.txt              | 120 +++++++
+ evidence/stage-00/secret-scan.txt                  |   9 +
+ evidence/stage-00/validation.txt                   | 176 ++++++++++
+ inventory/README.md                                |  29 ++
+ inventory/mikrotik/.gitkeep                        |   0
+ inventory/templates/.gitkeep                       |   0
+ inventory/vps1/.gitkeep                            |   0
+ inventory/vps3/.gitkeep                            |   0
+ reports/README.md                                  |  34 ++
+ reports/acceptance/.gitkeep                        |   0
+ reports/audit/.gitkeep                             |   0
+ reports/performance/.gitkeep                       |   0
+ reports/security/.gitkeep                          |   0
+ reports/testing/.gitkeep                           |   0
+ scripts/README.md                                  |  42 +++
+ scripts/bootstrap/.gitkeep                         |   0
+ scripts/deploy/.gitkeep                            |   0
+ scripts/inventory/.gitkeep                         |   0
+ scripts/rollback/.gitkeep                          |   0
+ scripts/security/.gitkeep                          |   0
+ scripts/testing/.gitkeep                           |   0
+ scripts/validation/.gitkeep                        |   0
+ stages/README.md                                   |  51 +++
+ stages/stage-00-repository-baseline/acceptance.md  |  29 ++
+ .../stage-00-repository-baseline/evidence-index.md |  20 ++
+ stages/stage-00-repository-baseline/report.md      | 194 ++++++++++
+ stages/stage-00-repository-baseline/task.md        | 109 ++++++
+ stages/templates/acceptance-template.md            |  29 ++
+ stages/templates/evidence-index-template.md        |  11 +
+ stages/templates/report-template.md                |  57 +++
+ stages/templates/task-template.md                  |  55 +++
+ tests/README.md                                    |  39 ++
+ tests/acceptance/.gitkeep                          |   0
+ tests/functional/.gitkeep                          |   0
+ tests/integration/.gitkeep                         |   0
+ tests/performance/.gitkeep                         |   0
+ tests/resilience/.gitkeep                          |   0
+ tests/security/.gitkeep                            |   0
+ tests/static/.gitkeep                              |   0
+ tools/README.md                                    |  29 ++
+ tools/lint/.gitkeep                                |   0
+ tools/validation/validate-repository.sh            | 391 +++++++++++++++++++++
+ 121 files changed, 4159 insertions(+)
+
+commit 9d528343ad3b244eaf63907f6fb33dd53f3b2bd7
+Author:     Hermes Agent <hermes-agent@nousresearch.com>
+AuthorDate: Wed Jul 22 03:44:45 2026 +0300
+Commit:     Hermes Agent <hermes-agent@nousresearch.com>
+CommitDate: Wed Jul 22 03:44:45 2026 +0300
+
+    chore(repo): establish project baseline and governance structure
+
+ create mode 100644 .editorconfig
+ create mode 100644 .gitattributes
+ create mode 100644 .github/CODEOWNERS
+ create mode 100644 .github/ISSUE_TEMPLATE/.gitkeep
+ create mode 100644 .github/ISSUE_TEMPLATE/architecture-change.yml
+ create mode 100644 .github/ISSUE_TEMPLATE/bug-report.yml
+ create mode 100644 .github/ISSUE_TEMPLATE/test-failure.yml
+ create mode 100644 .github/pull_request_template.md
+ create mode 100644 .github/workflows/markdown-lint.yml
+ create mode 100644 .github/workflows/repository-validation.yml
+ create mode 100644 .github/workflows/secret-scan.yml
+ create mode 100644 .github/workflows/shellcheck.yml
+ create mode 100644 .gitignore
+ create mode 100644 CHANGELOG.md
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 LICENSE
+ create mode 100644 Makefile
+ create mode 100644 README.md
+ create mode 100644 SECURITY.md
+ create mode 100644 configs/README.md
+ create mode 100644 configs/dns/.gitkeep
+ create mode 100644 configs/mikrotik/generated/.gitkeep
+ create mode 100644 configs/mikrotik/templates/.gitkeep
+ create mode 100644 configs/monitoring/.gitkeep
+ create mode 100644 configs/nftables/.gitkeep
+ create mode 100644 configs/routing/.gitkeep
+ create mode 100644 configs/systemd/.gitkeep
+ create mode 100644 configs/vps1/generated/.gitkeep
+ create mode 100644 configs/vps1/templates/.gitkeep
+ create mode 100644 configs/vps3/generated/.gitkeep
+ create mode 100644 configs/vps3/templates/.gitkeep
+ create mode 100644 diagrams/README.md
+ create mode 100644 diagrams/rendered/.gitkeep
+ create mode 100644 diagrams/source/.gitkeep
+ create mode 100644 docs/README.md
+ create mode 100644 docs/architecture/addressing-plan.md
+ create mode 100644 docs/architecture/availability-architecture.md
+ create mode 100644 docs/architecture/candidate-solutions.md
+ create mode 100644 docs/architecture/dns-architecture.md
+ create mode 100644 docs/architecture/logical-architecture.md
+ create mode 100644 docs/architecture/network-flows.md
+ create mode 100644 docs/architecture/physical-architecture.md
+ create mode 100644 docs/architecture/routing-policy.md
+ create mode 100644 docs/architecture/security-architecture.md
+ create mode 100644 docs/architecture/system-context.md
+ create mode 100644 docs/audit/README.md
+ create mode 100644 docs/audit/initial-concept.md
+ create mode 100644 docs/decisions/ADR-000-template.md
+ create mode 100644 docs/decisions/README.md
+ create mode 100644 docs/operations/backup-and-restore.md
+ create mode 100644 docs/operations/deployment-guide.md
+ create mode 100644 docs/operations/incident-response.md
+ create mode 100644 docs/operations/monitoring-guide.md
+ create mode 100644 docs/operations/operations-guide.md
+ create mode 100644 docs/operations/rollback-guide.md
+ create mode 100644 docs/operations/troubleshooting.md
+ create mode 100644 docs/project/definition-of-done.md
+ create mode 100644 docs/project/project-charter.md
+ create mode 100644 docs/project/roles-and-responsibilities.md
+ create mode 100644 docs/project/scope.md
+ create mode 100644 docs/project/stage-gates.md
+ create mode 100644 docs/project/terminology.md
+ create mode 100644 docs/requirements/assumptions.md
+ create mode 100644 docs/requirements/constraints.md
+ create mode 100644 docs/requirements/functional-requirements.md
+ create mode 100644 docs/requirements/non-functional-requirements.md
+ create mode 100644 docs/requirements/traceability-matrix.md
+ create mode 100644 docs/security/firewall-policy.md
+ create mode 100644 docs/security/hardening-standard.md
+ create mode 100644 docs/security/logging-policy.md
+ create mode 100644 docs/security/secret-management.md
+ create mode 100644 docs/security/security-test-plan.md
+ create mode 100644 docs/security/threat-model.md
+ create mode 100644 docs/testing/acceptance-criteria.md
+ create mode 100644 docs/testing/test-case-template.md
+ create mode 100644 docs/testing/test-environments.md
+ create mode 100644 docs/testing/test-strategy.md
+ create mode 100644 evidence/README.md
+ create mode 100644 evidence/stage-00/markdown-files.txt
+ create mode 100644 evidence/stage-00/repository-tree.txt
+ create mode 100644 evidence/stage-00/secret-scan.txt
+ create mode 100644 evidence/stage-00/validation.txt
+ create mode 100644 inventory/README.md
+ create mode 100644 inventory/mikrotik/.gitkeep
+ create mode 100644 inventory/templates/.gitkeep
+ create mode 100644 inventory/vps1/.gitkeep
+ create mode 100644 inventory/vps3/.gitkeep
+ create mode 100644 reports/README.md
+ create mode 100644 reports/acceptance/.gitkeep
+ create mode 100644 reports/audit/.gitkeep
+ create mode 100644 reports/performance/.gitkeep
+ create mode 100644 reports/security/.gitkeep
+ create mode 100644 reports/testing/.gitkeep
+ create mode 100644 scripts/README.md
+ create mode 100644 scripts/bootstrap/.gitkeep
+ create mode 100644 scripts/deploy/.gitkeep
+ create mode 100644 scripts/inventory/.gitkeep
+ create mode 100644 scripts/rollback/.gitkeep
+ create mode 100644 scripts/security/.gitkeep
+ create mode 100644 scripts/testing/.gitkeep
+ create mode 100644 scripts/validation/.gitkeep
+ create mode 100644 stages/README.md
+ create mode 100644 stages/stage-00-repository-baseline/acceptance.md
+ create mode 100644 stages/stage-00-repository-baseline/evidence-index.md
+ create mode 100644 stages/stage-00-repository-baseline/report.md
+ create mode 100644 stages/stage-00-repository-baseline/task.md
+ create mode 100644 stages/templates/acceptance-template.md
+ create mode 100644 stages/templates/evidence-index-template.md
+ create mode 100644 stages/templates/report-template.md
+ create mode 100644 stages/templates/task-template.md
+ create mode 100644 tests/README.md
+ create mode 100644 tests/acceptance/.gitkeep
+ create mode 100644 tests/functional/.gitkeep
+ create mode 100644 tests/integration/.gitkeep
+ create mode 100644 tests/performance/.gitkeep
+ create mode 100644 tests/resilience/.gitkeep
+ create mode 100644 tests/security/.gitkeep
+ create mode 100644 tests/static/.gitkeep
+ create mode 100644 tools/README.md
+ create mode 100644 tools/lint/.gitkeep
+ create mode 100755 tools/validation/validate-repository.sh
