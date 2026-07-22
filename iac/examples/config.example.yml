@@ -1,0 +1,57 @@
+# Stage 04 Example Configuration — OFFLINE SKELETON ONLY
+# All values are documentation-only placeholders (RFC 5737).
+# DO NOT use for production deployment.
+
+environment: example
+deployment_mode: offline-skeleton
+
+safety_flags:
+  deployment_enabled: false
+  production_mode: false
+  allow_remote_execution: false
+  allow_network_changes: false
+  allow_secret_material: false
+
+hosts:
+  router:
+    role: traffic-classifier
+    address: 192.0.2.1
+    ssh_port: 22
+  vps1:
+    role: ru-egress
+    address: 198.51.100.1
+    ssh_port: 22
+  vps3:
+    role: int-egress
+    address: 203.0.113.1
+    ssh_port: 22
+
+network:
+  lan_subnet: 192.0.2.0/24
+  tunnel_ru_subnet: 192.0.2.240/30
+  tunnel_int_subnet: 198.51.100.240/30
+  management_subnet: 192.0.2.0/24
+
+vpn:
+  protocol: wireguard
+  ru_tunnel:
+    local_ip: 192.0.2.241
+    remote_ip: 192.0.2.242
+    port: 51820
+  int_tunnel:
+    local_ip: 198.51.100.241
+    remote_ip: 198.51.100.242
+    port: 51821
+
+dns:
+  ru_upstream: 192.0.2.53
+  int_upstream: 198.51.100.53
+  default_upstream: 203.0.113.53
+
+monitoring:
+  platform: CHANGE_ME
+  alert_channel: CHANGE_ME
+
+backup:
+  retention_days: 30
+  storage_path: /CHANGE_ME/backups

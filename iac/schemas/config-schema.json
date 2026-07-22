@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hiddify Architecture Configuration",
+  "type": "object",
+  "required": [
+    "environment",
+    "safety_flags"
+  ],
+  "properties": {
+    "environment": {
+      "type": "string",
+      "description": "Environment name",
+      "examples": [
+        "example",
+        "lab",
+        "staging",
+        "production"
+      ]
+    },
+    "deployment_mode": {
+      "type": "string",
+      "enum": [
+        "offline-skeleton",
+        "validate-only",
+        "dry-run",
+        "production"
+      ],
+      "default": "offline-skeleton"
+    },
+    "safety_flags": {
+      "type": "object",
+      "required": [
+        "deployment_enabled",
+        "production_mode",
+        "allow_remote_execution",
+        "allow_network_changes",
+        "allow_secret_material"
+      ],
+      "properties": {
+        "deployment_enabled": {
+          "type": "boolean",
+          "const": false
+        },
+        "production_mode": {
+          "type": "boolean",
+          "const": false
+        },
+        "allow_remote_execution": {
+          "type": "boolean",
+          "const": false
+        },
+        "allow_network_changes": {
+          "type": "boolean",
+          "const": false
+        },
+        "allow_secret_material": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "hosts": {
+      "type": "object",
+      "properties": {
+        "router": {
+          "$ref": "#/definitions/host"
+        },
+        "vps1": {
+          "$ref": "#/definitions/host"
+        },
+        "vps3": {
+          "$ref": "#/definitions/host"
+        }
+      }
+    },
+    "network": {
+      "$ref": "#/definitions/network"
+    },
+    "vpn": {
+      "$ref": "#/definitions/vpn"
+    },
+    "dns": {
+      "$ref": "#/definitions/dns"
+    },
+    "monitoring": {
+      "$ref": "#/definitions/monitoring"
+    },
+    "backup": {
+      "$ref": "#/definitions/backup"
+    }
+  },
+  "definitions": {
+    "host": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "ssh_port": {
+          "type": "integer",
+          "default": 22
+        }
+      }
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "lan_subnet": {
+          "type": "string"
+        },
+        "tunnel_ru_subnet": {
+          "type": "string"
+        },
+        "tunnel_int_subnet": {
+          "type": "string"
+        },
+        "management_subnet": {
+          "type": "string"
+        }
+      }
+    },
+    "vpn": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "wireguard",
+            "openvpn"
+          ]
+        },
+        "ru_tunnel": {
+          "$ref": "#/definitions/tunnel"
+        },
+        "int_tunnel": {
+          "$ref": "#/definitions/tunnel"
+        }
+      }
+    },
+    "tunnel": {
+      "type": "object",
+      "properties": {
+        "local_ip": {
+          "type": "string"
+        },
+        "remote_ip": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      }
+    },
+    "dns": {
+      "type": "object",
+      "properties": {
+        "ru_upstream": {
+          "type": "string"
+        },
+        "int_upstream": {
+          "type": "string"
+        },
+        "default_upstream": {
+          "type": "string"
+        }
+      }
+    },
+    "monitoring": {
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "alert_channel": {
+          "type": "string"
+        }
+      }
+    },
+    "backup": {
+      "type": "object",
+      "properties": {
+        "retention_days": {
+          "type": "integer"
+        },
+        "storage_path": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
