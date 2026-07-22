@@ -8,7 +8,7 @@ This document describes the system context — the boundaries of the system and 
 
 ## System Boundary
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │          Network Access System           │
 │                                          │

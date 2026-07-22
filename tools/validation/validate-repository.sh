@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Repository validation script for Stage 00
+# Repository validation script for Stage 00+
 # Checks required files, directories, prohibited files, empty Markdown files,
-# Stage 00 artifacts, trailing whitespace, and .gitkeep presence.
+# Stage 00 artifacts, trailing whitespace, .gitkeep presence, task.md completeness,
+# evidence integrity, and report consistency.
 # Exit 0 only if all checks pass.
 
 set -Eeuo pipefail
@@ -220,7 +221,6 @@ echo ""
 # CHECK 7: .gitkeep in empty directories
 # -------------------------------------------------------------------
 echo "--- Check 7: .gitkeep presence ---"
-# Find directories that are empty (contain only .gitkeep or nothing)
 EMPTY_DIRS_NEEDING_GITKEEP=(
   "configs/mikrotik/templates"
   "configs/mikrotik/generated"
@@ -291,7 +291,7 @@ done
 echo ""
 
 # -------------------------------------------------------------------
-# CHECK 9: Evidence Stage 00 files
+# CHECK 9: Evidence Stage 00 files (FAIL if missing, not WARN)
 # -------------------------------------------------------------------
 echo "--- Check 9: Evidence Stage 00 ---"
 EVIDENCE_FILES=(
@@ -308,13 +308,13 @@ for file in "${EVIDENCE_FILES[@]}"; do
   if [ -f "$file" ]; then
     pass "Evidence file exists: $file"
   else
-    warn "Evidence file missing (expected after commit): $file"
+    fail "Evidence file missing: $file"
   fi
 done
 echo ""
 
 # -------------------------------------------------------------------
-# CHECK 10: README contains stage-gate description
+# CHECK 10: README content checks
 # -------------------------------------------------------------------
 echo "--- Check 10: README content checks ---"
 if grep -q "Stage-Gate\|stage-gate" README.md 2>/dev/null; then
@@ -331,10 +331,10 @@ fi
 echo ""
 
 # -------------------------------------------------------------------
-# CHECK 11: Roles documented (PASSED assigned only by ChatGPT)
+# CHECK 11: Roles and PASSED authority
 # -------------------------------------------------------------------
 echo "--- Check 11: Roles and PASSED authority ---"
-if grep -q "Hermes + Qwen" docs/project/roles-and-responsibilities.md 2>/dev/null; then
+if grep -q "Hermes + Qwen\|Hermes.*Qwen" docs/project/roles-and-responsibilities.md 2>/dev/null; then
   pass "Roles document references Hermes + Qwen"
 else
   fail "Roles document does not reference Hermes + Qwen"
@@ -348,7 +348,7 @@ fi
 echo ""
 
 # -------------------------------------------------------------------
-# CHECK 12: UTF-8 and trailing newlines
+# CHECK 12: File encoding and newlines
 # -------------------------------------------------------------------
 echo "--- Check 12: File encoding and newlines ---"
 MD_COUNT=$(find . -type f -name '*.md' -not -path './.git/*' | wc -l)
@@ -368,6 +368,99 @@ if [ "$NO_NEWLINE_COUNT" -eq 0 ]; then
   pass "All Markdown files end with newline"
 else
   fail "$NO_NEWLINE_COUNT Markdown file(s) missing final newline"
+fi
+echo ""
+
+# -------------------------------------------------------------------
+# CHECK 13: task.md completeness
+# -------------------------------------------------------------------
+echo "--- Check 13: task.md completeness ---"
+TASK_FILE="stages/stage-00-repository-baseline/task.md"
+if [ -f "$TASK_FILE" ]; then
+  # Check for all 15 required sections
+  for section_num in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+    if grep -q "## ${section_num}\." "$TASK_FILE" 2>/dev/null; then
+      pass "task.md contains section ${section_num}"
+    else
+      fail "task.md missing section ${section_num}"
+    fi
+  done
+
+  # Check for prohibited shorthand phrases
+  if grep -q "Остальные разделы задания" "$TASK_FILE" 2>/dev/null; then
+    fail "task.md contains prohibited shorthand: 'Остальные разделы задания'"
+  else
+    pass "task.md does not contain prohibited shorthand phrases"
+  fi
+
+  if grep -q "Полный текст задания сохранен в исходном документе" "$TASK_FILE" 2>/dev/null; then
+    fail "task.md references non-existent external document"
+  else
+    pass "task.md does not reference non-existent external document"
+  fi
+else
+  fail "task.md does not exist"
+fi
+echo ""
+
+# -------------------------------------------------------------------
+# CHECK 14: Evidence checksums verification
+# -------------------------------------------------------------------
+echo "--- Check 14: Evidence checksums ---"
+CHECKSUM_FILE="evidence/stage-00/checksums.sha256"
+if [ -f "$CHECKSUM_FILE" ]; then
+  pass "checksums.sha256 exists"
+  if sha256sum --check "$CHECKSUM_FILE" >/dev/null 2>&1; then
+    pass "checksums.sha256 verification passed"
+  else
+    fail "checksums.sha256 verification FAILED"
+    sha256sum --check "$CHECKSUM_FILE" 2>&1 | grep -i "FAILED" || true
+  fi
+else
+  fail "checksums.sha256 does not exist"
+fi
+echo ""
+
+# -------------------------------------------------------------------
+# CHECK 15: Report SHA consistency
+# -------------------------------------------------------------------
+echo "--- Check 15: Report SHA consistency ---"
+REPORT_FILE="stages/stage-00-repository-baseline/report.md"
+if [ -f "$REPORT_FILE" ]; then
+  # Check for truncated/short SHAs (less than 40 hex chars that look like commit references)
+  # Only flag SHAs that are 7-39 hex chars (7 is git's default abbreviated form)
+  SHORT_SHA_LINES=$(grep -nE "(SHA|Commit)[^0-9a-f]*[0-9a-f]{7,39}[^0-9a-f]" "$REPORT_FILE" 2>/dev/null | grep -vE "[0-9a-f]{40}" || true)
+  if [ -n "$SHORT_SHA_LINES" ]; then
+    warn "Report may contain shortened SHA values (verify manually)"
+    echo "$SHORT_SHA_LINES" | head -5
+  else
+    pass "No shortened SHA patterns detected in report"
+  fi
+
+  # Check that report does not contain "to be obtained after push"
+  if grep -q "to be obtained after push" "$REPORT_FILE" 2>/dev/null; then
+    fail "Report contains stale placeholder: 'to be obtained after push'"
+  else
+    pass "Report does not contain stale push placeholder"
+  fi
+else
+  fail "Report file does not exist"
+fi
+echo ""
+
+# -------------------------------------------------------------------
+# CHECK 16: Acceptance metadata
+# -------------------------------------------------------------------
+echo "--- Check 16: Acceptance metadata ---"
+ACCEPTANCE_FILE="stages/stage-00-repository-baseline/acceptance.md"
+if [ -f "$ACCEPTANCE_FILE" ]; then
+  if grep -q "PENDING EXTERNAL AUDIT\|PENDING" "$ACCEPTANCE_FILE" 2>/dev/null; then
+    pass "Acceptance file has correct PENDING status"
+  else
+    warn "Acceptance file may not have PENDING status"
+  fi
+else
+  fail "Acceptance file does not exist"
 fi
 echo ""
 

@@ -4,7 +4,7 @@ This directory contains sanitized technical specifications for all infrastructur
 
 ## Structure
 
-```
+```text
 inventory/
   templates/       - Inventory templates
   mikrotik/        - MikroTik router specifications

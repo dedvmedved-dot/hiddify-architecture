@@ -4,7 +4,7 @@ This directory contains sanitized configuration templates and generated configur
 
 ## Structure
 
-```
+```text
 configs/
   mikrotik/        - MikroTik RouterOS configurations
     templates/     - Configuration templates with placeholders
@@ -32,7 +32,7 @@ configs/
 
 ## Placeholder Format
 
-```
+```text
 <REPLACE_WITH_SECRET>
 ```
 

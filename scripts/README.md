@@ -4,7 +4,7 @@ This directory contains executable and library scripts for the project.
 
 ## Structure
 
-```
+```text
 scripts/
   bootstrap/       - Initial setup scripts
   deploy/          - Deployment scripts
@@ -29,9 +29,11 @@ Every shell script must:
 
 ```bash
 # Validate all scripts
+
 make lint-shell
 
 # Run specific script
+
 bash scripts/deploy/deploy-vps1.sh
 ```
 

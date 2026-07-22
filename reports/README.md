@@ -4,7 +4,7 @@ This directory contains summary and audit reports.
 
 ## Structure
 
-```
+```text
 reports/
   audit/           - External audit reports
   testing/         - Test summary reports

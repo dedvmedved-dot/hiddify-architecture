@@ -2,13 +2,13 @@
 
 ## Metadata
 
-| Field | Value |
-|-------|-------|
-| Stage | NN — Stage Name |
-| Commit | <FULL_40_CHARACTER_SHA> |
-| Audit date | YYYY-MM-DD |
-| Auditor | ChatGPT |
-| Result | PENDING EXTERNAL AUDIT |
+| Field      | Value                       |
+| ---------- | --------------------------- |
+| Stage      | NN — Stage Name             |
+| Commit     | <FULL_40_CHARACTER_SHA>     |
+| Audit date | YYYY-MM-DD                  |
+| Auditor    | ChatGPT                     |
+| Result     | PENDING EXTERNAL AUDIT      |
 
 ## Blocking Findings
 
@@ -24,6 +24,6 @@ List specific corrections required.
 
 ## Connector Verification
 
-```
+```text
 Connector verification: PENDING
 ```

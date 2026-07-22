@@ -9,6 +9,7 @@ Use the following patterns:
 - `docs/short-description` — Documentation updates
 
 Examples:
+
 - `stage/01-requirements-analysis`
 - `fix/correct-typo-in-readme`
 - `docs/add-network-diagram`
@@ -17,7 +18,7 @@ Examples:
 
 Follow conventional commits:
 
-```
+```text
 type(scope): brief description
 
 Longer explanation if needed.
@@ -26,6 +27,7 @@ Refs: #issue-number (if applicable)
 ```
 
 Types:
+
 - `feat` — New features
 - `fix` — Bug fixes
 - `docs` — Documentation changes
@@ -36,7 +38,8 @@ Types:
 - `stage` — Stage-specific work
 
 Examples:
-```
+
+```text
 chore(repo): establish project baseline and governance structure
 docs(architecture): add initial system context diagram
 stage(01): complete requirements analysis
@@ -44,7 +47,8 @@ stage(01): complete requirements analysis
 
 ## Security Rules
 
-### NEVER commit:
+### NEVER commit
+
 - Passwords, tokens, or API keys
 - Private keys (SSH, WireGuard, TLS)
 - SSH host keys
@@ -54,17 +58,20 @@ stage(01): complete requirements analysis
 - Configuration exports containing secrets
 - Database connection strings with credentials
 
-### Safe placeholders:
+### Safe placeholders
+
 Use `<REPLACE_WITH_SECRET>` for all secret values.
 
 Example:
+
 ```yaml
 api_key: <REPLACE_WITH_SECRET>
 password: <REPLACE_WITH_SECRET>
 private_key: <REPLACE_WITH_SECRET>
 ```
 
-### If you accidentally commit a secret:
+### If you accidentally commit a secret
+
 1. **Immediately** rotate the compromised credential
 2. Remove from Git history (requires force push — coordinate with team)
 3. Document incident in stage report
@@ -81,6 +88,7 @@ Every stage must include evidence in `evidence/stage-NN/`:
 - Checksums of critical files
 
 Evidence must be:
+
 - Timestamped (UTC)
 - Reproducible
 - Sanitized (no secrets)

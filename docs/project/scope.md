@@ -26,12 +26,14 @@
 ## Boundaries
 
 ### Included Infrastructure
+
 - MikroTik router(s)
 - VPS1 (egress node)
 - VPS3 (egress node)
 - Associated networking (DNS, routing, firewall)
 
 ### Excluded Infrastructure
+
 - End-user devices
 - ISP equipment
 - Third-party cloud services beyond specified VPS instances
@@ -39,6 +41,7 @@
 ## Deliverables
 
 For each stage, deliverables include:
+
 - Documentation in `docs/`
 - Configurations in `configs/`
 - Scripts in `scripts/`

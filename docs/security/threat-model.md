@@ -9,6 +9,7 @@ This document will contain the threat model for the network access system.
 ## Methodology
 
 Threat modeling will use STRIDE methodology:
+
 - **S**poofing
 - **T**ampering
 - **R**epudiation

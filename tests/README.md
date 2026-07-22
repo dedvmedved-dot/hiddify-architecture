@@ -4,7 +4,7 @@ This directory contains test scenarios and test automation.
 
 ## Structure
 
-```
+```text
 tests/
   static/          - Static analysis tests
   functional/      - Functional tests
@@ -19,9 +19,11 @@ tests/
 
 ```bash
 # Run all tests
+
 make validate
 
 # Run specific test category
+
 bash tests/static/run-all.sh
 ```
 

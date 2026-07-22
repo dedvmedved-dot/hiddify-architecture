@@ -9,24 +9,27 @@
 The initial concept involves creating a network access system with the following characteristics:
 
 ### Goals
+
 - Secure network access through multiple egress points
 - Split routing based on traffic classification rules
 - Russian and international egress for geographic diversity
 - Centralized management and monitoring
 
 ### Initial Technology Candidates
+
 - **Hiddify** — Proxy/VPN management platform (to be evaluated)
 - **MikroTik** — Router for traffic classification and routing
 - **VPS** — Cloud servers for egress points
 
 ### High-Level Architecture Idea
 
-```
+```text
 Clients → MikroTik (classification) → VPS1 (RU egress)
                                     → VPS3 (INT egress)
 ```
 
 ### Key Considerations
+
 - Security of tunnel connections
 - DNS consistency with routing
 - Failover between egress points
@@ -36,6 +39,7 @@ Clients → MikroTik (classification) → VPS1 (RU egress)
 ## Disclaimer
 
 This concept is a starting point only. The final architecture may:
+
 - Use different technologies
 - Have a different topology
 - Implement different routing strategies

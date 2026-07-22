@@ -4,7 +4,7 @@ This directory contains immutable or minimally processed evidence of stage compl
 
 ## Structure
 
-```
+```text
 evidence/
   stage-00/        - Stage 00 evidence
   stage-01/        - Stage 01 evidence (future)

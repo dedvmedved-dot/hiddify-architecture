@@ -27,6 +27,7 @@ This document describes incident response procedures.
 ## Post-Incident Review
 
 Every P1/P2 incident requires:
+
 - Timeline of events
 - Root cause analysis
 - Corrective actions

@@ -31,14 +31,17 @@ Describe the chosen option and why.
 ## Consequences
 
 ### Positive
+
 - Positive consequence 1
 - Positive consequence 2
 
 ### Negative
+
 - Negative consequence 1
 - Negative consequence 2
 
 ### Risks
+
 - Risk 1 with mitigation
 - Risk 2 with mitigation
 

@@ -50,6 +50,6 @@ Specify exactly what information to provide for audit.
 
 ## 13. Prohibition
 
-```
+```text
 Hermes + Qwen does NOT have authority to assign PASSED status.
 ```

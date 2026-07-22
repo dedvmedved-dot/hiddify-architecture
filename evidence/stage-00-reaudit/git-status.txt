@@ -1,0 +1,73 @@
+Timestamp UTC: 2026-07-22T06:10:47Z
+Branch: fix/stage-00-audit-findings
+HEAD: fcd6a72f3b0ef0da5eca620e620470624616fe66
+
+On branch fix/stage-00-audit-findings
+Your branch is up to date with 'origin/fix/stage-00-audit-findings'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   evidence/stage-00-reaudit/git-status.txt
+	modified:   evidence/stage-00-reaudit/pr-status.md
+	modified:   evidence/stage-00-reaudit/workflow-status.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+--- Changes vs main ---
+ .github/workflows/markdown-lint.yml                |   1 +
+ .github/workflows/repository-validation.yml        |  37 +-
+ .github/workflows/secret-scan.yml                  |   2 +
+ .github/workflows/shellcheck.yml                   |   1 +
+ .gitleaksignore                                    |   1 +
+ .markdownlint-cli2.yaml                            |  45 ++
+ CHANGELOG.md                                       |   1 +
+ CONTRIBUTING.md                                    |  18 +-
+ README.md                                          |   5 +-
+ SECURITY.md                                        |  10 +
+ configs/README.md                                  |   4 +-
+ diagrams/README.md                                 |   4 +-
+ docs/README.md                                     |   3 +-
+ docs/architecture/system-context.md                |   2 +-
+ docs/audit/README.md                               |   1 +
+ docs/audit/initial-concept.md                      |   6 +-
+ docs/decisions/ADR-000-template.md                 |   3 +
+ docs/decisions/README.md                           |   2 +-
+ docs/operations/incident-response.md               |   1 +
+ docs/project/roles-and-responsibilities.md         |   8 +-
+ docs/project/scope.md                              |   3 +
+ docs/project/stage-gates.md                        |  10 +-
+ docs/requirements/functional-requirements.md       |   8 +
+ docs/requirements/non-functional-requirements.md   |   6 +
+ docs/security/secret-management.md                 |   3 +-
+ docs/security/threat-model.md                      |   1 +
+ evidence/README.md                                 |   2 +-
+ evidence/stage-00-correction-01/checksums.sha256   |   5 +
+ evidence/stage-00-correction-01/ci-status.md       |  32 +
+ evidence/stage-00-correction-01/git-diff-check.txt |   2 +
+ .../stage-00-correction-01/repository-tree.txt     | 126 ++++
+ evidence/stage-00-correction-01/secret-scan.txt    |  10 +
+ evidence/stage-00-correction-01/validation.txt     | 202 +++++
+ evidence/stage-00-reaudit/checksums.sha256         |   7 +
+ evidence/stage-00-reaudit/git-log.txt              |  38 +
+ evidence/stage-00-reaudit/git-status.txt           |  72 ++
+ evidence/stage-00-reaudit/pr-status.md             |  49 ++
+ evidence/stage-00-reaudit/repository-tree.txt      | 139 ++++
+ evidence/stage-00-reaudit/summary.md               |  85 +++
+ evidence/stage-00-reaudit/validation.txt           | 202 +++++
+ evidence/stage-00-reaudit/workflow-status.md       |  43 ++
+ inventory/README.md                                |   2 +-
+ reports/README.md                                  |   2 +-
+ scripts/README.md                                  |   4 +-
+ stages/README.md                                   |   7 +-
+ stages/stage-00-repository-baseline/acceptance.md  |  32 +-
+ .../stage-00-repository-baseline/evidence-index.md |  14 +-
+ stages/stage-00-repository-baseline/report.md      | 295 ++++++--
+ stages/stage-00-repository-baseline/task.md        | 835 ++++++++++++++++++++-
+ stages/templates/acceptance-template.md            |  16 +-
+ stages/templates/report-template.md                |   2 +-
+ stages/templates/task-template.md                  |   2 +-
+ tests/README.md                                    |   4 +-
+ tools/README.md                                    |   2 +-
+ tools/validation/validate-repository.sh            | 111 ++-
+ 55 files changed, 2403 insertions(+), 125 deletions(-)
