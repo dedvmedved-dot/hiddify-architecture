@@ -34,11 +34,13 @@ Traffic classification engine responsible for:
 Secure tunnel between classification point and egress nodes.
 
 **Requirements:**
+
 - Encryption in transit (SEC-008)
 - Session persistence (FR-015)
 - Monitoring and health checks (FR-040, FR-041)
 
 **Technology candidates for evaluation:**
+
 - WireGuard
 - OpenVPN
 - IPsec/IKEv2
