@@ -1,0 +1,20 @@
+evidence/stage-00/git-log.txt: ЦЕЛ
+evidence/stage-00/git-status.txt: ЦЕЛ
+evidence/stage-00/markdown-files.txt: ЦЕЛ
+evidence/stage-00/repository-tree.txt: ЦЕЛ
+evidence/stage-00/secret-scan.txt: ЦЕЛ
+evidence/stage-00/validation.txt: ЦЕЛ
+---
+evidence/stage-00-reaudit/git-log.txt: ЦЕЛ
+evidence/stage-00-reaudit/git-status.txt: ЦЕЛ
+evidence/stage-00-reaudit/pr-status.md: ЦЕЛ
+evidence/stage-00-reaudit/repository-tree.txt: ЦЕЛ
+evidence/stage-00-reaudit/summary.md: ЦЕЛ
+evidence/stage-00-reaudit/validation.txt: ЦЕЛ
+evidence/stage-00-reaudit/workflow-status.md: ЦЕЛ
+---
+evidence/stage-00-post-merge/main-git-log.txt: ЦЕЛ
+evidence/stage-00-post-merge/main-git-status.txt: ЦЕЛ
+evidence/stage-00-post-merge/main-validation.txt: ЦЕЛ
+evidence/stage-00-post-merge/main-workflow-status.md: ЦЕЛ
+evidence/stage-00-post-merge/merge-status.md: ЦЕЛ
