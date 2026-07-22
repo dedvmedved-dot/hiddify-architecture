@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -12,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Check required root files
         run: |
@@ -81,12 +84,18 @@ jobs:
 
       - name: Check trailing whitespace
         run: |
-          if git diff --check HEAD^ HEAD 2>/dev/null; then
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            if ! git diff --check HEAD^ HEAD 2>&1; then
+              echo "ERROR: Trailing whitespace detected"
+              exit 1
+            fi
             echo "OK: No trailing whitespace issues"
-          elif git show --check HEAD 2>/dev/null; then
-            echo "OK: No trailing whitespace issues (first commit)"
           else
-            echo "WARNING: Trailing whitespace detected"
+            if ! git show --check HEAD 2>&1; then
+              echo "ERROR: Trailing whitespace detected (first commit)"
+              exit 1
+            fi
+            echo "OK: No trailing whitespace issues (first commit)"
           fi
 
       - name: Check Stage 00 report
@@ -107,8 +116,22 @@ jobs:
 
       - name: Run validation script
         run: |
-          if [ -f "tools/validation/validate-repository.sh" ]; then
-            bash tools/validation/validate-repository.sh
+          if [ ! -f "tools/validation/validate-repository.sh" ]; then
+            echo "ERROR: Validation script not found"
+            exit 1
+          fi
+          bash tools/validation/validate-repository.sh
+
+      - name: Check Stage 00 checksums
+        run: |
+          checksum_file="evidence/stage-00/checksums.sha256"
+          if [ -f "$checksum_file" ]; then
+            if ! sha256sum --check "$checksum_file"; then
+              echo "ERROR: Checksum verification failed"
+              exit 1
+            fi
+            echo "OK: Stage 00 checksums verified"
           else
-            echo "WARNING: Validation script not found"
+            echo "ERROR: Stage 00 checksums file not found"
+            exit 1
           fi
