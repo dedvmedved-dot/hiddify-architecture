@@ -47,6 +47,7 @@ Pros: Simple. Cons: Less control, external dependency.
 ## DNS Leak Prevention
 
 Per DNS-001, DNS-002, SEC-019:
+
 - Router policy routes DNS traffic through correct tunnel
 - No DNS fallback to default ISP resolver
 - DNS caching on router with per-egress cache separation

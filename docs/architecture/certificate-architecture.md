@@ -30,6 +30,7 @@ Per SEC-005, SEC-006, SEC-007:
 ## Certificate Monitoring
 
 Per OPS-015:
+
 - Certificate expiration monitored
 - Advance warning before expiry
 - Renewal procedures documented
