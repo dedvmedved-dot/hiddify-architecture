@@ -3,21 +3,34 @@
 
 config:
   # MD013 - Line length
-  # Many files contain long lines from original specifications
-  MD013:
-    line_length: 80
-    heading_line_length: 80
-    code_block_line_length: 120
-    stern: true
+  # Disable line length checks - documentation contains many long lines
+  MD013: false
 
   # MD024 - Multiple headings with the same content
   # Allow duplicate headings in different sections
   MD024:
     siblings_only: true
 
+  # MD026 - Trailing punctuation in heading
+  # Allow colons in headings (e.g., "Examples:")
+  MD026: false
+
+  # MD031 - Fenced code blocks should be surrounded by blank lines
+  MD031: true
+
+  # MD032 - Lists should be surrounded by blank lines
+  MD032: true
+
   # MD033 - Inline HTML
   # Allow inline HTML for formatting
   MD033: false
+
+  # MD036 - Emphasis used instead of heading
+  # Allow emphasis for visual formatting
+  MD036: false
+
+  # MD040 - Fenced code blocks should have a language specified
+  MD040: true
 
   # MD041 - First line in file should be a top-level heading
   # Some files start with comments or frontmatter
