@@ -84,6 +84,13 @@
 ./evidence/stage-00-correction-01/repository-tree.txt
 ./evidence/stage-00-correction-01/secret-scan.txt
 ./evidence/stage-00-correction-01/validation.txt
+./evidence/stage-00-reaudit/git-log.txt
+./evidence/stage-00-reaudit/git-status.txt
+./evidence/stage-00-reaudit/pr-status.md
+./evidence/stage-00-reaudit/repository-tree.txt
+./evidence/stage-00-reaudit/summary.md
+./evidence/stage-00-reaudit/validation.txt
+./evidence/stage-00-reaudit/workflow-status.md
 ./evidence/stage-00/checksums.sha256
 ./evidence/stage-00/git-log.txt
 ./evidence/stage-00/git-status.txt

@@ -1,31 +1,42 @@
-# GitHub Actions Workflow Status — Stage 00 Re-Audit
+# GitHub Actions Workflow Status — Stage 00 Final Audit
 
-**Checked**: 2026-07-22 02:01 UTC
-**Commit**: `70691a1f6b9467af1c1f11acee6e471689b8ff3b`
+**Checked**: 2026-07-22 02:10 UTC
+**Commit**: `e57bdba10eefdbb08e8094791189dccc89d3df95`
 **Branch**: `fix/stage-00-audit-findings`
 
-## Latest PR-triggered Runs
+## Latest PR-triggered Runs (commit `e57bdba`)
 
-| Workflow | Run ID | Conclusion | Status | Created |
-|----------|--------|------------|--------|---------|
-| Markdown Lint | 29883806956 | **failure** | completed | 2026-07-22T01:41:57Z |
-| ShellCheck | 29883806984 | success | completed | 2026-07-22T01:41:57Z |
-| Secret Scan | 29883806954 | success | completed | 2026-07-22T01:41:57Z |
-| Repository Validation | 29883806955 | success | completed | 2026-07-22T01:41:57Z |
+| Workflow | Run ID | Conclusion | Created |
+|----------|--------|------------|---------|
+| Markdown Lint | 29884737682 | **failure** | 2026-07-22T02:02:35Z |
+| ShellCheck | 29884737678 | success | 2026-07-22T02:02:35Z |
+| Secret Scan | 29884737677 | success | 2026-07-22T02:02:35Z |
+| Repository Validation | 29884737681 | **failure** | 2026-07-22T02:02:35Z |
 
 ## Failure Details
 
-### Markdown Lint (Run 29883806956)
+### Markdown Lint (Run 29884737682)
 
-- **Error**: 4 × MD034/no-bare-urls
-- **File**: `evidence/stage-00-correction-01/ci-status.md`
-- **Lines**: 11, 12, 13, 14 — bare URLs in markdown table
-- **Fix applied**: URLs wrapped in `<...>`, status updated to PARTIAL PASS
-- **Root cause**: This file was added in commit `70691a1` and its bare URLs caused its own CI failure
+- **Errors**: 13 (MD022 + MD032 in evidence files)
+- **Files affected**:
+  - `evidence/stage-00-reaudit/summary.md`: 12 errors (blanks around headings + lists)
+  - `evidence/stage-00-reaudit/workflow-status.md`: 1 error (blanks around lists)
+- **Fix applied**: Added blank lines around all `###` headings and lists
 
-## Earlier workflow_dispatch Runs (commit `4df664c`)
+### Repository Validation (Run 29884737681)
 
-All 4 workflows passed on commit `4df664c` via `workflow_dispatch`:
+- **Error**: Trailing whitespace detected
+- **File affected**: `evidence/stage-00-reaudit/git-log.txt`
+- **Fix applied**: Removed trailing whitespace
+
+## Successful Workflows
+
+Both `ShellCheck` and `Secret Scan` passed consistently on all commits.
+
+## Earlier Successful Dispatch Runs (commit `4df664c`)
+
+All 4 workflows passed via `workflow_dispatch`:
+
 - Markdown Lint: success (Run 29883661641)
 - ShellCheck: success (Run 29883713821)
 - Secret Scan: success (Run 29883661597)
