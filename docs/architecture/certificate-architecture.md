@@ -23,6 +23,7 @@ This document addresses TLS/SSL certificates for:
 ## Key Management
 
 Per SEC-005, SEC-006, SEC-007:
+
 - Private keys never stored in Git
 - Key rotation schedule defined in operations procedures
 - Backup keys stored securely, separate from configuration backups
