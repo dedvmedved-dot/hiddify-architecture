@@ -1,0 +1,2 @@
+stages/stage-00-repository-baseline/task.md:937: new blank line at EOF.
+Exit code: 2
