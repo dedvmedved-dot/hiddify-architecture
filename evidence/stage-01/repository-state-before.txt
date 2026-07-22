@@ -1,0 +1,52 @@
+=== git status ===
+Текущая ветка: stage/01-requirements-baseline
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>...», чтобы добавить файл в индекс)
+  (используйте «git restore <файл>...», чтобы отменить изменения в рабочем каталоге)
+	изменено:      docs/requirements/assumptions.md
+	изменено:      docs/requirements/constraints.md
+	изменено:      docs/requirements/functional-requirements.md
+	изменено:      docs/requirements/non-functional-requirements.md
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	docs/requirements/dns-requirements.md
+	docs/requirements/open-questions.md
+	docs/requirements/operations-requirements.md
+	docs/requirements/requirements-risks.md
+	docs/requirements/routing-policy-requirements.md
+	docs/requirements/security-requirements.md
+	docs/requirements/stakeholders.md
+	docs/requirements/traceability.md
+	docs/requirements/use-cases.md
+	evidence/stage-01/
+	inventory/templates/dns-inventory-template.md
+	inventory/templates/mikrotik-inventory-template.md
+	inventory/templates/network-inventory-template.md
+	inventory/templates/service-inventory-template.md
+	inventory/templates/traffic-classification-template.md
+	inventory/templates/vps-inventory-template.md
+	stages/stage-01-requirements-baseline/
+
+индекс пуст (используйте «git add» и/или «git commit -a»)
+
+=== branch ===
+stage/01-requirements-baseline
+
+=== HEAD ===
+2f1472a49120e1bdaf8c985a6d5e293408904eba
+
+=== origin/main ===
+2f1472a49120e1bdaf8c985a6d5e293408904eba
+
+=== git log -10 ===
+2f1472a (HEAD -> stage/01-requirements-baseline, origin/main, origin/HEAD, main) docs(handover): sanitize post-merge evidence
+401fd2a docs(handover): fix post-merge evidence markdown lint
+9f5f684 docs(handover): record Hermes transition post-merge verification
+7d3cf9d Merge pull request #2 from dedvmedved-dot/chore/hermes-agent-transition
+6676600 (origin/chore/hermes-agent-transition, chore/hermes-agent-transition) fix(handover): resolve repository validation findings
+347dc16 docs(handover): fix markdown lint and complete corrective evidence
+e90a588 docs(handover): correct onboarding evidence and access record
+2e0d38a docs(handover): record new Hermes agent onboarding
+dafa6ae docs(stage-00): record final acceptance and post-merge verification
+3ee4250 merge(stage-00): complete repository baseline acceptance
