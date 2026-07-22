@@ -31,7 +31,7 @@ tests/stage04/                   — Unit tests
 ## Safety Flags
 
 All example configurations enforce safety flags = false:
-s enforce safety flags = false:
+
 - deployment_enabled: false
 - production_mode: false
 - allow_remote_execution: false
