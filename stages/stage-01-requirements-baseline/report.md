@@ -78,7 +78,7 @@ See `docs/requirements/open-questions.md` for complete list. Key blockers includ
 | ------ | ----- |
 | Evidence files total | 10 |
 | Checksummed evidence files | 9 |
-| PR changed files | 31 |
+| PR changed files | 34 |
 
 ## Validation
 

@@ -45,3 +45,10 @@
 **Previous evidence commit:** `c6a6edac9fbcc4bec8480c272de44cffbee11b1c`
 **Final audit target:** PR #3 HEAD at time of external audit
 **Final audit target SHA:** Provided in Hermes final report and connector-verified by ChatGPT
+
+## Audit Evidence Model
+
+Embedded CI evidence corresponds to the previous completed evidence
+commit (`d195f5d`). The current final PR HEAD and its CI are verified
+externally by ChatGPT through the GitHub Connector. This avoids an
+infinite commit/evidence cycle.
