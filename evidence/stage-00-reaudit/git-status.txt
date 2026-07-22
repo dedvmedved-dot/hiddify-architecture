@@ -1,6 +1,6 @@
-Timestamp UTC: 2026-07-22T02:11:31Z
+Timestamp UTC: 2026-07-22T06:10:47Z
 Branch: fix/stage-00-audit-findings
-HEAD: 1076dd2e5d56e7edb40055f9887b7950abe21e3e
+HEAD: fcd6a72f3b0ef0da5eca620e620470624616fe66
 
 On branch fix/stage-00-audit-findings
 Your branch is up to date with 'origin/fix/stage-00-audit-findings'.
@@ -8,8 +8,9 @@ Your branch is up to date with 'origin/fix/stage-00-audit-findings'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   evidence/stage-00-reaudit/git-log.txt
 	modified:   evidence/stage-00-reaudit/git-status.txt
+	modified:   evidence/stage-00-reaudit/pr-status.md
+	modified:   evidence/stage-00-reaudit/workflow-status.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
@@ -48,20 +49,20 @@ no changes added to commit (use "git add" and/or "git commit -a")
  evidence/stage-00-correction-01/secret-scan.txt    |  10 +
  evidence/stage-00-correction-01/validation.txt     | 202 +++++
  evidence/stage-00-reaudit/checksums.sha256         |   7 +
- evidence/stage-00-reaudit/git-log.txt              |  40 +
- evidence/stage-00-reaudit/git-status.txt           |  74 ++
+ evidence/stage-00-reaudit/git-log.txt              |  38 +
+ evidence/stage-00-reaudit/git-status.txt           |  72 ++
  evidence/stage-00-reaudit/pr-status.md             |  49 ++
  evidence/stage-00-reaudit/repository-tree.txt      | 139 ++++
- evidence/stage-00-reaudit/summary.md               |  79 ++
+ evidence/stage-00-reaudit/summary.md               |  85 +++
  evidence/stage-00-reaudit/validation.txt           | 202 +++++
  evidence/stage-00-reaudit/workflow-status.md       |  43 ++
  inventory/README.md                                |   2 +-
  reports/README.md                                  |   2 +-
  scripts/README.md                                  |   4 +-
  stages/README.md                                   |   7 +-
- stages/stage-00-repository-baseline/acceptance.md  |  30 +-
+ stages/stage-00-repository-baseline/acceptance.md  |  32 +-
  .../stage-00-repository-baseline/evidence-index.md |  14 +-
- stages/stage-00-repository-baseline/report.md      | 235 ++++--
+ stages/stage-00-repository-baseline/report.md      | 295 ++++++--
  stages/stage-00-repository-baseline/task.md        | 835 ++++++++++++++++++++-
  stages/templates/acceptance-template.md            |  16 +-
  stages/templates/report-template.md                |   2 +-
@@ -69,4 +70,4 @@ no changes added to commit (use "git add" and/or "git commit -a")
  tests/README.md                                    |   4 +-
  tools/README.md                                    |   2 +-
  tools/validation/validate-repository.sh            | 111 ++-
- 55 files changed, 2342 insertions(+), 122 deletions(-)
+ 55 files changed, 2403 insertions(+), 125 deletions(-)

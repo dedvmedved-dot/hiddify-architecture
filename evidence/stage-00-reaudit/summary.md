@@ -11,6 +11,8 @@
 Stage 00 received **CONDITIONAL PASS** from external auditor ChatGPT after Corrective Action 01.
 **Corrective Action 02** addresses the sole remaining finding: Evidence synchronization with current HEAD.
 
+**Correction commit**: `fcd6a72f3b0ef0da5eca620e620470624616fe66` — document synchronization
+
 ## Previous Audit Target
 
 `ba93354a600a57ed9231be00587214976d02bb31` — last commit before Corrective Action 02.

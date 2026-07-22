@@ -1,6 +1,8 @@
-Timestamp UTC: 2026-07-22T02:11:13Z
+Timestamp UTC: 2026-07-22T06:10:47Z
 
-* 1076dd2 (HEAD -> fix/stage-00-audit-findings, origin/fix/stage-00-audit-findings) fix(stage-00): finalize external audit preparation
+* fcd6a72 (HEAD -> fix/stage-00-audit-findings, origin/fix/stage-00-audit-findings) docs(stage-00): synchronize re-audit records with current state
+* ba93354 fix(stage-00): remove trailing whitespace from evidence files
+* 1076dd2 fix(stage-00): finalize external audit preparation
 * e57bdba fix(stage-00): prepare repository for external re-audit
 * 70691a1 test(stage-00): update corrective evidence with final CI results
 * 4df664c fix(stage-00): add blank lines around all lists to fix MD032
@@ -13,26 +15,23 @@ Timestamp UTC: 2026-07-22T02:11:13Z
 * ddbfe0b (origin/main, main) docs(stage-00): add post-commit evidence files
 * 9d52834 chore(repo): establish project baseline and governance structure
 
---- HEAD details ---
-commit 1076dd2e5d56e7edb40055f9887b7950abe21e3e
+--- Correction commit (CA-02) ---
+commit fcd6a72f3b0ef0da5eca620e620470624616fe66
 Author:     Hermes Agent <hermes-agent@nousresearch.com>
-AuthorDate: Wed Jul 22 05:08:42 2026 +0300
+AuthorDate: Wed Jul 22 09:09:24 2026 +0300
 Commit:     Hermes Agent <hermes-agent@nousresearch.com>
-CommitDate: Wed Jul 22 05:08:42 2026 +0300
+CommitDate: Wed Jul 22 09:09:24 2026 +0300
 
-    fix(stage-00): finalize external audit preparation
+    docs(stage-00): synchronize re-audit records with current state
 
-    - Fix MD022/MD032 lint errors in evidence/stage-00-reaudit/summary.md
-    - Fix MD032 lint error in evidence/stage-00-reaudit/workflow-status.md
-    - Remove trailing whitespace from git-log.txt
-    - Regenerate all evidence with current HEAD (e57bdba)
-    - Update checksums
+    - Update summary.md for Corrective Action 02, remove stale HEAD (e57bdba)
+    - Add Final Re-Audit Results section to report.md
+    - Mark historical Known Issues as RESOLVED
+    - Update timeline with CA-01, re-audit, and CA-02
+    - Mark initial validation 128 PASS as historical
+    - Add CA-02 note to acceptance.md (PENDING preserved)
 
- evidence/stage-00-reaudit/checksums.sha256    | 12 +++---
- evidence/stage-00-reaudit/git-log.txt         | 45 +++++++++++-----------
- evidence/stage-00-reaudit/git-status.txt      | 25 +++++++-----
- evidence/stage-00-reaudit/repository-tree.txt |  7 ++++
- evidence/stage-00-reaudit/summary.md          | 55 ++++++++++++++-------------
- evidence/stage-00-reaudit/validation.txt      |  6 +--
- evidence/stage-00-reaudit/workflow-status.md  | 47 ++++++++++++++---------
- 7 files changed, 112 insertions(+), 85 deletions(-)
+ evidence/stage-00-reaudit/summary.md              |  84 +++++++++---------
+ stages/stage-00-repository-baseline/acceptance.md |   2 +
+ stages/stage-00-repository-baseline/report.md     | 100 +++++++++++++++++-----
+ 3 files changed, 124 insertions(+), 62 deletions(-)

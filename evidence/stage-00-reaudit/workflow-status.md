@@ -1,43 +1,29 @@
-# GitHub Actions Workflow Status — Stage 00 Final Audit
+# Stage 00 — Workflow Status
 
-**Checked**: 2026-07-22 02:10 UTC
-**Commit**: `e57bdba10eefdbb08e8094791189dccc89d3df95`
-**Branch**: `fix/stage-00-audit-findings`
+## Audit Target
 
-## Latest PR-triggered Runs (commit `e57bdba`)
+- **Branch**: `fix/stage-00-audit-findings`
+- **Correction Commit**: `fcd6a72f3b0ef0da5eca620e620470624616fe66`
+- **Pull Request**: [#1](https://github.com/dedvmedved-dot/hiddify-architecture/pull/1)
 
-| Workflow | Run ID | Conclusion | Created |
+## Workflows (Correction Commit `fcd6a72`)
+
+| Workflow | Status | Conclusion | Run URL |
 |----------|--------|------------|---------|
-| Markdown Lint | 29884737682 | **failure** | 2026-07-22T02:02:35Z |
-| ShellCheck | 29884737678 | success | 2026-07-22T02:02:35Z |
-| Secret Scan | 29884737677 | success | 2026-07-22T02:02:35Z |
-| Repository Validation | 29884737681 | **failure** | 2026-07-22T02:02:35Z |
+| Markdown Lint | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29895885081> |
+| ShellCheck | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29895885071> |
+| Secret Scan | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29895885078> |
+| Repository Validation | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29895885094> |
 
-## Failure Details
+## Workflows (Previous Audit Target `ba93354`)
 
-### Markdown Lint (Run 29884737682)
+| Workflow | Status | Conclusion | Run URL |
+|----------|--------|------------|---------|
+| Markdown Lint | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29885155269> |
+| ShellCheck | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29885155272> |
+| Secret Scan | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29885155278> |
+| Repository Validation | completed | success | <https://github.com/dedvmedved-dot/hiddify-architecture/actions/runs/29885155273> |
 
-- **Errors**: 13 (MD022 + MD032 in evidence files)
-- **Files affected**:
-  - `evidence/stage-00-reaudit/summary.md`: 12 errors (blanks around headings + lists)
-  - `evidence/stage-00-reaudit/workflow-status.md`: 1 error (blanks around lists)
-- **Fix applied**: Added blank lines around all `###` headings and lists
+## Result
 
-### Repository Validation (Run 29884737681)
-
-- **Error**: Trailing whitespace detected
-- **File affected**: `evidence/stage-00-reaudit/git-log.txt`
-- **Fix applied**: Removed trailing whitespace
-
-## Successful Workflows
-
-Both `ShellCheck` and `Secret Scan` passed consistently on all commits.
-
-## Earlier Successful Dispatch Runs (commit `4df664c`)
-
-All 4 workflows passed via `workflow_dispatch`:
-
-- Markdown Lint: success (Run 29883661641)
-- ShellCheck: success (Run 29883713821)
-- Secret Scan: success (Run 29883661597)
-- Repository Validation: success (Run 29883662484)
+All required workflows completed successfully for both the correction commit and the previous audit target. No failures or cancelled runs.

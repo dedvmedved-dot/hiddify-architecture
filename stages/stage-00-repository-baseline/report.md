@@ -253,7 +253,7 @@ after Corrective Action 01. The sole remaining finding:
 
 ### Correction Commit
 
-SHA: *to be determined after commit 1*
+SHA: `fcd6a72f3b0ef0da5eca620e620470624616fe66`
 
 ### Evidence Commit
 
