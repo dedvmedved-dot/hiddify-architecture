@@ -13,6 +13,7 @@ docs/requirements/traceability-matrix.md
 docs/requirements/traceability.md
 docs/requirements/use-cases.md
 evidence/stage-01/artifact-list.txt
+evidence/stage-01/checksums.sha256
 evidence/stage-01/git-diff-check.txt
 evidence/stage-01/placeholder-scan.txt
 evidence/stage-01/repository-state-before.txt
@@ -20,6 +21,7 @@ evidence/stage-01/requirement-id-check.txt
 evidence/stage-01/secret-scan.txt
 evidence/stage-01/source-files-reviewed.txt
 evidence/stage-01/validation.txt
+evidence/stage-01/workflow-status.md
 inventory/templates/.gitkeep
 inventory/templates/dns-inventory-template.md
 inventory/templates/mikrotik-inventory-template.md
@@ -27,7 +29,6 @@ inventory/templates/network-inventory-template.md
 inventory/templates/service-inventory-template.md
 inventory/templates/traffic-classification-template.md
 inventory/templates/vps-inventory-template.md
-reports/audit/.gitkeep
 reports/audit/stage-01-requirements-baseline.md
 stages/stage-01-requirements-baseline/acceptance.md
 stages/stage-01-requirements-baseline/evidence-index.md

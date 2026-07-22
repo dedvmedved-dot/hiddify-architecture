@@ -1,30 +1,23 @@
-=== Duplicate ID check (definition files only, excluding traceability) ===
-STK-004
-STK-005
-UC-001
-UC-002
-UC-003
-UC-004
-UC-005
-UC-006
-UC-007
-UC-008
-UC-009
-UC-010
-UC-011
-UC-012
-(empty = no duplicates)
+# Requirement ID Verification — Stage 01 CA-01
 
-=== ID counts by type ===
-STK: 7 unique IDs
-UC: 12 unique IDs
-FR: 42 unique IDs
-NFR: 19 unique IDs
+## Traceability Completeness Check
+
+Definition IDs count: 150
+Traceability IDs count: 150
+Missing IDs: 0
+Extra IDs: 0
+Duplicate traceability rows: 0
+Result: PASS — All 150 definition IDs present in traceability matrix; no missing, extra, or duplicate rows.
+
+### ID counts by type
+
+FR: 41 unique IDs
+NFR: 15 unique IDs
 SEC: 22 unique IDs
+RTE: 19 unique IDs
+DNS: 9 unique IDs
 OPS: 17 unique IDs
 CON: 19 unique IDs
 ASM: 10 unique IDs
-OQ: 32 unique IDs
-DNS: 9 unique IDs
-RISK-01: 20 unique IDs
-RTE: 19 unique IDs
+---
+Total: 150

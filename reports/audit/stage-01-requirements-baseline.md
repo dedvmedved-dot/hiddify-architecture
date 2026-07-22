@@ -35,8 +35,13 @@
 - Monitoring platform
 - Alert channels
 
-**Validation:** 153 PASS, 0 FAIL, 0 WARN
+**Traceability:** 150 rows covering 150 unique requirement IDs (FR, NFR, SEC, RTE, DNS, OPS, CON, ASM)
+**Evidence files:** 10 total (9 checksummed, 1 checksums.sha256)
 
+**Validation:** 153 PASS, 0 FAIL, 0 WARN
 **Secret scan:** CLEAN
 
-**Audit target commit:** PENDING
+**Primary implementation commit:** `418f4558eb10cc28473704993a1f6952236142b6`
+**Previous evidence commit:** `c6a6edac9fbcc4bec8480c272de44cffbee11b1c`
+**Final audit target:** PR #3 HEAD at time of external audit
+**Final audit target SHA:** Provided in Hermes final report and connector-verified by ChatGPT

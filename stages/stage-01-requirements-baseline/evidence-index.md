@@ -5,9 +5,10 @@
 | E01-001 | repository-state-before.txt | Git state before Stage 01 | git commands | YES | in checksums.sha256 |
 | E01-002 | source-files-reviewed.txt | Documents reviewed | manual listing | YES | in checksums.sha256 |
 | E01-003 | artifact-list.txt | Created artifacts listing | find command | YES | in checksums.sha256 |
-| E01-004 | requirement-id-check.txt | Duplicate ID scan | grep | YES | in checksums.sha256 |
-| E01-005 | placeholder-scan.txt | Placeholder/IP scan | grep | YES | in checksums.sha256 |
+| E01-004 | requirement-id-check.txt | Traceability completeness and duplicate ID scan | grep, awk, comm | YES | in checksums.sha256 |
+| E01-005 | placeholder-scan.txt | Placeholder and IP address scan | grep | YES | in checksums.sha256 |
 | E01-006 | secret-scan.txt | Secret pattern scan | grep | YES | in checksums.sha256 |
-| E01-007 | validation.txt | Repository validation | validate-repository.sh | YES | in checksums.sha256 |
+| E01-007 | validation.txt | Repository validation results | validate-repository.sh | YES | in checksums.sha256 |
 | E01-008 | git-diff-check.txt | Whitespace diff check | git diff --check | YES | in checksums.sha256 |
-| E01-009 | checksums.sha256 | Evidence checksums | sha256sum | YES | N/A |
+| E01-009 | workflow-status.md | GitHub Actions run evidence | GitHub Actions / manual recording | YES | in checksums.sha256 |
+| E01-010 | checksums.sha256 | Evidence checksums | sha256sum | YES | N/A |

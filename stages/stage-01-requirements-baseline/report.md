@@ -98,7 +98,20 @@ git branch -D stage/01-requirements-baseline
 
 ## Commit Information
 
-Commit SHA: 418f4558eb10cc28473704993a1f6952236142b6
+Primary Stage 01 implementation commit:
+
+`418f4558eb10cc28473704993a1f6952236142b6`
+
+Previous evidence commit:
+
+`c6a6edac9fbcc4bec8480c272de44cffbee11b1c`
+
+Final audit target:
+
+`PR #3 HEAD at time of external audit`
+
+The exact final audit target SHA is supplied in the Hermes final report
+and verified by ChatGPT through the GitHub Connector.
 
 ## Readiness
 
