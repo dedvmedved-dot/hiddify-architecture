@@ -60,6 +60,7 @@ before proceeding to the next step.
 ## Failure Response
 
 Any smoke test failure:
+
 1. Do NOT proceed to next step
 2. Diagnose failure
 3. Fix or rollback the current step
