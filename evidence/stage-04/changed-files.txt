@@ -1,0 +1,17 @@
+.github/workflows/stage-04-validation.yml
+automation/ansible/playbooks/.gitkeep
+automation/ansible/roles/.gitkeep
+docs/implementation/iac-skeleton-overview.md
+docs/implementation/offline-validation-design.md
+docs/implementation/safety-guard-design.md
+docs/implementation/secrets-handling-design.md
+iac/examples/config.example.yml
+iac/modules/.gitkeep
+iac/schemas/config-schema.json
+iac/tests/.gitkeep
+iac/validation/.gitkeep
+scripts/safety_guard.py
+scripts/validate_stage04.py
+stages/stage-04-iac-skeleton/acceptance.md
+stages/stage-04-iac-skeleton/task.md
+tests/stage04/test_config.py

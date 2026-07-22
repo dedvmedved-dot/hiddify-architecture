@@ -1,0 +1,1 @@
+{"rollback_model":"Stage 04 offline skeleton","version":"0.1.0","steps":[{"id":"RB-01","component":"router","pre_check":"config export","rollback_action":"restore from backup","test":"S04-IT-002"},{"id":"RB-02","component":"vps1","pre_check":"config backup","rollback_action":"revert configuration","test":"S04-IT-002"}]}

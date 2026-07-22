@@ -71,7 +71,7 @@ def main():
         print(f"  FAIL: Directory structure — {e}")
         results.append(False)
     results.append(run_unit_tests())
-    
+
     passed = sum(results)
     total = len(results)
     print(f"Result: {passed}/{total} PASS")
