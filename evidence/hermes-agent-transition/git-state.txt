@@ -26,7 +26,7 @@ dafa6aee1d377393e271879c0463c41359894a58
 === git log --oneline --decorate --graph -20 ===
 * dafa6ae (HEAD -> chore/hermes-agent-transition, origin/main, origin/HEAD, main) docs(stage-00): record final acceptance and post-merge verification
 *   3ee4250 merge(stage-00): complete repository baseline acceptance
-|\  
+|\
 | * 06e4a30 (origin/fix/stage-00-audit-findings) test(stage-00): finalize corrective re-audit evidence
 | * fcd6a72 docs(stage-00): synchronize re-audit records with current state
 | * ba93354 fix(stage-00): remove trailing whitespace from evidence files
@@ -40,6 +40,6 @@ dafa6aee1d377393e271879c0463c41359894a58
 | * 002dcb7 fix(stage-00): resolve markdown lint errors and add configuration
 | * e8eb657 test(stage-00): add corrective validation evidence
 | * 25f2975 fix(stage-00): address external audit findings B-00-01 to B-00-05
-|/  
+|/
 * ddbfe0b docs(stage-00): add post-commit evidence files
 * 9d52834 chore(repo): establish project baseline and governance structure
