@@ -1,0 +1,202 @@
+========================================
+Repository Validation
+========================================
+Repository root: /root/hiddify-architecture
+Date (UTC): 2026-07-22 02:01:36 UTC
+========================================
+
+--- Check 1: Required root files ---
+PASS: Required file exists: README.md
+PASS: Required file exists: LICENSE
+PASS: Required file exists: CHANGELOG.md
+PASS: Required file exists: CONTRIBUTING.md
+PASS: Required file exists: SECURITY.md
+PASS: Required file exists: .gitignore
+PASS: Required file exists: .editorconfig
+PASS: Required file exists: .gitattributes
+PASS: Required file exists: Makefile
+
+--- Check 2: Required directories ---
+PASS: Required directory exists: docs
+PASS: Required directory exists: docs/project
+PASS: Required directory exists: docs/requirements
+PASS: Required directory exists: docs/architecture
+PASS: Required directory exists: docs/decisions
+PASS: Required directory exists: docs/audit
+PASS: Required directory exists: docs/testing
+PASS: Required directory exists: docs/operations
+PASS: Required directory exists: docs/security
+PASS: Required directory exists: stages
+PASS: Required directory exists: stages/stage-00-repository-baseline
+PASS: Required directory exists: stages/templates
+PASS: Required directory exists: configs
+PASS: Required directory exists: configs/mikrotik
+PASS: Required directory exists: configs/vps1
+PASS: Required directory exists: configs/vps3
+PASS: Required directory exists: configs/nftables
+PASS: Required directory exists: configs/routing
+PASS: Required directory exists: configs/dns
+PASS: Required directory exists: configs/systemd
+PASS: Required directory exists: configs/monitoring
+PASS: Required directory exists: scripts
+PASS: Required directory exists: scripts/bootstrap
+PASS: Required directory exists: scripts/deploy
+PASS: Required directory exists: scripts/validation
+PASS: Required directory exists: scripts/testing
+PASS: Required directory exists: scripts/rollback
+PASS: Required directory exists: scripts/inventory
+PASS: Required directory exists: scripts/security
+PASS: Required directory exists: inventory
+PASS: Required directory exists: inventory/templates
+PASS: Required directory exists: inventory/mikrotik
+PASS: Required directory exists: inventory/vps1
+PASS: Required directory exists: inventory/vps3
+PASS: Required directory exists: tests
+PASS: Required directory exists: tests/static
+PASS: Required directory exists: tests/functional
+PASS: Required directory exists: tests/integration
+PASS: Required directory exists: tests/performance
+PASS: Required directory exists: tests/resilience
+PASS: Required directory exists: tests/security
+PASS: Required directory exists: tests/acceptance
+PASS: Required directory exists: evidence
+PASS: Required directory exists: evidence/stage-00
+PASS: Required directory exists: reports
+PASS: Required directory exists: reports/audit
+PASS: Required directory exists: reports/testing
+PASS: Required directory exists: reports/performance
+PASS: Required directory exists: reports/security
+PASS: Required directory exists: reports/acceptance
+PASS: Required directory exists: diagrams
+PASS: Required directory exists: diagrams/source
+PASS: Required directory exists: diagrams/rendered
+PASS: Required directory exists: tools
+PASS: Required directory exists: tools/lint
+PASS: Required directory exists: tools/validation
+PASS: Required directory exists: .github
+PASS: Required directory exists: .github/ISSUE_TEMPLATE
+PASS: Required directory exists: .github/workflows
+
+--- Check 3: Stage 00 artifacts ---
+PASS: Stage 00 artifact exists: stages/stage-00-repository-baseline/task.md
+PASS: Stage 00 artifact exists: stages/stage-00-repository-baseline/report.md
+PASS: Stage 00 artifact exists: stages/stage-00-repository-baseline/acceptance.md
+PASS: Stage 00 artifact exists: stages/stage-00-repository-baseline/evidence-index.md
+
+--- Check 4: Prohibited files ---
+PASS: No prohibited files found
+
+--- Check 5: Empty Markdown files ---
+PASS: No empty Markdown files found
+
+--- Check 6: GitHub Actions workflows ---
+PASS: Workflow exists: .github/workflows/markdown-lint.yml
+PASS: Workflow exists: .github/workflows/shellcheck.yml
+PASS: Workflow exists: .github/workflows/secret-scan.yml
+PASS: Workflow exists: .github/workflows/repository-validation.yml
+
+--- Check 7: .gitkeep presence ---
+PASS: .gitkeep present in: configs/mikrotik/templates
+PASS: .gitkeep present in: configs/mikrotik/generated
+PASS: .gitkeep present in: configs/vps1/templates
+PASS: .gitkeep present in: configs/vps1/generated
+PASS: .gitkeep present in: configs/vps3/templates
+PASS: .gitkeep present in: configs/vps3/generated
+PASS: .gitkeep present in: configs/nftables
+PASS: .gitkeep present in: configs/routing
+PASS: .gitkeep present in: configs/dns
+PASS: .gitkeep present in: configs/systemd
+PASS: .gitkeep present in: configs/monitoring
+PASS: .gitkeep present in: scripts/bootstrap
+PASS: .gitkeep present in: scripts/deploy
+PASS: .gitkeep present in: scripts/validation
+PASS: .gitkeep present in: scripts/testing
+PASS: .gitkeep present in: scripts/rollback
+PASS: .gitkeep present in: scripts/inventory
+PASS: .gitkeep present in: scripts/security
+PASS: .gitkeep present in: inventory/templates
+PASS: .gitkeep present in: inventory/mikrotik
+PASS: .gitkeep present in: inventory/vps1
+PASS: .gitkeep present in: inventory/vps3
+PASS: .gitkeep present in: tests/static
+PASS: .gitkeep present in: tests/functional
+PASS: .gitkeep present in: tests/integration
+PASS: .gitkeep present in: tests/performance
+PASS: .gitkeep present in: tests/resilience
+PASS: .gitkeep present in: tests/security
+PASS: .gitkeep present in: tests/acceptance
+PASS: .gitkeep present in: reports/audit
+PASS: .gitkeep present in: reports/testing
+PASS: .gitkeep present in: reports/performance
+PASS: .gitkeep present in: reports/security
+PASS: .gitkeep present in: reports/acceptance
+PASS: .gitkeep present in: diagrams/source
+PASS: .gitkeep present in: diagrams/rendered
+PASS: .gitkeep present in: tools/lint
+
+--- Check 8: Stage templates ---
+PASS: Stage template exists: stages/templates/task-template.md
+PASS: Stage template exists: stages/templates/report-template.md
+PASS: Stage template exists: stages/templates/acceptance-template.md
+PASS: Stage template exists: stages/templates/evidence-index-template.md
+
+--- Check 9: Evidence Stage 00 ---
+PASS: Evidence file exists: evidence/stage-00/repository-tree.txt
+PASS: Evidence file exists: evidence/stage-00/git-status.txt
+PASS: Evidence file exists: evidence/stage-00/git-log.txt
+PASS: Evidence file exists: evidence/stage-00/markdown-files.txt
+PASS: Evidence file exists: evidence/stage-00/secret-scan.txt
+PASS: Evidence file exists: evidence/stage-00/validation.txt
+PASS: Evidence file exists: evidence/stage-00/checksums.sha256
+
+--- Check 10: README content checks ---
+PASS: README mentions stage-gate process
+PASS: README mentions PASSED status
+
+--- Check 11: Roles and PASSED authority ---
+PASS: Roles document references Hermes + Qwen
+PASS: Stage-gates document defines PASSED status
+
+--- Check 12: File encoding and newlines ---
+Total Markdown files: 66
+PASS: All Markdown files end with newline
+
+--- Check 13: task.md completeness ---
+PASS: task.md contains section 1
+PASS: task.md contains section 2
+PASS: task.md contains section 3
+PASS: task.md contains section 4
+PASS: task.md contains section 5
+PASS: task.md contains section 6
+PASS: task.md contains section 7
+PASS: task.md contains section 8
+PASS: task.md contains section 9
+PASS: task.md contains section 10
+PASS: task.md contains section 11
+PASS: task.md contains section 12
+PASS: task.md contains section 13
+PASS: task.md contains section 14
+PASS: task.md contains section 15
+PASS: task.md does not contain prohibited shorthand phrases
+PASS: task.md does not reference non-existent external document
+
+--- Check 14: Evidence checksums ---
+PASS: checksums.sha256 exists
+PASS: checksums.sha256 verification passed
+
+--- Check 15: Report SHA consistency ---
+PASS: No shortened SHA patterns detected in report
+PASS: Report does not contain stale push placeholder
+
+--- Check 16: Acceptance metadata ---
+PASS: Acceptance file has correct PENDING status
+
+========================================
+VALIDATION SUMMARY
+========================================
+PASS: 153
+FAIL: 0
+WARN: 0
+========================================
+RESULT: PASSED
+EXIT: 0
