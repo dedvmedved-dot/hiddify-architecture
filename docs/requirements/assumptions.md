@@ -1,34 +1,16 @@
 # Assumptions
 
-**Status:** DRAFT
+**Status:** DRAFT — OWNER REVIEW REQUIRED
 
-## Infrastructure Assumptions
-
-1. VPS1 and VPS3 have stable network connectivity
-2. MikroTik router supports required features (policy-based routing, firewall)
-3. VPS instances run modern Linux (Ubuntu/Debian)
-4. Sufficient bandwidth is available on all links
-
-## Process Assumptions
-
-1. ChatGPT provides timely architectural review
-2. Owner transfers tasks and commit hashes promptly
-3. Hermes has SSH access to all infrastructure
-4. GitHub repository is accessible to all parties
-
-## Technical Assumptions
-
-1. WireGuard or similar modern VPN protocol will be evaluated
-2. DNS can be managed through standard tools
-3. nftables or iptables available on VPS instances
-4. Systemd is the init system on VPS instances
-
-## Timeline Assumptions
-
-1. Stages proceed sequentially
-2. Each stage may take multiple sessions
-3. Evidence collection adds overhead to each stage
-
----
-
-*Assumptions to be validated during Stage 01.*
+| ID | Assumption | Reason | Impact if false | Validation method | Owner decision | Status |
+| -- | ---------- | ------ | --------------- | ----------------- | -------------- | ------ |
+| ASM-001 | MikroTik remains the traffic-classification point | Initial concept specifies MikroTik | Architecture redesign required | Owner confirmation | REQUIRED | UNVALIDATED |
+| ASM-002 | VPS1 is intended for Russian egress | Initial concept naming convention | Egress pairing incorrect | Owner confirmation | REQUIRED | UNVALIDATED |
+| ASM-003 | VPS3 is intended for international egress | Initial concept naming convention | Egress pairing incorrect | Owner confirmation | REQUIRED | UNVALIDATED |
+| ASM-004 | Owner controls both VPS instances | Required for configuration deployment | Cannot deploy to uncontrolled infrastructure | Owner confirmation | REQUIRED | UNVALIDATED |
+| ASM-005 | Router can support required policy routing features | RouterOS generally supports policy routing | Alternative router or approach needed | RouterOS version check | REQUIRED | UNVALIDATED |
+| ASM-006 | Administrative access can be restricted to authorized sources | Standard security practice | Additional security controls needed | Router config review | REQUIRED | UNVALIDATED |
+| ASM-007 | Monitoring endpoint can be deployed on or near infrastructure | Operational requirement | External monitoring needed | Infrastructure review | REQUIRED | UNVALIDATED |
+| ASM-008 | Configuration backup is permitted by Owner | Operational safety | Cannot implement backup | Owner confirmation | REQUIRED | UNVALIDATED |
+| ASM-009 | DNS behavior can be controlled at router level | RouterOS DNS features | External DNS resolver needed | RouterOS version check | REQUIRED | UNVALIDATED |
+| ASM-010 | Public endpoints can be health-checked from monitoring location | Monitoring requirement | Alternative health-check method needed | Network test | REQUIRED | UNVALIDATED |

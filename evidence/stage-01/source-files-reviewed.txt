@@ -1,0 +1,19 @@
+# Source Files Reviewed — Stage 01
+
+| File | Commit SHA | Purpose |
+| ---- | ---------- | ------- |
+| README.md | 2f1472a | Project overview, stage-gate, roles |
+| docs/project/scope.md | 2f1472a | Project scope definition |
+| docs/project/stage-gates.md | 2f1472a | Stage-gate process and statuses |
+| docs/project/roles-and-responsibilities.md | 2f1472a | Stakeholder roles and authority |
+| docs/audit/initial-concept.md | 2f1472a | Starting concept (NOT approved architecture) |
+| docs/security/secret-management.md | 2f1472a | Secret management principles |
+| SECURITY.md | 2f1472a | Prohibited content, sanitization |
+| CONTRIBUTING.md | 2f1472a | Branch naming, commits, evidence, security |
+| stages/templates/task-template.md | 2f1472a | Stage task structure |
+| stages/templates/report-template.md | 2f1472a | Stage report structure |
+| stages/templates/acceptance-template.md | 2f1472a | Stage acceptance structure |
+| stages/templates/evidence-index-template.md | 2f1472a | Evidence index structure |
+| stages/stage-00-repository-baseline/task.md | 2f1472a | Stage 00 task reference |
+| stages/stage-00-repository-baseline/report.md | 2f1472a | Stage 00 implementation report |
+| stages/stage-00-repository-baseline/acceptance.md | 2f1472a | Stage 00 acceptance record |
