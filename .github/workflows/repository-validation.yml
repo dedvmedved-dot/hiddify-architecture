@@ -1,0 +1,114 @@
+name: Repository Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required root files
+        run: |
+          required_files=(
+            "README.md"
+            "LICENSE"
+            "CHANGELOG.md"
+            "CONTRIBUTING.md"
+            "SECURITY.md"
+            ".gitignore"
+            ".editorconfig"
+            ".gitattributes"
+            "Makefile"
+          )
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "ERROR: Missing required file: $file"
+              exit 1
+            fi
+            echo "OK: $file exists"
+          done
+
+      - name: Check required directories
+        run: |
+          required_dirs=(
+            "docs"
+            "stages"
+            "configs"
+            "scripts"
+            "inventory"
+            "tests"
+            "evidence"
+            "reports"
+            "diagrams"
+            "tools"
+          )
+          for dir in "${required_dirs[@]}"; do
+            if [ ! -d "$dir" ]; then
+              echo "ERROR: Missing required directory: $dir"
+              exit 1
+            fi
+            echo "OK: $dir exists"
+          done
+
+      - name: Check for prohibited files
+        run: |
+          prohibited=$(find . -type f \
+            \( -name '*.key' -o -name '*.pem' -o -name '*.p12' \
+               -o -name '*.pfx' -o -name '.env' -o -name '*.backup' \) \
+            -not -path './.git/*' -print || true)
+          if [ -n "$prohibited" ]; then
+            echo "ERROR: Prohibited files found:"
+            echo "$prohibited"
+            exit 1
+          fi
+          echo "OK: No prohibited files found"
+
+      - name: Check for empty Markdown files
+        run: |
+          empty_md=$(find . -type f -name '*.md' -empty -not -path './.git/*' -print || true)
+          if [ -n "$empty_md" ]; then
+            echo "ERROR: Empty Markdown files found:"
+            echo "$empty_md"
+            exit 1
+          fi
+          echo "OK: No empty Markdown files"
+
+      - name: Check trailing whitespace
+        run: |
+          if git diff --check HEAD^ HEAD 2>/dev/null; then
+            echo "OK: No trailing whitespace issues"
+          elif git show --check HEAD 2>/dev/null; then
+            echo "OK: No trailing whitespace issues (first commit)"
+          else
+            echo "WARNING: Trailing whitespace detected"
+          fi
+
+      - name: Check Stage 00 report
+        run: |
+          if [ ! -f "stages/stage-00-repository-baseline/report.md" ]; then
+            echo "ERROR: Stage 00 report missing"
+            exit 1
+          fi
+          echo "OK: Stage 00 report exists"
+
+      - name: Check Stage 00 evidence index
+        run: |
+          if [ ! -f "stages/stage-00-repository-baseline/evidence-index.md" ]; then
+            echo "ERROR: Stage 00 evidence index missing"
+            exit 1
+          fi
+          echo "OK: Stage 00 evidence index exists"
+
+      - name: Run validation script
+        run: |
+          if [ -f "tools/validation/validate-repository.sh" ]; then
+            bash tools/validation/validate-repository.sh
+          else
+            echo "WARNING: Validation script not found"
+          fi

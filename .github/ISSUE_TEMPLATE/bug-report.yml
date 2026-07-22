@@ -1,0 +1,54 @@
+name: Bug Report
+description: Report a bug or issue
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug
+      placeholder: Clear description of the issue
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How to reproduce the bug
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. Step 3
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: System/environment details
+      placeholder: OS, software versions, etc.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant log output (sanitized)
+      render: shell

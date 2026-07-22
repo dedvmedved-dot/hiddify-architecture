@@ -1,0 +1,17 @@
+# Code Owners
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for all files
+* @dedvmedved-dot
+
+# Documentation
+/docs/ @dedvmedved-dot
+
+# Configurations
+/configs/ @dedvmedved-dot
+
+# Scripts
+/scripts/ @dedvmedved-dot
+
+# GitHub Actions
+/.github/workflows/ @dedvmedved-dot

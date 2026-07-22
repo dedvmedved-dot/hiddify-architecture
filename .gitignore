@@ -1,0 +1,67 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Private keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.ovpn
+*.mobileconfig
+
+# SSH keys
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# MikroTik
+*.backup
+*.backup.*
+*.rsc.private
+*.secret
+*.secrets
+
+# Credentials directories
+secrets/
+private/
+credentials/
+
+# Logs and temporary files
+*.log
+tmp/
+.cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Node modules (if used for tooling)
+node_modules/
+
+# Terraform (if used later)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Ansible (if used later)
+*.retry

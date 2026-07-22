@@ -1,0 +1,39 @@
+name: Test Failure
+description: Report a test failure
+title: "[Test Failure]: "
+labels: ["test-failure"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report a test failure for investigation.
+  - type: input
+    id: test-name
+    attributes:
+      label: Test Name
+      description: Name of the failing test
+    validations:
+      required: true
+  - type: input
+    id: stage
+    attributes:
+      label: Stage
+      description: Which stage does this test belong to?
+  - type: textarea
+    id: output
+    attributes:
+      label: Test Output
+      description: Full test output (sanitized)
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did the test fail?
+  - type: textarea
+    id: analysis
+    attributes:
+      label: Initial Analysis
+      description: Your initial analysis of the failure

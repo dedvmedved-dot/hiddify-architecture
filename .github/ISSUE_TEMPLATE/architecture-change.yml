@@ -1,0 +1,49 @@
+name: Architecture Change
+description: Propose an architecture change
+title: "[Architecture]: "
+labels: ["architecture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose an architecture change for review.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What is the current situation?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      description: What change do you propose?
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why is this change needed?
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: What is the impact of this change?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternatives were considered?
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
