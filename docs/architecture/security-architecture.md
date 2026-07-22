@@ -1,26 +1,53 @@
 # Security Architecture
 
-**Status:** DRAFT
+**Status:** DRAFT — OWNER REVIEW REQUIRED
 
-## Overview
+## Security Zones
 
-This document will describe the security architecture, including threat models, encryption, authentication, and access control.
+| Zone | Components | Trust Level | Inbound Policy | Outbound Policy |
+|------|-----------|-------------|----------------|-----------------|
+| External | Internet, ISP | Untrusted | Default-deny | Controlled |
+| DMZ-Egress | VPS1, VPS3 public IPs | Semi-trusted | Tunnel only + health checks | Forwarding traffic |
+| Internal | LAN clients, Router LAN side | Trusted | From LAN only | Classified + routed |
+| Management | Admin access points | Restricted | Authorized sources only | Limited |
+| Tunnel | Router-VPS encrypted links | Encrypted | Tunnel endpoints only | Encrypted traffic only |
 
-## Security Layers
+## Trust Boundaries
 
-1. **Transport Security** — Encryption between nodes
-2. **Access Control** — Who can access what
-3. **Firewall Policy** — Traffic filtering rules
-4. **Secret Management** — How secrets are handled
-5. **Audit Trail** — Logging and monitoring
+```text
+                   ┌─────────────────────────────┐
+                   │        INTERNET (Untrusted)  │
+                   └──────────┬──────────────────┘
+                              │
+              ┌───────────────┴───────────────┐
+              │                               │
+     ┌────────▼────────┐           ┌──────────▼──────────┐
+     │   VPS1 (DMZ)    │           │   VPS3 (DMZ)        │
+     │   Trust: Low    │           │   Trust: Low        │
+     └────────┬────────┘           └──────────┬──────────┘
+              │ Tunnel                         │ Tunnel
+              │ Encrypted                      │ Encrypted
+     ┌────────▼────────────────────────────────▼──────────┐
+     │              Router (Classification)                │
+     │              Trust: Medium                          │
+     └────────┬──────────────────────────────┬────────────┘
+              │ LAN                          │ Management
+     ┌────────▼────────┐           ┌─────────▼───────────┐
+     │  LAN (Trusted)  │           │  Admin (Restricted) │
+     │  Trust: High    │           │  Trust: Highest     │
+     └─────────────────┘           └─────────────────────┘
+```
 
-## Security Principles
+## Security Controls
 
-- Defense in depth
-- Principle of least privilege
-- Secure by default
-- Audit everything
-
----
-
-*This document is a placeholder. Security architecture will be developed during the security design stage.*
+| Control | Implementation | Reference |
+|---------|---------------|-----------|
+| Encryption in transit | Tunnel protocol | SEC-008 |
+| Default-deny firewall | All components | SEC-010 |
+| Least privilege access | Admin restrictions | SEC-001 |
+| Key-based authentication | SSH for admin | SEC-002 |
+| Audit logging | Administrative actions | SEC-018 |
+| Configuration integrity | Git + checksums | SEC-013 |
+| Secret management | External to repository | SEC-005, SEC-006 |
+| DNS leak prevention | Per-egress DNS | SEC-019 |
+| Traffic isolation | Policy routing | SEC-020 |
