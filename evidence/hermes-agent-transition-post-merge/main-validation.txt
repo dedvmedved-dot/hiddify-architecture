@@ -1,7 +1,7 @@
 ========================================
 Repository Validation
 ========================================
-Repository root: /home/sk/projects/hiddify-architecture
+Repository root: <REPOSITORY_WORKDIR>/projects/hiddify-architecture
 Date (UTC): 2026-07-22 10:33:55 UTC
 ========================================
 
