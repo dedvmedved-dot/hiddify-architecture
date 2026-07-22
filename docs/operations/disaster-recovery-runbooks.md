@@ -21,6 +21,7 @@
 **Scenario:** VPS1 unreachable; RU egress unavailable.
 
 **Recovery:**
+
 1. Verify provider status (check provider dashboard)
 2. Attempt SSH; if unreachable, contact provider
 3. If provider outage: wait for restoration; execute failover policy
@@ -40,6 +41,7 @@
 **Scenario:** Router WAN connectivity lost.
 
 **Recovery:**
+
 1. Verify ISP status
 2. If ISP outage: wait for restoration; local LAN remains functional
 3. If router WAN interface issue: check physical connection; reboot interface
