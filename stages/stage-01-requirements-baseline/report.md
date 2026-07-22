@@ -8,8 +8,8 @@ Stage 01 establishes the requirements baseline for the `hiddify-architecture` pr
 
 - Stakeholder identification (7 stakeholders)
 - Use case definition (12 use cases)
-- Functional requirements (42 requirements across 6 groups)
-- Non-functional requirements (19 requirements)
+- Functional requirements (39 requirements across 6 groups)
+- Non-functional requirements (15 requirements)
 - Security requirements (22 requirements)
 - Routing policy requirements (19 requirements)
 - DNS requirements (9 requirements)
@@ -19,8 +19,8 @@ Stage 01 establishes the requirements baseline for the `hiddify-architecture` pr
 - Open questions (32 questions: 17 blocking, 11 high, 4 medium)
 - Risk register (20 risks)
 - Inventory templates (6 templates)
-- Traceability matrix (20 rows covering key requirements)
-- Stage 01 evidence (9 evidence files)
+- Traceability matrix (150 rows covering 150 unique requirement IDs)
+- Stage 01 evidence (10 evidence files)
 
 ## Out of Scope
 
