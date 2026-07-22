@@ -7,6 +7,7 @@
 **Scenario:** Router hardware failure or bricked configuration.
 
 **Recovery:**
+
 1. Obtain replacement router (if hardware failure)
 2. Install RouterOS (version from inventory)
 3. Restore configuration from latest backup
