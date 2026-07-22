@@ -10,8 +10,8 @@
 
 - Stakeholders: 7
 - Use cases: 12
-- Functional: 42
-- Non-functional: 19
+- Functional: 39
+- Non-functional: 15
 - Security: 22
 - Routing: 19
 - DNS: 9

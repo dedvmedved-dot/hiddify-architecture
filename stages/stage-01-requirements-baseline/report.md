@@ -60,8 +60,8 @@ See `docs/requirements/open-questions.md` for complete list. Key blockers includ
 | ---- | ----- |
 | Stakeholders | 7 |
 | Use cases | 12 |
-| Functional requirements | 42 |
-| Non-functional requirements | 19 |
+| Functional requirements | 39 |
+| Non-functional requirements | 15 |
 | Security requirements | 22 |
 | Routing requirements | 19 |
 | DNS requirements | 9 |
@@ -70,7 +70,15 @@ See `docs/requirements/open-questions.md` for complete list. Key blockers includ
 | Assumptions | 10 |
 | Open questions | 32 |
 | Risks | 20 |
-| Traceability rows | 20 |
+| Traceability rows | 150 |
+
+## Evidence Statistics
+
+| Metric | Count |
+| ------ | ----- |
+| Evidence files total | 10 |
+| Checksummed evidence files | 9 |
+| PR changed files | 31 |
 
 ## Validation
 
