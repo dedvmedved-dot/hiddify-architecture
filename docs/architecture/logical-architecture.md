@@ -57,6 +57,7 @@ Egress nodes providing exit points for classified traffic.
 | VPS3 | International egress | Candidate — specs UNKNOWN |
 
 Each egress node requires:
+
 - VPN/tunnel endpoint
 - DNS resolver aligned with egress path
 - Firewall (default-deny)
@@ -68,6 +69,7 @@ Each egress node requires:
 Administrative access and monitoring for all components.
 
 **Components:**
+
 - Monitoring system (platform TO BE DECIDED)
 - Alerting (channels TO BE DECIDED)
 - Configuration management (Git-based, per project governance)
