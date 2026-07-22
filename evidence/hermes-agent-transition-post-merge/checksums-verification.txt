@@ -1,0 +1,9 @@
+evidence/hermes-agent-transition/checksums-verification.txt: ЦЕЛ
+evidence/hermes-agent-transition/environment-summary.md: ЦЕЛ
+evidence/hermes-agent-transition/git-state.txt: ЦЕЛ
+evidence/hermes-agent-transition/github-state.md: ЦЕЛ
+evidence/hermes-agent-transition/handover-readiness.md: ЦЕЛ
+evidence/hermes-agent-transition/project-understanding.md: ЦЕЛ
+evidence/hermes-agent-transition/repository-access.md: ЦЕЛ
+evidence/hermes-agent-transition/repository-structure.md: ЦЕЛ
+evidence/hermes-agent-transition/validation.txt: ЦЕЛ

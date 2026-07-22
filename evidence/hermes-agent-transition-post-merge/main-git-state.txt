@@ -1,0 +1,45 @@
+=== git status ===
+Текущая ветка: main
+Эта ветка соответствует «origin/main».
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>...», чтобы добавить в то, что будет включено в коммит)
+	evidence/hermes-agent-transition-post-merge/
+
+индекс пуст, но есть неотслеживаемые файлы
+(используйте «git add», чтобы проиндексировать их)
+
+=== git status --short ===
+?? evidence/hermes-agent-transition-post-merge/
+
+=== git branch --show-current ===
+main
+
+=== git rev-parse HEAD ===
+7d3cf9d1c3f9576abd6484b7e28124eba4bbd84c
+
+=== git rev-parse origin/main ===
+7d3cf9d1c3f9576abd6484b7e28124eba4bbd84c
+
+=== git log --oneline --decorate --graph -15 ===
+*   7d3cf9d (HEAD -> main, origin/main, origin/HEAD) Merge pull request #2 from dedvmedved-dot/chore/hermes-agent-transition
+|\
+| * 6676600 (origin/chore/hermes-agent-transition, chore/hermes-agent-transition) fix(handover): resolve repository validation findings
+| * 347dc16 docs(handover): fix markdown lint and complete corrective evidence
+| * e90a588 docs(handover): correct onboarding evidence and access record
+| * 2e0d38a docs(handover): record new Hermes agent onboarding
+|/
+* dafa6ae docs(stage-00): record final acceptance and post-merge verification
+*   3ee4250 merge(stage-00): complete repository baseline acceptance
+|\
+| * 06e4a30 (origin/fix/stage-00-audit-findings) test(stage-00): finalize corrective re-audit evidence
+| * fcd6a72 docs(stage-00): synchronize re-audit records with current state
+| * ba93354 fix(stage-00): remove trailing whitespace from evidence files
+| * 1076dd2 fix(stage-00): finalize external audit preparation
+| * e57bdba fix(stage-00): prepare repository for external re-audit
+| * 70691a1 test(stage-00): update corrective evidence with final CI results
+| * 4df664c fix(stage-00): add blank lines around all lists to fix MD032
+| * acb1547 fix(stage-00): add GITHUB_TOKEN to secret-scan workflow
+
+=== git rev-list --parents -n 1 MERGE ===
+7d3cf9d1c3f9576abd6484b7e28124eba4bbd84c dafa6aee1d377393e271879c0463c41359894a58 667660067d9111b654ee516129dc31af93306b88
