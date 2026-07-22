@@ -1,27 +1,45 @@
 # Physical Architecture
 
-**Status:** DRAFT
+**Status:** DRAFT — OWNER REVIEW REQUIRED
 
-## Overview
+## Physical Components
 
-This document will describe the physical deployment architecture, including server specifications, network topology, and geographic distribution.
+| Component | Role | Location | Specs | Status |
+|-----------|------|----------|-------|--------|
+| Router | Traffic classification + tunnel endpoint | Owner premises | <MIKROTIK_MODEL>, <ROUTEROS_VERSION>, <MIKROTIK_CPU>, <MIKROTIK_RAM>, <MIKROTIK_STORAGE> | UNKNOWN |
+| VPS1 | Russian egress node | <VPS1_REGION>, <VPS1_COUNTRY> | <VPS1_OS>, <VPS1_VCPU>, <VPS1_RAM>, <VPS1_DISK> | UNKNOWN |
+| VPS3 | International egress node | <VPS3_REGION>, <VPS3_COUNTRY> | <VPS3_OS>, <VPS3_VCPU>, <VPS3_RAM>, <VPS3_DISK> | UNKNOWN |
 
-## Nodes
+## Network Connectivity
 
-| Node | Type | Location | OS | Role |
-|------|------|----------|-----|------|
-| MikroTik | Hardware/VM | Local | RouterOS | Router/Firewall |
-| VPS1 | Cloud VPS | Russia | Ubuntu/Debian | Egress-RU |
-| VPS3 | Cloud VPS | International | Ubuntu/Debian | Egress-INT |
+| Connection | Type | Bandwidth | Status |
+|------------|------|-----------|--------|
+| Router ↔ ISP | WAN | UNKNOWN | UNKNOWN |
+| Router ↔ VPS1 | Tunnel over internet | UNKNOWN | UNKNOWN |
+| Router ↔ VPS3 | Tunnel over internet | UNKNOWN | UNKNOWN |
+| Router ↔ LAN | Internal | UNKNOWN | UNKNOWN |
+| VPS1 ↔ Internet | Public NIC | UNKNOWN | UNKNOWN |
+| VPS3 ↔ Internet | Public NIC | UNKNOWN | UNKNOWN |
 
-## Network Topology
+## Addressing (Sanitized)
 
-*To be defined during architecture stage.*
+| Network | CIDR | Purpose | Status |
+|---------|------|---------|--------|
+| LAN | <INTERNAL_SUBNET_A> | Client network | UNKNOWN |
+| Router WAN | <ROUTER_WAN_IP> | ISP uplink | UNKNOWN |
+| VPS1 public | <VPS1_PUBLIC_IP> | RU egress | UNKNOWN |
+| VPS3 public | <VPS3_PUBLIC_IP> | INT egress | UNKNOWN |
+| Tunnel subnet RU | <TUNNEL_SUBNET_RU> | Router-VPS1 tunnel | TO BE ALLOCATED |
+| Tunnel subnet INT | <TUNNEL_SUBNET_INT> | Router-VPS3 tunnel | TO BE ALLOCATED |
+| Management | <MGMT_SUBNET> | Administrative access | TO BE ALLOCATED |
 
-## Geographic Distribution
+## Deployment Model
 
-*To be defined during architecture stage.*
+All components are single-instance in the initial architecture.
+High availability is addressed conceptually but not deployed in initial phase.
 
----
+Redundancy options for future stages:
 
-*This document is a placeholder. Physical architecture will be developed during the architecture design stage.*
+- Secondary VPS per egress path
+- Router failover (if hardware supports)
+- Tunnel failover to alternate endpoint
