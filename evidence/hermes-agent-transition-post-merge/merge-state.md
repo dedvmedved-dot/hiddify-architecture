@@ -1,7 +1,7 @@
 # Merge State
 
 - **PR number:** #2
-- **PR URL:** https://github.com/dedvmedved-dot/hiddify-architecture/pull/2
+- **PR URL:** <https://github.com/dedvmedved-dot/hiddify-architecture/pull/2>
 - **PR state:** closed
 - **Draft before transition:** Yes
 - **Draft transition:** manually by Owner via GitHub UI
