@@ -1,0 +1,24 @@
+name: Stage 04 Offline Validation
+
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Run offline validation
+        run: python3 scripts/validate_stage04.py
+      - name: Run safety guard
+        run: python3 scripts/safety_guard.py
