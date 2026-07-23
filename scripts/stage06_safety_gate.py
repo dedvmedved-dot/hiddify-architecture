@@ -7,13 +7,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def main():
     owner_file = os.path.join(ROOT, 'stages/stage-06-controlled-lab-deployment/owner-input-checklist.md')
     deployment_approved = os.environ.get('STAGE06_LAB_DEPLOYMENT_APPROVED', 'NO')
-    
+
     # Default: deployment is BLOCKED
     if deployment_approved != 'YES':
         print("SAFETY GATE: BLOCKED — STAGE06_LAB_DEPLOYMENT_APPROVED is not YES")
         print("Deployment requires: export STAGE06_LAB_DEPLOYMENT_APPROVED=YES")
         sys.exit(1)
-    
+
     # Check owner input
     if os.path.exists(owner_file):
         with open(owner_file) as f:
@@ -24,7 +24,7 @@ def main():
         if 'NOT production: YES' not in content:
             print("SAFETY GATE: BLOCKED — Environment not confirmed as non-production")
             sys.exit(1)
-    
+
     print("SAFETY GATE: PASS — Deployment authorized for LAB environment only")
     sys.exit(0)
 

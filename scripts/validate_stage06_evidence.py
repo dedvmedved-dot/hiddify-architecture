@@ -38,10 +38,10 @@ def main():
     results.append(check(f"Present={len(present)}", len(present)==len(REQUIRED)))
     results.append(check(f"Missing={len(missing)}", len(missing)==0))
     if missing: print(f"  Missing: {missing}")
-    
+
     empty = [f for f in present if os.path.getsize(os.path.join(E, f)) == 0]
     results.append(check(f"Empty={len(empty)}", len(empty)==0))
-    
+
     report = {"required":len(REQUIRED), "present":len(present), "missing":len(missing),
               "empty":len(empty), "result":"PASS" if all(results) else "FAIL"}
     print(json.dumps(report, indent=2))
