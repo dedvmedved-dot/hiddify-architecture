@@ -1,6 +1,6 @@
 Command: python3 scripts/validate_stage05_rollback_map.py
 Exit Code: 1
-HEAD: aabd856634112340d2efd7d1c6cea5e3fb72c4ad
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
 
   PASS: Steps=7
   PASS: No duplicate step IDs
