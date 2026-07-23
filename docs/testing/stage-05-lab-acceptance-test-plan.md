@@ -351,6 +351,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-IT-001 — Full integration simulation
 
 - **ID:** S05-IT-001
