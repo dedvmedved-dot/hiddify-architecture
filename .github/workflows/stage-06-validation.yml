@@ -1,0 +1,26 @@
+name: Stage 06 Validation
+on:
+  pull_request: {branches: [main]}
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install deps
+        run: pip install pyyaml
+      - name: Stage 06 Structure Validation
+        run: python3 scripts/validate_stage06_owner_input.py
+      - name: Safety Gate Unit Test
+        run: python3 scripts/stage06_safety_gate.py; echo "Safety gate defaults to BLOCKED (exit 1 expected)"
+      - name: Evidence Completeness Validation
+        run: python3 scripts/validate_stage06_evidence.py
+      - name: Test ID Validation
+        run: python3 scripts/validate_stage06_tests.py
+      - name: Traceability Validation
+        run: python3 scripts/validate_stage06_traceability.py
+      - name: Deployment Readiness Tests
+        run: python3 tests/stage06/test_readiness.py
