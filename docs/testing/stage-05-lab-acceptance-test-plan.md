@@ -1,4 +1,5 @@
 # Stage 05 Lab Acceptance Test Plan
+
 **Status:** Stage 05 — PLAN ONLY
 
 ## Test Specifications
