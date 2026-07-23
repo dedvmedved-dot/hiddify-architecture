@@ -1,1 +1,21 @@
-- hosts: all\n  gather_facts: no\n  tasks:\n    - name: Validate configuration\n      debug:\n        msg: 'Config validation — LAB ONLY'\n
+---
+- name: Stage 05 Validation — LAB ONLY
+  hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Validate all roles
+      include_role:
+        name: "{{ item }}"
+      loop:
+        - common
+        - wireguard
+        - dns
+        - reverse_proxy
+        - certificates
+        - logging
+        - monitoring
+        - backup
+        - security_hardening
+        - post_validation
+      tags: [validate]

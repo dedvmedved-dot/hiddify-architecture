@@ -1,1 +1,20 @@
-- hosts: all\n  gather_facts: no\n  tasks:\n    - name: Rollback placeholder\n      debug:\n        msg: 'Rollback plan — execution not authorized in Stage 05'\n
+---
+- name: Stage 05 Rollback — PLAN ONLY
+  hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Rollback plan validation
+      debug:
+        msg: "Rollback mapped for {{ item }}"
+      loop:
+        - {step: 1, component: router, action: restore_config}
+        - {step: 2, component: vps1, action: restore_config}
+        - {step: 3, component: vps3, action: restore_config}
+        - {step: 4, component: tunnel_ru, action: disable_interface}
+        - {step: 5, component: tunnel_int, action: disable_interface}
+        - {step: 6, component: dns, action: remove_rules}
+        - {step: 7, component: routing, action: remove_policy}
+    - include_role:
+        name: rollback
+  tags: [rollback, plan-only]

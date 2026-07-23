@@ -1,0 +1,4 @@
+---
+# Stage 05 LAB ONLY defaults
+lab_environment: true
+production_environment: false

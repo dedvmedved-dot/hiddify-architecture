@@ -1,1 +1,23 @@
-- hosts: all\n  gather_facts: no\n  tasks:\n    - name: Verify lab environment\n      assert:\n        that:\n          - lab_environment | default(false)\n          - not production_environment | default(true)\n          - not deployment_enabled | default(true)\n
+---
+- name: Stage 05 Preflight — LAB ONLY
+  hosts: all
+  gather_facts: no
+  connection: local
+  tasks:
+    - name: Verify lab flags
+      assert:
+        that:
+          - lab_environment | default(false)
+          - not production_environment | default(true)
+          - not deployment_enabled | default(true)
+          - not remote_execution_enabled | default(true)
+          - allow_network_changes | default(false) == false
+          - allow_secret_material | default(false) == false
+    - name: Verify ansible connection
+      assert:
+        that:
+          - ansible_connection == 'local'
+    - name: Verify doc IPs
+      set_fact:
+        doc_ranges: ['192.0.2.', '198.51.100.', '203.0.113.']
+  tags: [preflight, stage05]

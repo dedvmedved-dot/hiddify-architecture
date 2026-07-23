@@ -1,0 +1,27 @@
+# Stage 05 Rollback Map — PLAN ONLY
+rollback_map:
+  steps:
+    - step_id: RB-01
+      component: router
+      checkpoint: config_export
+      trigger: config_change_failure
+      task_reference: ansible/playbooks/rollback.yml
+      post_validation: "Verify baseline connectivity"
+      requirement_ids: [FR-050, OPS-010]
+      adr_ids: [ADR-009]
+    - step_id: RB-02
+      component: vps1
+      checkpoint: config_backup
+      trigger: config_failure
+      task_reference: ansible/playbooks/rollback.yml
+      post_validation: "management accessible"
+      requirement_ids: [OPS-010]
+      adr_ids: [ADR-009]
+    - step_id: RB-03
+      component: vps3
+      checkpoint: config_backup
+      trigger: config_failure
+      task_reference: ansible/playbooks/rollback.yml
+      post_validation: "management accessible"
+      requirement_ids: [OPS-010]
+      adr_ids: [ADR-009]

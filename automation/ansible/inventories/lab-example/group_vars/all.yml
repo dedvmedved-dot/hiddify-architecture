@@ -1,1 +1,9 @@
-lab_environment: true\nproduction_environment: false\ndeployment_enabled: false\nremote_execution_enabled: false\nansible_connection: local\n
+---
+lab_environment: true
+production_environment: false
+deployment_enabled: false
+remote_execution_enabled: false
+allow_network_changes: false
+allow_secret_material: false
+ansible_connection: local
+domain: example.invalid

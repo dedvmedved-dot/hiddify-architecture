@@ -1,0 +1,4 @@
+# Monitoring Configuration — LAB ONLY
+platform: {{ monitoring_platform | default('CHANGE_ME') }}
+alert_channel: {{ alert_channel | default('CHANGE_ME') }}
+check_interval: {{ check_interval | default(60) }}

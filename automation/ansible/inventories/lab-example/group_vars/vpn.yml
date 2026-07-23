@@ -1,1 +1,8 @@
-vpn_protocol: wireguard\nvpn_port_ru: 51820\nvpn_port_int: 51821\n
+---
+vpn_protocol: wireguard
+vpn_port_ru: 51820
+vpn_port_int: 51821
+wg_private_key: CHANGE_ME
+wg_peer_public_key: CHANGE_ME
+wg_address: 192.0.2.241
+wg_endpoint: example.invalid

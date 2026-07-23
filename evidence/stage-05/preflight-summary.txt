@@ -1,0 +1,8 @@
+  PASS: lab_environment=true
+  PASS: production_environment=false
+  PASS: deployment_enabled=false
+  PASS: remote_execution_enabled=false
+  PASS: ansible_connection=local
+  PASS: doc IPs only
+Result: 6/6 PASS
+EXIT: 0

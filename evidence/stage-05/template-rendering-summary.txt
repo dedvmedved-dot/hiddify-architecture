@@ -1,0 +1,10 @@
+  PASS: automation/ansible/roles/wireguard/templates/wireguard.conf.j2 (placeholder present)
+  PASS: automation/ansible/roles/dns/templates/dns-routing.conf.j2
+  PASS: automation/ansible/roles/reverse_proxy/templates/reverse-proxy.conf.j2
+  PASS: automation/ansible/roles/certificates/templates/certificate-placeholder.conf.j2 (placeholder present)
+  PASS: automation/ansible/roles/logging/templates/logging.conf.j2 (placeholder present)
+  PASS: automation/ansible/roles/monitoring/templates/monitoring.conf.j2 (placeholder present)
+  PASS: automation/ansible/roles/backup/templates/backup.conf.j2 (placeholder present)
+  PASS: Deterministic rendering
+Result: 8/8 PASS
+EXIT: 0

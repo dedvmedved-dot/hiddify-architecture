@@ -1,0 +1,11 @@
+# WireGuard Configuration — LAB ONLY
+# Placeholders only, no real keys
+[Interface]
+PrivateKey = {{ wg_private_key | default('CHANGE_ME') }}
+Address = {{ wg_address | default('192.0.2.241/30') }}
+ListenPort = {{ wg_port | default(51820) }}
+
+[Peer]
+PublicKey = {{ wg_peer_public_key | default('CHANGE_ME') }}
+AllowedIPs = {{ wg_allowed_ips | default('0.0.0.0/0') }}
+Endpoint = {{ wg_endpoint | default('example.invalid:51820') }}

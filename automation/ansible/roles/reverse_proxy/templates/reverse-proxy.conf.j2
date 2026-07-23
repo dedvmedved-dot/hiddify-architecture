@@ -1,0 +1,7 @@
+# Reverse Proxy Configuration — LAB ONLY
+# Placeholders only
+listen {{ proxy_port | default(443) }};
+server_name {{ proxy_server_name | default('example.invalid') }};
+location / {
+    proxy_pass {{ proxy_backend | default('http://192.0.2.1:8080') }};
+}

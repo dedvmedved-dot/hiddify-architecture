@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: certificates
+  description: 'Stage 05 lab role — certificates'
+  license: MIT
+  min_ansible_version: '2.9'
+  platforms: []
+dependencies: []

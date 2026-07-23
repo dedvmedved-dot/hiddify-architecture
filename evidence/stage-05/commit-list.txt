@@ -1,0 +1,2 @@
+00c6c1e fix(stage-05): resolve lint and whitespace
+7ada1d5 chore(stage-05): initialize lab readiness package with validation and CI
