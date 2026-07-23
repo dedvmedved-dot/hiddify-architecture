@@ -1,5 +1,6 @@
 # Stage 05 Lab Acceptance Test Plan
 **Status:** Stage 05 — PLAN ONLY
+
 ## Test Specifications
 
 ### S05-CFG-001 — Lab config schema validation
