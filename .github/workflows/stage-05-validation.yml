@@ -38,3 +38,5 @@ jobs:
         run: python3 scripts/validate_stage05_traceability.py
       - name: Test ID Validation
         run: python3 scripts/validate_stage05_test_ids.py
+      - name: Evidence Completeness Validation
+        run: python3 scripts/validate_stage05_evidence.py
