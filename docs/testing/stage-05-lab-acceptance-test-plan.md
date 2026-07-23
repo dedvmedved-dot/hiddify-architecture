@@ -11,6 +11,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-CFG-002 — Production classification rejection
 
 - **ID:** S05-CFG-002
@@ -21,6 +22,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-CFG-003 — Real IP rejection
 
 - **ID:** S05-CFG-003
@@ -31,6 +33,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-CFG-004 — Non-example domain rejection
 
 - **ID:** S05-CFG-004
@@ -41,6 +44,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PF-001 — Valid lab preflight
 
 - **ID:** S05-PF-001
@@ -51,6 +55,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PF-002 — Missing role rejection
 
 - **ID:** S05-PF-002
@@ -61,6 +66,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PF-003 — Duplicate address rejection
 
 - **ID:** S05-PF-003
@@ -71,6 +77,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PF-004 — Missing rollback mapping
 
 - **ID:** S05-PF-004
@@ -81,6 +88,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ANS-001 — Site syntax-check
 
 - **ID:** S05-ANS-001
@@ -91,6 +99,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ANS-002 — All playbooks syntax-check
 
 - **ID:** S05-ANS-002
@@ -101,6 +110,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ANS-003 — Check-mode local only
 
 - **ID:** S05-ANS-003
@@ -111,6 +121,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ANS-004 — Normal execution rejected
 
 - **ID:** S05-ANS-004
@@ -121,6 +132,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ANS-005 — Remote inventory rejected
 
 - **ID:** S05-ANS-005
@@ -131,6 +143,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-001 — WireGuard template
 
 - **ID:** S05-TPL-001
@@ -141,6 +154,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-002 — DNS template
 
 - **ID:** S05-TPL-002
@@ -151,6 +165,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-003 — Reverse proxy template
 
 - **ID:** S05-TPL-003
@@ -161,6 +176,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-004 — Certificate template
 
 - **ID:** S05-TPL-004
@@ -171,6 +187,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-005 — Logging template
 
 - **ID:** S05-TPL-005
@@ -181,6 +198,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-006 — Monitoring template
 
 - **ID:** S05-TPL-006
@@ -191,6 +209,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-007 — Backup template
 
 - **ID:** S05-TPL-007
@@ -201,6 +220,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TPL-008 — Deterministic rendering
 
 - **ID:** S05-TPL-008
@@ -211,6 +231,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SEC-001 — Private key detection
 
 - **ID:** S05-SEC-001
@@ -221,6 +242,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SEC-002 — Token detection
 
 - **ID:** S05-SEC-002
@@ -231,6 +253,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SEC-003 — Password assignment detection
 
 - **ID:** S05-SEC-003
@@ -241,6 +264,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SG-001 — Terraform apply rejection
 
 - **ID:** S05-SG-001
@@ -251,6 +275,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SG-002 — Remote Ansible rejection
 
 - **ID:** S05-SG-002
@@ -261,6 +286,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SG-003 — SSH command rejection
 
 - **ID:** S05-SG-003
@@ -271,6 +297,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-SG-004 — Network modification rejection
 
 - **ID:** S05-SG-004
@@ -281,6 +308,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PLN-001 — Deployment plan generation
 
 - **ID:** S05-PLN-001
@@ -291,6 +319,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PLN-002 — Deterministic plan output
 
 - **ID:** S05-PLN-002
@@ -301,6 +330,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PLN-003 — Plan contains rollback mapping
 
 - **ID:** S05-PLN-003
@@ -311,6 +341,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-PLN-004 — Plan contains validation mapping
 
 - **ID:** S05-PLN-004
@@ -321,6 +352,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-RB-001 — Rollback map completeness
 
 - **ID:** S05-RB-001
@@ -331,6 +363,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-TRC-001 — Traceability completeness
 
 - **ID:** S05-TRC-001
@@ -341,6 +374,7 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
+
 ### S05-ID-001 — Duplicate Test ID detection
 
 - **ID:** S05-ID-001
