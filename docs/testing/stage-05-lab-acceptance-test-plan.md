@@ -364,4 +364,3 @@
 - **Test implementation:** `tests/stage05/test_all.py`
 - **CI step:** stage-05-validation
 - **Status:** IMPLEMENTED
-
