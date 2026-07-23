@@ -1,3 +1,7 @@
+Evidence ID: E05-CHG
+HEAD: 8d2f80e61718f33135a8c5597ff955ec5411d8c0
+Timestamp: 2026-07-23T06:54:33Z
+
 .github/workflows/stage-05-validation.yml
 automation/ansible/ansible.cfg
 automation/ansible/inventories/lab-example/group_vars/all.yml

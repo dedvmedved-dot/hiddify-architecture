@@ -1,3 +1,7 @@
+Evidence ID: E05-UT
+HEAD: 8d2f80e61718f33135a8c5597ff955ec5411d8c0
+Timestamp: 2026-07-23T06:54:33Z
+
 PASS: S05-CFG-001 Lab config schema
 PASS: S05-CFG-002 Prod rejection
 PASS: S05-CFG-003 Doc IPs only

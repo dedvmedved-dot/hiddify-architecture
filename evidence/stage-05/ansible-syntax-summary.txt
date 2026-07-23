@@ -1,0 +1,14 @@
+Evidence ID: E05-ANS-001
+Purpose: Ansible syntax check
+HEAD: 8d2f80e61718f33135a8c5597ff955ec5411d8c0
+Timestamp: 2026-07-23T06:53:43Z
+
+site.yml: command=ansible-playbook -i ... --syntax-check  exit=0  result=PASS
+preflight.yml: command=ansible-playbook -i ... --syntax-check  exit=0  result=PASS
+validate.yml: command=ansible-playbook -i ... --syntax-check  exit=0  result=PASS
+rollback.yml: command=ansible-playbook -i ... --syntax-check  exit=0  result=PASS
+
+Playbooks checked: 4
+Passed: 4
+Failed: 0
+Result: PASS

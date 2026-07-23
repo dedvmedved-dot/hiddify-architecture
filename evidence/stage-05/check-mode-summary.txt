@@ -1,0 +1,15 @@
+Evidence ID: E05-CHK-001
+Purpose: Local mock check-mode
+HEAD: 8d2f80e61718f33135a8c5597ff955ec5411d8c0
+Timestamp: 2026-07-23T06:53:43Z
+
+site.yml: exit=0  result=PASS
+preflight.yml: exit=0  result=PASS
+validate.yml: exit=0  result=PASS
+rollback.yml: exit=0  result=PASS
+
+Playbooks checked: 4
+Remote hosts contacted: 0
+Unreachable: 0
+Infrastructure changes: 0
+Result: PASS

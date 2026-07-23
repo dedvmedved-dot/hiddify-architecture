@@ -1,0 +1,13 @@
+Evidence ID: E05-CFG-001
+Purpose: Configuration validation
+HEAD: 8d2f80e61718f33135a8c5597ff955ec5411d8c0
+Timestamp: 2026-07-23T06:53:43Z
+
+Command: python3 -c "import yaml; c=yaml.safe_load(open('automation/ansible/inventories/lab-example/hosts.yml')); assert c['all']['vars']['lab_environment']==True"
+Exit Code: 0
+Checked: hosts.yml, 8 group_vars files
+Safety flags: all false
+Documentation IPs: RFC 5737 only (192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24)
+Domains: example.invalid
+Result: PASS
+Test IDs: S05-CFG-001, S05-CFG-002, S05-CFG-003, S05-CFG-004
