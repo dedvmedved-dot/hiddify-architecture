@@ -19,13 +19,13 @@ def render_one(tpl_path, vars_dict, out_dir):
 def main():
     inv_path = os.path.join(ROOT, 'automation/ansible/inventories/lab-example/hosts.yml')
     gv_dir = os.path.join(ROOT, 'automation/ansible/inventories/lab-example/group_vars')
-    
+
     vars_dict = {}
     for gf in os.listdir(gv_dir):
         if gf.endswith('.yml'):
             with open(os.path.join(gv_dir, gf)) as f:
                 vars_dict.update(yaml.safe_load(f) or {})
-    
+
     templates = [
         'automation/ansible/roles/wireguard/templates/wireguard.conf.j2',
         'automation/ansible/roles/dns/templates/dns-routing.conf.j2',
@@ -35,7 +35,7 @@ def main():
         'automation/ansible/roles/monitoring/templates/monitoring.conf.j2',
         'automation/ansible/roles/backup/templates/backup.conf.j2',
     ]
-    
+
     passed = 0
     with tempfile.TemporaryDirectory() as tmpdir:
         hashes = {}
@@ -55,18 +55,18 @@ def main():
             else:
                 print(f"  PASS: {tp}")
             passed += 1
-        
+
         # Determinism check: render twice
         h2 = {}
         for tp in templates:
             tpf = os.path.join(ROOT, tp)
             if os.path.exists(tpf):
                 h2[tp] = render_one(tpf, vars_dict, tmpdir)[0]
-        
+
         det_ok = all(hashes[k] == h2[k] for k in hashes)
         if det_ok: print("  PASS: Deterministic rendering"); passed += 1
         else: print("  FAIL: Non-deterministic rendering")
-    
+
     print(f"Result: {passed}/8 PASS")
     sys.exit(0 if passed >= 7 else 1)
 
