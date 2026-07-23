@@ -1,0 +1,23 @@
+PASS: test_ut001_valid_config
+PASS: test_ut002_safety_flags
+PASS: test_ut003_doc_ips
+PASS: test_ut004_placeholders
+PASS: test_ut005_mode
+PASS: test_ut006_missing_required
+PASS: test_ut007_wrong_type
+PASS: test_ut008_production_mode
+PASS: test_ut009_deployment_enabled
+PASS: test_ut010_remote_exec
+PASS: test_ut011_secret_detected
+PASS: test_ut012_private_key
+PASS: test_ut013_forbidden_cmd
+PASS: test_ut014_unknown_role
+PASS: test_ut015_invalid_cidr
+PASS: test_ut016_invalid_domain
+PASS: test_ut017_example_invalid
+PASS: test_ut018_invalid_req_id
+PASS: test_ut019_missing_adr
+PASS: test_ut020_duplicate_test_id
+
+20 tests passed
+EXIT: 0
