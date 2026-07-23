@@ -1,0 +1,4 @@
+---
+monitoring_platform: CHANGE_ME
+alert_channel: CHANGE_ME
+check_interval: 60

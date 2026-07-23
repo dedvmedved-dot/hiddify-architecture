@@ -1,0 +1,35 @@
+---
+- name: Stage 05 Lab Site — PLAN ONLY, NO DEPLOYMENT
+  hosts: all
+  gather_facts: no
+  connection: local
+  vars:
+    lab_environment: true
+    production_environment: false
+    deployment_enabled: false
+  pre_tasks:
+    - name: Safety guard
+      assert:
+        that:
+          - lab_environment
+          - not production_environment
+          - not deployment_enabled
+      tags: [always]
+  roles:
+    - common
+    - system_prerequisites
+    - network_preflight
+    - wireguard
+    - dns
+    - reverse_proxy
+    - certificates
+    - logging
+    - monitoring
+    - backup
+    - security_hardening
+    - post_validation
+  post_tasks:
+    - name: Validation gate
+      debug:
+        msg: "PLAN_ONLY — LAB_EXECUTION_NOT_AUTHORIZED"
+  tags: [stage05, lab, plan-only]

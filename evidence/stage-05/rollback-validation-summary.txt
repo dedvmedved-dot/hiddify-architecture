@@ -1,0 +1,60 @@
+Command: python3 scripts/validate_stage05_rollback_map.py
+Exit Code: 1
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
+
+  PASS: Steps=7
+  PASS: No duplicate step IDs
+  PASS: RB-01.step_id
+  PASS: RB-01.component
+  PASS: RB-01.checkpoint
+  FAIL: RB-01.rollback_trigger
+  FAIL: RB-01.rollback_task_reference
+  FAIL: RB-01.post_rollback_validation
+  FAIL: RB-01.stop_condition
+  PASS: RB-02.step_id
+  PASS: RB-02.component
+  PASS: RB-02.checkpoint
+  FAIL: RB-02.rollback_trigger
+  FAIL: RB-02.rollback_task_reference
+  FAIL: RB-02.post_rollback_validation
+  PASS: RB-02.stop_condition
+  PASS: RB-03.step_id
+  PASS: RB-03.component
+  PASS: RB-03.checkpoint
+  FAIL: RB-03.rollback_trigger
+  FAIL: RB-03.rollback_task_reference
+  FAIL: RB-03.post_rollback_validation
+  PASS: RB-03.stop_condition
+  PASS: RB-04.step_id
+  PASS: RB-04.component
+  PASS: RB-04.checkpoint
+  PASS: RB-04.rollback_trigger
+  FAIL: RB-04.rollback_task_reference
+  PASS: RB-04.post_rollback_validation
+  PASS: RB-04.stop_condition
+  PASS: RB-05.step_id
+  PASS: RB-05.component
+  PASS: RB-05.checkpoint
+  PASS: RB-05.rollback_trigger
+  FAIL: RB-05.rollback_task_reference
+  PASS: RB-05.post_rollback_validation
+  PASS: RB-05.stop_condition
+  PASS: RB-06.step_id
+  PASS: RB-06.component
+  PASS: RB-06.checkpoint
+  PASS: RB-06.rollback_trigger
+  FAIL: RB-06.rollback_task_reference
+  PASS: RB-06.post_rollback_validation
+  PASS: RB-06.stop_condition
+  PASS: RB-07.step_id
+  PASS: RB-07.component
+  PASS: RB-07.checkpoint
+  PASS: RB-07.rollback_trigger
+  FAIL: RB-07.rollback_task_reference
+  PASS: RB-07.post_rollback_validation
+  PASS: RB-07.stop_condition
+{
+  "steps_total": 7,
+  "duplicates": 0,
+  "result": "FAIL"
+}

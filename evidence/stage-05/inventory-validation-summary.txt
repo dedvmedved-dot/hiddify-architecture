@@ -1,0 +1,19 @@
+Evidence ID: E05-INV-001
+Purpose: Inventory validation
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
+Timestamp: 2026-07-23T06:53:43Z
+
+Command: python3 scripts/validate_lab_preflight.py
+Exit Code: 0
+Inventory: automation/ansible/inventories/lab-example/hosts.yml
+Group vars: 8 files (all, vpn, proxy, dns, monitoring, logging, backup, security)
+Host count: 3 (lab-router, lab-vps1, lab-vps3)
+Roles: traffic-classifier, ru-egress, int-egress
+ansible_connection: local (all hosts)
+Remote targets: 0
+Production targets: 0
+SSH connections: 0
+Private key paths: 0
+Duplicate addresses: 0
+Result: PASS
+Test IDs: S05-PF-001, S05-PF-002, S05-PF-003, S05-PF-004

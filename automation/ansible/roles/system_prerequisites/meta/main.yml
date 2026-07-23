@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: system_prerequisites
+  description: 'Stage 05 lab role — system_prerequisites'
+  license: MIT
+  min_ansible_version: '2.9'
+  platforms: []
+dependencies: []

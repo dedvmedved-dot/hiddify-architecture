@@ -1,0 +1,4 @@
+---
+allow_secret_material: false
+cert_renewal_days: 30
+ssh_port: 22

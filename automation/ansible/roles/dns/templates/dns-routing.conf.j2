@@ -1,0 +1,6 @@
+# DNS Routing Configuration — LAB ONLY
+# Placeholders only
+upstream ru {{ dns_ru | default('192.0.2.53') }}
+upstream int {{ dns_int | default('198.51.100.53') }}
+default-upstream {{ dns_default | default('203.0.113.53') }}
+domain {{ lab_domain | default('example.invalid') }}

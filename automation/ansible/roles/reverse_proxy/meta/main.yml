@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: reverse_proxy
+  description: 'Stage 05 lab role — reverse_proxy'
+  license: MIT
+  min_ansible_version: '2.9'
+  platforms: []
+dependencies: []

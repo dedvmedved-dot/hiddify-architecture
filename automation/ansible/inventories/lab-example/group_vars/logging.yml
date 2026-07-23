@@ -1,0 +1,4 @@
+---
+log_destination: CHANGE_ME
+log_level: info
+log_format: json

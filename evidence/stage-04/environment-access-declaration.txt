@@ -1,0 +1,11 @@
+Infrastructure accessed: NO
+Production systems accessed: NO
+Remote hosts contacted: NO
+Network configuration changed: NO
+DNS changed: NO
+VPN changed: NO
+Secrets used: NO
+Privileged commands executed: NO
+Deployment performed: NO
+History rewritten: NO
+Force push: NO

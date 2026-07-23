@@ -1,0 +1,4 @@
+# Backup Configuration — LAB ONLY
+retention_days: {{ backup_retention | default(30) }}
+storage_path: {{ backup_path | default('CHANGE_ME') }}
+schedule: {{ backup_schedule | default('daily') }}

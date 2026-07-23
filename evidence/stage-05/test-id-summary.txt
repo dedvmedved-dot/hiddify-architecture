@@ -1,0 +1,63 @@
+Command: python3 scripts/validate_stage05_test_ids.py
+Exit Code: 1
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
+
+  PASS: Required=36
+  PASS: Implementation=36
+  PASS: Plan=36
+  PASS: Traceability=36
+  PASS: Evidence=36
+  PASS: Missing=0
+  PASS: Unknown=0
+  FAIL: Duplicates=2
+{
+  "required": 36,
+  "implementation_ids": [
+    "S05-ANS-001",
+    "S05-ANS-002",
+    "S05-ANS-003",
+    "S05-ANS-004",
+    "S05-ANS-005",
+    "S05-CFG-001",
+    "S05-CFG-002",
+    "S05-CFG-003",
+    "S05-CFG-004",
+    "S05-ID-001",
+    "S05-IT-001",
+    "S05-PF-001",
+    "S05-PF-002",
+    "S05-PF-003",
+    "S05-PF-004",
+    "S05-PLN-001",
+    "S05-PLN-002",
+    "S05-PLN-003",
+    "S05-PLN-004",
+    "S05-RB-001",
+    "S05-SEC-001",
+    "S05-SEC-002",
+    "S05-SEC-003",
+    "S05-SG-001",
+    "S05-SG-002",
+    "S05-SG-003",
+    "S05-SG-004",
+    "S05-TPL-001",
+    "S05-TPL-002",
+    "S05-TPL-003",
+    "S05-TPL-004",
+    "S05-TPL-005",
+    "S05-TPL-006",
+    "S05-TPL-007",
+    "S05-TPL-008",
+    "S05-TRC-001"
+  ],
+  "plan_mappings": 36,
+  "traceability_mappings": 36,
+  "evidence_mappings": 36,
+  "missing": [],
+  "unknown": [],
+  "duplicates": [
+    "S05-CFG-001",
+    "S05-CFG-002"
+  ],
+  "result": "FAIL"
+}

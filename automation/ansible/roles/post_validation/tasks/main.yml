@@ -1,0 +1,8 @@
+---
+# Stage 05 — post_validation tasks (CHECK-MODE ONLY)
+- name: post_validation — lab validation placeholder
+  assert:
+    that:
+      - lab_environment | default(false)
+      - not production_environment | default(true)
+  tags: [always, lab, stage05]
