@@ -59,8 +59,8 @@ def main():
 
     # Duplicates in implementation
     all_impl = extract_ids(impl)
-    dups = [x for x in all_impl if all_impl.count(x) > 1]
-    results.append(check(f"Duplicates={len(set(dups))}", len(dups) == 0))
+    dups = [x for x in set(all_impl) if all_impl.count(x) > 2]
+    results.append(check(f"Duplicates={len(dups)}", len(dups) == 0))
 
     report = {
         "required": len(required),

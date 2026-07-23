@@ -22,8 +22,8 @@ def main():
     dups = [x for x in step_ids if step_ids.count(x) > 1]
     results.append(check(f"No duplicate step IDs", len(dups) == 0))
 
-    required = ['step_id','component','checkpoint','rollback_trigger',
-                'rollback_task_reference','post_rollback_validation',
+    required = ['step_id','component','checkpoint','trigger',
+                'task_reference','post_validation',
                 'stop_condition']
 
     for s in steps:

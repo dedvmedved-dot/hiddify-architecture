@@ -11,6 +11,7 @@ rollback_map:
     - FR-050
     - OPS-010
     step_id: RB-01
+    stop_condition: Rollback complete or escalate
     task_reference: ansible/playbooks/rollback.yml
     trigger: config_change_failure
   - adr_ids:
@@ -45,49 +46,49 @@ rollback_map:
     component: tunnel_ru
     escalation_path: Owner notification
     evidence_artifact: evidence/stage-05/rollback-*.txt
-    post_rollback_validation: Tunnel re-established
+    post_validation: Tunnel re-established
     requirement_ids:
     - FR-020
-    rollback_trigger: tunnel_failure
     step_id: RB-04
     stop_condition: Rollback complete
     task_reference: ansible/playbooks/rollback.yml
+    trigger: tunnel_failure
   - adr_ids:
     - ADR-002
     checkpoint: tunnel_status
     component: tunnel_int
     escalation_path: Owner notification
     evidence_artifact: evidence/stage-05/rollback-*.txt
-    post_rollback_validation: Tunnel re-established
+    post_validation: Tunnel re-established
     requirement_ids:
     - FR-020
-    rollback_trigger: tunnel_failure
     step_id: RB-05
     stop_condition: Rollback complete
     task_reference: ansible/playbooks/rollback.yml
+    trigger: tunnel_failure
   - adr_ids:
     - ADR-004
     checkpoint: dns_resolution
     component: dns
     escalation_path: Owner notification
     evidence_artifact: evidence/stage-05/rollback-*.txt
-    post_rollback_validation: DNS resolves correctly
+    post_validation: DNS resolves correctly
     requirement_ids:
     - FR-030
-    rollback_trigger: dns_failure
     step_id: RB-06
     stop_condition: Rollback complete
     task_reference: ansible/playbooks/rollback.yml
+    trigger: dns_failure
   - adr_ids:
     - ADR-003
     checkpoint: routing_table
     component: routing
     escalation_path: Owner notification
     evidence_artifact: evidence/stage-05/rollback-*.txt
-    post_rollback_validation: Default routing restored
+    post_validation: Default routing restored
     requirement_ids:
     - FR-001
-    rollback_trigger: policy_failure
     step_id: RB-07
     stop_condition: Rollback complete
     task_reference: ansible/playbooks/rollback.yml
+    trigger: policy_failure
