@@ -1,0 +1,7 @@
+fa04e3e fix(stage-04): correct UT-015 CIDR validation
+230369f test(stage-04): complete unit tests, integration sim, traceability, and evidence
+f3dbe1d fix(stage-04): correct garbled safety flags line
+36446d7 fix(stage-04): resolve lint and validation issues
+cb32c9d ci(stage-04): add offline validation workflow
+0f64918 feat(stage-04): add documentation and test harness
+cbe2ccb chore(stage-04): initialize offline iac skeleton with validation
