@@ -31,37 +31,37 @@ def read_file(path):
 
 def main():
     results = []
-    
+
     impl = read_file('tests/stage05/test_all.py')
     plan = read_file('docs/testing/stage-05-lab-acceptance-test-plan.md')
     trace = read_file('docs/implementation/stage-05-traceability.md')
     ev = read_file('evidence/stage-05/unit-test-summary.txt')
-    
+
     impl_ids = set(extract_ids(impl))
     plan_ids = set(extract_ids(plan))
     trace_ids = set(extract_ids(trace))
     ev_ids = set(extract_ids(ev))
-    
+
     required = set(REQUIRED)
-    
+
     results.append(check(f"Required={len(required)}", len(required) == 36))
     results.append(check(f"Implementation={len(impl_ids)}", impl_ids >= required))
     results.append(check(f"Plan={len(plan_ids)}", plan_ids >= required))
     results.append(check(f"Traceability={len(trace_ids)}", trace_ids >= required))
     results.append(check(f"Evidence={len(ev_ids)}", True))
-    
+
     missing = required - impl_ids
     results.append(check(f"Missing={len(missing)}", len(missing) == 0))
     if missing: print(f"    Missing: {sorted(missing)}")
-    
+
     unknown = impl_ids - required
     results.append(check(f"Unknown={len(unknown)}", len(unknown) == 0))
-    
+
     # Duplicates in implementation
     all_impl = extract_ids(impl)
     dups = [x for x in all_impl if all_impl.count(x) > 1]
     results.append(check(f"Duplicates={len(set(dups))}", len(dups) == 0))
-    
+
     report = {
         "required": len(required),
         "implementation_ids": sorted(impl_ids & required),
@@ -73,7 +73,7 @@ def main():
         "duplicates": sorted(set(dups)),
         "result": "PASS" if all(results) else "FAIL"
     }
-    
+
     print(json.dumps(report, indent=2))
     sys.exit(0 if all(results) else 1)
 
