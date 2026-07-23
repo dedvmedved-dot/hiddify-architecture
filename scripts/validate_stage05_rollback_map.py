@@ -9,29 +9,29 @@ def main():
     if not os.path.exists(rbf):
         print("FAIL: rollback map not found")
         sys.exit(1)
-    
+
     with open(rbf) as f:
         data = yaml.safe_load(f)
-    
+
     steps = data.get('rollback_map', {}).get('steps', [])
     results = []
-    
+
     results.append(check(f"Steps={len(steps)}", len(steps) >= 3))
-    
+
     step_ids = [s.get('step_id','') for s in steps]
     dups = [x for x in step_ids if step_ids.count(x) > 1]
     results.append(check(f"No duplicate step IDs", len(dups) == 0))
-    
+
     required = ['step_id','component','checkpoint','rollback_trigger',
                 'rollback_task_reference','post_rollback_validation',
                 'stop_condition']
-    
+
     for s in steps:
         sid = s.get('step_id','?')
         for field in required:
             val = s.get(field,'')
             results.append(check(f"{sid}.{field}", bool(val)))
-    
+
     report = {
         "steps_total": len(steps),
         "duplicates": len(set(dups)),
