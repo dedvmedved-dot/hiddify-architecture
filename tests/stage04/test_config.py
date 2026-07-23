@@ -93,9 +93,12 @@ def test_ut014_unknown_role():
 
 # S04-UT-015: invalid CIDR
 def test_ut015_invalid_cidr():
-    assert not re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/\d{1,2}$', '999.999.999.0/24')
-
-# S04-UT-016: invalid domain
+    import ipaddress
+    try:
+        ipaddress.ip_network('999.999.999.0/24', strict=False)
+        assert False, "Should reject invalid CIDR"
+    except ValueError:
+        pass
 def test_ut016_invalid_domain():
     assert not re.match(r'^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', 'invalid_domain')
 
