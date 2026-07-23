@@ -1,3 +1,7 @@
+Command: python3 scripts/validate_lab_preflight.py
+Exit Code: 0
+HEAD: aabd856634112340d2efd7d1c6cea5e3fb72c4ad
+
   PASS: lab_environment=true
   PASS: production_environment=false
   PASS: deployment_enabled=false
@@ -5,4 +9,3 @@
   PASS: ansible_connection=local
   PASS: doc IPs only
 Result: 6/6 PASS
-EXIT: 0

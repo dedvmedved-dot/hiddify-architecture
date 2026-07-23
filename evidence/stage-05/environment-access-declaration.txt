@@ -1,0 +1,19 @@
+Infrastructure accessed: NO
+Production systems accessed: NO
+Remote hosts contacted: NO
+Network configuration changed: NO
+DNS changed: NO
+VPN changed: NO
+Firewall changed: NO
+Routes changed: NO
+Secrets used: NO
+Real credentials used: NO
+Private keys used: NO
+Privileged commands executed: NO
+Deployment performed: NO
+Lab deployment performed: NO
+Ansible remote execution: NO
+Terraform apply: NO
+Terraform destroy: NO
+History rewritten: NO
+Force push: NO

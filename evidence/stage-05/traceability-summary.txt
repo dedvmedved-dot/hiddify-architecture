@@ -1,0 +1,23 @@
+Command: python3 scripts/validate_stage05_traceability.py
+Exit Code: 0
+HEAD: aabd856634112340d2efd7d1c6cea5e3fb72c4ad
+
+  PASS: Column 'Req ID'
+  PASS: Column 'Arch Doc'
+  PASS: Column 'ADR'
+  PASS: Column 'Stage 04'
+  PASS: Column 'Stage 05'
+  PASS: Column 'Test ID'
+  PASS: Column 'Status'
+  PASS: Requirement refs=39
+  PASS: ADR refs=36
+  PASS: Test ID refs=36
+  PASS: Valid statuses=36
+{
+  "columns_found": 7,
+  "requirement_refs": 39,
+  "adr_refs": 36,
+  "test_id_refs": 36,
+  "statuses": 36,
+  "result": "PASS"
+}

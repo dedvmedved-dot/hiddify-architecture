@@ -20,8 +20,10 @@ jobs:
         run: python3 scripts/validate_lab_preflight.py
       - name: Template Rendering
         run: python3 scripts/render_lab_templates.py
-      - name: Deployment Plan
+      - name: Deployment Plan Validation
         run: python3 scripts/generate_lab_deployment_plan.py
+      - name: Rollback Mapping Validation
+        run: python3 scripts/validate_stage05_rollback_map.py
       - name: Ansible Syntax Check
         run: ANSIBLE_ROLES_PATH=automation/ansible/roles ansible-playbook -i automation/ansible/inventories/lab-example/hosts.yml automation/ansible/playbooks/site.yml --syntax-check
       - name: Local Check Mode
@@ -32,5 +34,7 @@ jobs:
         run: python3 scripts/run_stage05_simulation.py
       - name: Safety Guard
         run: python3 scripts/safety_guard.py
-      - name: Traceability
-        run: python3 -c "import os; assert os.path.exists('docs/implementation/stage-05-traceability.md')"
+      - name: Traceability Validation
+        run: python3 scripts/validate_stage05_traceability.py
+      - name: Test ID Validation
+        run: python3 scripts/validate_stage05_test_ids.py

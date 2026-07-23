@@ -1,3 +1,7 @@
+Command: python3 scripts/render_lab_templates.py
+Exit Code: 0
+HEAD: aabd856634112340d2efd7d1c6cea5e3fb72c4ad
+
   PASS: automation/ansible/roles/wireguard/templates/wireguard.conf.j2 (placeholder present)
   PASS: automation/ansible/roles/dns/templates/dns-routing.conf.j2
   PASS: automation/ansible/roles/reverse_proxy/templates/reverse-proxy.conf.j2
@@ -7,4 +11,3 @@
   PASS: automation/ansible/roles/backup/templates/backup.conf.j2 (placeholder present)
   PASS: Deterministic rendering
 Result: 8/8 PASS
-EXIT: 0

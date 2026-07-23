@@ -1,2 +1,5 @@
+Command: python3 scripts/safety_guard.py
+Exit Code: 0
+HEAD: aabd856634112340d2efd7d1c6cea5e3fb72c4ad
+
 SAFETY GUARD: PASS — no forbidden commands found
-EXIT: 0
