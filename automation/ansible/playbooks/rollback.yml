@@ -1,0 +1,1 @@
+- hosts: all\n  gather_facts: no\n  tasks:\n    - name: Rollback placeholder\n      debug:\n        msg: 'Rollback plan — execution not authorized in Stage 05'\n

@@ -1,0 +1,1 @@
+lab_environment: true\nproduction_environment: false\ndeployment_enabled: false\nremote_execution_enabled: false\nansible_connection: local\n

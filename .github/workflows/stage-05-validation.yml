@@ -1,0 +1,17 @@
+name: Stage 05 Lab Readiness Validation
+on:
+  pull_request: {branches: [main]}
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install pyyaml
+      - run: python3 scripts/validate_lab_preflight.py
+      - run: python3 scripts/generate_lab_deployment_plan.py
+      - run: python3 scripts/run_stage05_simulation.py
+      - run: python3 scripts/safety_guard.py

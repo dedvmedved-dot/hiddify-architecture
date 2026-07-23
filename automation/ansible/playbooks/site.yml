@@ -1,0 +1,1 @@
+- hosts: all\n  gather_facts: no\n  tasks:\n    - name: Stage 05 — LAB ONLY, NO DEPLOYMENT\n      debug:\n        msg: 'This playbook runs in check/dry-run mode only.'\n
