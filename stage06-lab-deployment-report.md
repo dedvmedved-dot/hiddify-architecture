@@ -106,7 +106,6 @@ logging.conf.j2, monitoring.conf.j2, reverse-proxy.conf.j2, wireguard.conf.j2
 ERROR: The role 'common' was not found in: .../playbooks/roles:...
 ```
 
-
 **Исправление:** добавить в `[defaults]` секцию `ansible.cfg`:
 
 ```ini
