@@ -14,6 +14,7 @@
 ST06-03 Offline Deployment Engineering completed. All technical blockers that could be resolved without real infrastructure access have been addressed.
 
 **Key results:**
+
 - 16-file Hiddify Ansible role created with full lifecycle automation
 - Panel automation integrated into role
 - 5 new validators (placeholders, execution mode, owner input completeness, Hiddify role, rollback)
@@ -44,7 +45,7 @@ ST06-03 Offline Deployment Engineering completed. All technical blockers that co
 
 ### New Files (20)
 
-```
+```text
 automation/ansible/roles/hiddify/          — 16 files (role)
 configs/stage06-owner-input.example.yml    — Owner Input template
 scripts/validate_stage06_placeholders.py   — Placeholder validator
@@ -54,22 +55,22 @@ scripts/validate_stage06_hiddify_role.py   — Hiddify role validator
 scripts/generate_stage06_rollback_plan.py  — Rollback plan generator
 tests/stage06/test_st06_03_engineering.py  — 20 unit tests
 stage06-offline-deployment-engineering-report.md — This report
-```
+```text
 
 ### Modified Files (2)
 
-```
+```text
 automation/ansible/ansible.cfg             — Added roles_path = ./roles
 .github/workflows/stage-06-validation.yml  — Expanded to 24 steps
-```
+```text
 
 ---
 
 ## 4. roles_path Fix
 
-**Before:** `ansible.cfg` had no `roles_path`. Playbooks from `playbooks/` could not find roles in `roles/`.
-
+**Before:
 **After:** `roles_path = ./roles` added. Verified from:
+
 - `automation/ansible/` — PASS
 - Repository root via `ANSIBLE_CONFIG` — PASS
 - `roles/hiddify/tests/` — PASS (role resolves via ansible.cfg)
@@ -103,19 +104,19 @@ automation/ansible/ansible.cfg             — Added roles_path = ./roles
 hiddify_deployment_enabled: false
 hiddify_remote_execution_enabled: false
 hiddify_installation_mode: plan_only
-```
+```text
 
 ### Deployment Authorization Requirements
 
 All 6 conditions must be met:
-```
+```text
 STAGE06_LAB_DEPLOYMENT_APPROVED=YES
 deployment_enabled=true
 remote_execution_enabled=true
 lab_environment=true
 production_environment=false
 owner_input_complete=true
-```
+```text
 
 ---
 
@@ -196,6 +197,7 @@ Integrated into Hiddify role (`tasks/preflight.yml`):
 **Generator:** `generate_stage06_rollback_plan.py`
 
 12-step rollback plan covering:
+
 1. Service stop → 2. Disable → 3. Docker down → 4. Config restore → 5. Proxy restore → 6. Firewall restore → 7. Routing restore → 8. DNS cleanup → 9. systemd restore → 10. Backup restore → 11. Verify → 12. Record
 
 Mode: PLAN_ONLY. No execution performed.
@@ -241,6 +243,7 @@ Mode: PLAN_ONLY. No execution performed.
 ## 13. CI Results
 
 Workflow expanded to 24 steps. Key additions:
+
 - Ansible roles path validation
 - Hiddify role syntax + validator
 - Owner input completeness
@@ -250,10 +253,10 @@ Workflow expanded to 24 steps. Key additions:
 - ST06-03 engineering tests
 
 Final aggregation clearly states:
-```
+```text
 OFFLINE READINESS: PASS
 REAL DEPLOYMENT: BLOCKED
-```
+```text
 
 ---
 
@@ -273,6 +276,7 @@ REAL DEPLOYMENT: BLOCKED
 All 30 parameters in `owner-input-checklist.md` are still NO.
 
 Critical inputs needed:
+
 - Lab router IP
 - VPS1/VPS3 public IPs
 - SSH usernames
@@ -298,7 +302,7 @@ Critical inputs needed:
 
 ## 17. Final Status
 
-```
+```text
 ST06-03 IMPLEMENTATION:
 COMPLETED
 
@@ -319,7 +323,7 @@ NO
 
 READY FOR EXTERNAL AUDIT:
 YES
-```
+```text
 
 ---
 

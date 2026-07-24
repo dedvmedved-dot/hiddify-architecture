@@ -39,15 +39,20 @@ jobs:
           ansible-playbook roles/hiddify/tests/test.yml --syntax-check 2>&1 | grep -v WARNING
           echo "PASS: Hiddify role syntax OK"
 
+      - name: Hiddify Role Check Mode (local, safe)
+        run: |
+          cd automation/ansible
+          ansible-playbook roles/hiddify/tests/test.yml --check --connection=local --inventory roles/hiddify/tests/inventory 2>&1 | grep -v WARNING
+          echo "PASS: Hiddify role check mode OK"
+
       - name: Hiddify Role Validator
         run: python3 scripts/validate_stage06_hiddify_role.py
 
       - name: Stage 06 Owner Input Structure
         run: python3 scripts/validate_stage06_owner_input.py
 
-      - name: Owner Input Completeness
-        run: python3 scripts/validate_stage06_owner_input_complete.py
-        continue-on-error: true
+      - name: Owner Input Completeness (strict — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/validate_stage06_owner_input_complete.py
 
       - name: Evidence Completeness
         run: python3 scripts/validate_stage06_evidence.py
@@ -55,12 +60,11 @@ jobs:
       - name: Semantic Evidence Validation
         run: python3 scripts/validate_stage06_semantic.py
 
-      - name: Placeholder Validator (offline mode)
+      - name: Placeholder Validator (offline — must exit 0)
         run: python3 scripts/validate_stage06_placeholders.py --mode offline
 
-      - name: Placeholder Validator (deployment mode)
-        run: python3 scripts/validate_stage06_placeholders.py --mode deployment
-        continue-on-error: true
+      - name: Placeholder Validator (deployment — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/validate_stage06_placeholders.py --mode deployment
 
       - name: Execution Mode Validator
         run: python3 scripts/validate_stage06_execution_mode.py --mode offline
@@ -74,9 +78,11 @@ jobs:
       - name: Rollback Plan Generator
         run: python3 scripts/generate_stage06_rollback_plan.py
 
-      - name: Safety Gate (mandatory — BLOCKED without owner input)
-        run: python3 scripts/stage06_safety_gate.py
-        continue-on-error: true
+      - name: Safety Gate (strict — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/stage06_safety_gate.py
+
+      - name: Unit Tests — Exit Code Helper
+        run: python3 -m pytest tests/stage06/test_expect_exit_code.py -v
 
       - name: Unit Tests — Semantic
         run: python3 -m pytest tests/stage06/test_semantic.py -v
