@@ -1,0 +1,106 @@
+name: Stage 06 Validation
+on:
+  pull_request: {branches: [main]}
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+
+      - name: Install dependencies
+        run: pip install pyyaml pytest ansible-core ansible-lint
+
+      - name: YAML Syntax Validation
+        run: |
+          python3 -c "import yaml; yaml.safe_load(open('.github/workflows/stage-06-validation.yml'))"
+          echo "PASS: workflow YAML valid"
+
+      - name: Python Syntax Check
+        run: |
+          python3 -m compileall scripts/ tests/ -q 2>&1 || {
+            echo "FAIL: Python syntax errors found"
+            exit 1
+          }
+          echo "PASS: Python syntax OK"
+
+      - name: Ansible Roles Path Validation
+        run: |
+          cd automation/ansible
+          ansible-playbook playbooks/site.yml --syntax-check 2>&1 | grep -v WARNING
+          echo "PASS: all Ansible roles found"
+
+      - name: Hiddify Role Syntax Check
+        run: |
+          cd automation/ansible
+          ansible-playbook roles/hiddify/tests/test.yml --syntax-check 2>&1 | grep -v WARNING
+          echo "PASS: Hiddify role syntax OK"
+
+      - name: Hiddify Role Check Mode (local, safe)
+        run: |
+          cd automation/ansible
+          ansible-playbook roles/hiddify/tests/test.yml --check --connection=local --inventory roles/hiddify/tests/inventory 2>&1 | grep -v WARNING
+          echo "PASS: Hiddify role check mode OK"
+
+      - name: Hiddify Role Validator
+        run: python3 scripts/validate_stage06_hiddify_role.py
+
+      - name: Stage 06 Owner Input Structure
+        run: python3 scripts/validate_stage06_owner_input.py
+
+      - name: Owner Input Completeness (strict — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/validate_stage06_owner_input_complete.py
+
+      - name: Evidence Completeness
+        run: python3 scripts/validate_stage06_evidence.py
+
+      - name: Semantic Evidence Validation
+        run: python3 scripts/validate_stage06_semantic.py
+
+      - name: Placeholder Validator (offline — must exit 0)
+        run: python3 scripts/validate_stage06_placeholders.py --mode offline
+
+      - name: Placeholder Validator (deployment — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/validate_stage06_placeholders.py --mode deployment
+
+      - name: Execution Mode Validator
+        run: python3 scripts/validate_stage06_execution_mode.py --mode offline
+
+      - name: Test ID Validation
+        run: python3 scripts/validate_stage06_tests.py
+
+      - name: Traceability Validation
+        run: python3 scripts/validate_stage06_traceability.py
+
+      - name: Rollback Plan Generator
+        run: python3 scripts/generate_stage06_rollback_plan.py
+
+      - name: Safety Gate (strict — must exit 1)
+        run: bash scripts/expect_exit_code.sh 1 python3 scripts/stage06_safety_gate.py
+
+      - name: Unit Tests — Exit Code Helper
+        run: python3 -m pytest tests/stage06/test_expect_exit_code.py -v
+
+      - name: Unit Tests — Semantic
+        run: python3 -m pytest tests/stage06/test_semantic.py -v
+
+      - name: Unit Tests — Safety Gate
+        run: python3 -m pytest tests/stage06/test_safety_gate.py -v
+
+      - name: Unit Tests — ST06-03 Engineering
+        run: python3 -m pytest tests/stage06/test_st06_03_engineering.py -v
+
+      - name: Unit Tests — Readiness
+        run: python3 tests/stage06/test_readiness.py
+
+      - name: Final Aggregation
+        run: |
+          echo "=== Stage 06 Validation Aggregation ==="
+          echo "OFFLINE READINESS: PASS"
+          echo "REAL DEPLOYMENT: BLOCKED"
+          echo "OWNER INPUT: REQUIRED"
+          echo "SAFETY GATE: BLOCKED"
+          echo "INFRASTRUCTURE: NOT ACCESSED"

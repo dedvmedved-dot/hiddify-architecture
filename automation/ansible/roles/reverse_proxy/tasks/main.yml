@@ -1,0 +1,8 @@
+---
+# Stage 05 — reverse_proxy tasks (CHECK-MODE ONLY)
+- name: reverse_proxy — lab validation placeholder
+  assert:
+    that:
+      - lab_environment | default(false)
+      - not production_environment | default(true)
+  tags: [always, lab, stage05]

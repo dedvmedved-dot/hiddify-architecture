@@ -1,0 +1,19 @@
+Checksum Verification — RI-01-T00-R3
+
+baseline-artifacts.sha256:
+  Entries: 26
+  Coverage: all 26 files under repository-assurance-baseline/
+  Exclusions: none
+  Verified: 26/26 PASS
+
+evidence-artifacts.sha256:
+  Entries: 18
+  Coverage: 20 total evidence files minus 2 self-referential (baseline-artifacts.sha256, evidence-artifacts.sha256)
+  Excluded (self-referential): baseline-artifacts.sha256, evidence-artifacts.sha256
+  Verified: 18/18 PASS
+
+Manifest totals:
+  Total manifests: 2
+  Total manifest entries: 44
+  Total repository files: 26 (baseline) + 20 (evidence) = 46
+Verification status: PASS

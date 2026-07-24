@@ -1,0 +1,34 @@
+Modified files (19):
+repository-assurance-baseline/README.md
+repository-assurance-baseline/acceptance.md
+repository-assurance-baseline/assurance-topology.md
+repository-assurance-baseline/baseline-summary.md
+repository-assurance-baseline/branch-state.md
+repository-assurance-baseline/gate-catalog.md
+repository-assurance-baseline/known-limitations.md
+repository-assurance-baseline/recommendations.md
+repository-assurance-baseline/report.md
+repository-assurance-baseline/repository-state.md
+repository-assurance-baseline/status-model.md
+repository-assurance-baseline/test-catalog.md
+repository-assurance-baseline/validation-assets-catalog.md
+repository-assurance-baseline/validation-gap-analysis.md
+repository-assurance-baseline/validation-overlap-analysis.md
+repository-assurance-baseline/validator-catalog.md
+repository-assurance-baseline/workflow-catalog.md
+repository-assurance-baseline/data/baseline.json
+evidence/repository-assurance-baseline/file-integrity.txt
+
+Added files (9):
+repository-assurance-baseline/remediation-report.md
+evidence/repository-assurance-baseline/baseline-artifacts.sha256
+evidence/repository-assurance-baseline/evidence-artifacts.sha256
+evidence/repository-assurance-baseline/remediation-metadata.txt
+evidence/repository-assurance-baseline/remediation-changed-files.txt
+evidence/repository-assurance-baseline/remediation-diff-scope.txt
+evidence/repository-assurance-baseline/checksum-verification.txt
+evidence/repository-assurance-baseline/markdown-lint-result.txt
+evidence/repository-assurance-baseline/remediation-validation-summary.txt
+
+Removed files (1):
+evidence/repository-assurance-baseline/checksums.sha256

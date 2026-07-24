@@ -1,0 +1,50 @@
+---
+# Hiddify deployment defaults — ALL SAFETY GATES CLOSED BY DEFAULT
+
+# Execution mode
+hiddify_deployment_enabled: false
+hiddify_remote_execution_enabled: false
+hiddify_installation_mode: plan_only  # plan_only | check | deploy
+
+# Installation
+hiddify_version: latest
+hiddify_install_method: docker
+hiddify_install_source: https://github.com/hiddify/hiddify-config
+
+# Paths
+hiddify_base_dir: /opt/hiddify
+hiddify_config_dir: "{{ hiddify_base_dir }}/config"
+hiddify_data_dir: "{{ hiddify_base_dir }}/data"
+hiddify_log_dir: /var/log/hiddify
+
+# Panel
+hiddify_panel_port: 9000
+hiddify_panel_domain: example.invalid
+hiddify_panel_admin_email: admin@example.invalid
+hiddify_panel_admin_password: CHANGE_ME
+hiddify_panel_tls_enabled: true
+
+# Subscription
+hiddify_subscription_port: 8443
+hiddify_subscription_domain: sub.example.invalid
+
+# Protocols
+hiddify_enabled_protocols:
+  - vless
+  - trojan
+  - shadowsocks
+
+# Docker
+hiddify_docker_image: hiddify/hiddify-panel
+hiddify_docker_restart_policy: unless-stopped
+
+# System
+hiddify_service_name: hiddify-panel
+hiddify_systemd_enabled: false
+hiddify_health_check_url: https://example.invalid:9000/api/health
+
+# Safety
+hiddify_require_owner_input: true
+hiddify_require_safety_gate: true
+hiddify_require_lab_environment: true
+hiddify_block_production: true

@@ -1,0 +1,15 @@
+---
+# Internal vars — do not override in inventory
+_hiddify_min_ram_mb: 2048
+_hiddify_min_disk_gb: 10
+_hiddify_min_cpu_cores: 2
+_hiddify_supported_os:
+  - Ubuntu
+  - Debian
+_hiddify_supported_arch:
+  - x86_64
+_hiddify_required_ports:
+  - "{{ hiddify_panel_port }}"
+  - "{{ hiddify_subscription_port }}"
+  - 80
+  - 443

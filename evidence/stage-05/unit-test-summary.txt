@@ -1,0 +1,44 @@
+Evidence ID: E05-UT
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
+Timestamp: 2026-07-23T06:54:33Z
+
+PASS: S05-CFG-001 Lab config schema
+PASS: S05-CFG-002 Prod rejection
+PASS: S05-CFG-003 Doc IPs only
+PASS: S05-CFG-004 Domain check
+PASS: S05-PF-001 Preflight
+PASS: S05-PF-002 Roles present
+PASS: S05-PF-003 No dupes
+PASS: S05-PF-004 Rollback map
+PASS: S05-ANS-001 Site syntax
+PASS: S05-ANS-002 All syntax
+PASS: S05-ANS-003 Check-mode local
+PASS: S05-ANS-004 Normal rejected
+PASS: S05-ANS-005 Remote rejected
+PASS: S05-TPL-001 WireGuard template
+PASS: S05-TPL-002 DNS template
+PASS: S05-TPL-003 Reverse proxy template
+PASS: S05-TPL-004 Certificate template
+PASS: S05-TPL-005 Logging template
+PASS: S05-TPL-006 Monitoring template
+PASS: S05-TPL-007 Backup template
+PASS: S05-TPL-008 Deterministic rendering
+PASS: S05-SEC-001 Private key
+PASS: S05-SEC-002 Token
+PASS: S05-SEC-003 Password
+PASS: S05-SG-001 Terraform apply
+PASS: S05-SG-002 Remote Ansible
+PASS: S05-SG-003 SSH command
+PASS: S05-SG-004 Network mod
+PASS: S05-PLN-001 Plan generation
+PASS: S05-PLN-002 Deterministic plan
+PASS: S05-PLN-003 Rollback in plan
+PASS: S05-PLN-004 Validation mapping
+PASS: S05-RB-001 Rollback map complete
+PASS: S05-TRC-001 Traceability present
+PASS: S05-ID-001 No duplicate IDs
+PASS: S05-IT-001 Integration simulation
+
+========================================
+Total: 36/36 PASS
+EXIT: 0

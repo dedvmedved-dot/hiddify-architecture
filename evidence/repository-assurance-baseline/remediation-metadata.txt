@@ -1,0 +1,10 @@
+Task: RI-01-T00-R1 + RI-01-T00-R2
+Parent Task: RI-01-T00
+Baseline Source HEAD: e0d80abbe0124f5995364b6b44c9e427655dd718
+Initial Baseline Artifact Commit: 70ec88d6cdbe5c246191efb42afddc52acd46587
+R1 Implementation Commit: 336420096695702322a4b3bea8db77b8bccc2024
+R1 Post-Commit Evidence Refresh: 7aba8e943c3bf8eff204f576ae055ffed0e857b8
+R2 Base HEAD: 7aba8e943c3bf8eff204f576ae055ffed0e857b8
+R2 Generation Time: 2026-07-24T04:48:59Z
+External Audit Head: RECORDED_BY_ACCEPTANCE_AUTHORITY
+Status: COMPLETE — AWAITING EXTERNAL AUDIT

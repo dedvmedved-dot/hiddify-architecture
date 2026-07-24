@@ -1,0 +1,11 @@
+---
+- name: Hiddify Role Test (offline)
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    hiddify_deployment_enabled: false
+    hiddify_remote_execution_enabled: false
+    hiddify_installation_mode: plan_only
+  roles:
+    - hiddify

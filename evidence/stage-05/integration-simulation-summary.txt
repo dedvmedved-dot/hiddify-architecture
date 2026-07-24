@@ -1,0 +1,16 @@
+Command: python3 scripts/run_stage05_simulation.py
+Exit Code: 0
+HEAD: 158bf070a33a46f332e7c2a0055a3b03af0eef97
+
+Stage 05 Integration Simulation (S05-IT-001)
+  PASS: Preflight
+  PASS: Deployment plan
+  PASS: Safety guard
+
+Result: 3/3 PASS
+LAB_PACKAGE_VALID
+PLAN_GENERATED
+ROLLBACK_MAPPED
+NO_REMOTE_EXECUTION
+NO_INFRASTRUCTURE_CHANGE
+READY_FOR_STAGE_06_REVIEW

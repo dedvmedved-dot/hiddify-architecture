@@ -1,0 +1,27 @@
+---
+- name: Hiddify Service | Install systemd unit
+  template:
+    src: hiddify-panel.service.j2
+    dest: "/etc/systemd/system/{{ hiddify_service_name }}.service"
+    mode: '0644'
+  when: hiddify_remote_execution_enabled | bool
+  notify: "restart hiddify service"
+
+- name: Hiddify Service | Enable and start
+  systemd:
+    name: "{{ hiddify_service_name }}"
+    enabled: "{{ hiddify_systemd_enabled }}"
+    state: started
+    daemon_reload: true
+  when:
+    - hiddify_remote_execution_enabled | bool
+    - hiddify_systemd_enabled | bool
+
+- name: Hiddify Service | Offline plan
+  debug:
+    msg:
+      - "Service plan (offline mode):"
+      - "  - Unit: {{ hiddify_service_name }}.service"
+      - "  - Enabled: {{ hiddify_systemd_enabled }}"
+      - "  - Restart policy: {{ hiddify_docker_restart_policy }}"
+  when: not (hiddify_remote_execution_enabled | bool)

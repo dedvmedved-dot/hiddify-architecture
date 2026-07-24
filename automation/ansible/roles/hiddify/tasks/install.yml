@@ -1,0 +1,39 @@
+---
+- name: Hiddify Install | Safety gate — confirm deployment authorized
+  assert:
+    that:
+      - hiddify_deployment_enabled | bool
+      - hiddify_remote_execution_enabled | bool
+      - lookup('env', 'STAGE06_LAB_DEPLOYMENT_APPROVED') == 'YES'
+    fail_msg: "HIDDIFY INSTALL BLOCKED: deployment not authorized"
+  tags: [always]
+
+- name: Hiddify Install | Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+  loop:
+    - "{{ hiddify_base_dir }}"
+    - "{{ hiddify_config_dir }}"
+    - "{{ hiddify_data_dir }}"
+  when: hiddify_remote_execution_enabled | bool
+
+- name: Hiddify Install | Pull Docker image
+  docker_image:
+    name: "{{ hiddify_docker_image }}"
+    tag: "{{ hiddify_version }}"
+    source: pull
+  when: hiddify_remote_execution_enabled | bool
+
+- name: Hiddify Install | Offline install plan
+  debug:
+    msg:
+      - "Install plan (offline mode):"
+      - "  - Create directories: {{ hiddify_base_dir }}, {{ hiddify_config_dir }}"
+      - "  - Pull image: {{ hiddify_docker_image }}:{{ hiddify_version }}"
+      - "  - Method: {{ hiddify_install_method }}"
+      - "  - Source: {{ hiddify_install_source }}"
+  when: not (hiddify_remote_execution_enabled | bool)

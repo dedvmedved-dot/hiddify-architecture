@@ -1,0 +1,8 @@
+Modified existing files: 0
+Deleted existing files: 0
+New files under repository-assurance-baseline/: 24
+New files under evidence/repository-assurance-baseline/: 7
+Total new files: 31
+Baseline Preservation Rule: COMPLIANT
+Baseline Snapshot Time: 2026-07-24T02:04:34Z
+Initial Artifact Generation Time: 2026-07-24T02:07:25Z

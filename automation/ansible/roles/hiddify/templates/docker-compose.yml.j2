@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  hiddify-panel:
+    image: {{ hiddify_docker_image }}:{{ hiddify_version }}
+    restart: {{ hiddify_docker_restart_policy }}
+    ports:
+      - "{{ hiddify_panel_port }}:{{ hiddify_panel_port }}"
+      - "{{ hiddify_subscription_port }}:{{ hiddify_subscription_port }}"
+    volumes:
+      - {{ hiddify_config_dir }}:/app/config:ro
+      - {{ hiddify_data_dir }}:/app/data
+    env_file:
+      - {{ hiddify_config_dir }}/panel.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:{{ hiddify_panel_port }}/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

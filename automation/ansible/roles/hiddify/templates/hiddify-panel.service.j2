@@ -1,0 +1,18 @@
+[Unit]
+Description=Hiddify Panel
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory={{ hiddify_base_dir }}
+ExecStart=/usr/bin/docker compose up -d
+ExecStop=/usr/bin/docker compose down
+ExecReload=/usr/bin/docker compose restart
+Restart={{ hiddify_docker_restart_policy }}
+User=root
+
+[Install]
+WantedBy=multi-user.target

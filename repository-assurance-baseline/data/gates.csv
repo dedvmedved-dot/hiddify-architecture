@@ -1,0 +1,3 @@
+file,checks_env,checks_file,block_reasons,exit_code
+safety_guard.py,False,False,,1
+stage06_safety_gate.py,True,True,"STAGE06_LAB_DEPLOYMENT_APPROVED is not YES""); Owner deployment approval not YES""); Environment not confirmed as non-production"")",1

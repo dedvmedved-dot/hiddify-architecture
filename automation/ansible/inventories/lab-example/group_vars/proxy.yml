@@ -1,0 +1,4 @@
+---
+proxy_port: 443
+proxy_server_name: example.invalid
+proxy_backend: http://192.0.2.1:8080

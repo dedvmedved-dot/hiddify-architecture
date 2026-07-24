@@ -1,0 +1,4 @@
+---
+backup_retention: 30
+backup_schedule: daily
+backup_path: CHANGE_ME

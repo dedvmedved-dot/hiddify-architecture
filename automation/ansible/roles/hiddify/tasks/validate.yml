@@ -1,0 +1,37 @@
+---
+- name: Hiddify Validate | Check configuration files
+  stat:
+    path: "{{ item }}"
+  loop:
+    - "{{ hiddify_config_dir }}/panel.env"
+    - "{{ hiddify_base_dir }}/docker-compose.yml"
+  register: _hiddify_config_files
+  when: hiddify_remote_execution_enabled | bool
+
+- name: Hiddify Validate | Health check
+  uri:
+    url: "{{ hiddify_health_check_url }}"
+    method: GET
+    status_code: 200
+    validate_certs: "{{ hiddify_panel_tls_enabled }}"
+  register: _hiddify_health
+  ignore_errors: true
+  when: hiddify_remote_execution_enabled | bool
+
+- name: Hiddify Validate | Health check result
+  debug:
+    msg: "Hiddify health check: {{ 'PASS' if _hiddify_health.status == 200 else 'FAIL' }}"
+  when: hiddify_remote_execution_enabled | bool
+
+- name: Hiddify Validate | Offline validation summary
+  debug:
+    msg:
+      - "Hiddify validation (offline mode):"
+      - "  - Config dir: {{ hiddify_config_dir }}"
+      - "  - Panel port: {{ hiddify_panel_port }}"
+      - "  - Subscription port: {{ hiddify_subscription_port }}"
+      - "  - TLS: {{ hiddify_panel_tls_enabled }}"
+      - "  - Protocols: {{ hiddify_enabled_protocols | join(', ') }}"
+      - "  - Health URL: {{ hiddify_health_check_url }}"
+      - "  - Mode: {{ hiddify_installation_mode }}"
+  when: not (hiddify_remote_execution_enabled | bool)

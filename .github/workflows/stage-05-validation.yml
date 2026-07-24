@@ -1,0 +1,42 @@
+name: Stage 05 Lab Readiness Validation
+on:
+  pull_request: {branches: [main]}
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install deps
+        run: pip install pyyaml jinja2 ansible-core
+      - name: Configuration Validation
+        run: python3 -c "import yaml; c=yaml.safe_load(open('automation/ansible/inventories/lab-example/hosts.yml')); assert c['all']['vars']['lab_environment']"
+      - name: Inventory Validation
+        run: python3 -c "import yaml; c=yaml.safe_load(open('automation/ansible/inventories/lab-example/hosts.yml')); assert c['all']['vars']['ansible_connection']=='local'"
+      - name: Preflight Validation
+        run: python3 scripts/validate_lab_preflight.py
+      - name: Template Rendering
+        run: python3 scripts/render_lab_templates.py
+      - name: Deployment Plan Validation
+        run: python3 scripts/generate_lab_deployment_plan.py
+      - name: Rollback Mapping Validation
+        run: python3 scripts/validate_stage05_rollback_map.py
+      - name: Ansible Syntax Check
+        run: ANSIBLE_ROLES_PATH=automation/ansible/roles ansible-playbook -i automation/ansible/inventories/lab-example/hosts.yml automation/ansible/playbooks/site.yml --syntax-check
+      - name: Local Check Mode
+        run: ANSIBLE_ROLES_PATH=automation/ansible/roles ansible-playbook -i automation/ansible/inventories/lab-example/hosts.yml automation/ansible/playbooks/site.yml --check --connection=local
+      - name: Unit Tests
+        run: python3 tests/stage05/test_all.py
+      - name: Integration Simulation
+        run: python3 scripts/run_stage05_simulation.py
+      - name: Safety Guard
+        run: python3 scripts/safety_guard.py
+      - name: Traceability Validation
+        run: python3 scripts/validate_stage05_traceability.py
+      - name: Test ID Validation
+        run: python3 scripts/validate_stage05_test_ids.py
+      - name: Evidence Completeness Validation
+        run: python3 scripts/validate_stage05_evidence.py

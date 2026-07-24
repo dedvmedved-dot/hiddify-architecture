@@ -1,0 +1,13 @@
+RI-01-T00-R1 + RI-01-T00-R2 Validation Summary
+Generated: 2026-07-24T04:48:59Z
+
+Markdown Lint (R1): PASS (0 issues)
+Markdown Lint (R2): to be verified
+Checksum verification: PASS (2 manifests, 44 files)
+JSON validation: PASS (baseline.json)
+CSV validation: PASS (6 files)
+SHA-in-timestamp grep: NO MATCHES (verified)
+Ambiguous 'Remediation Commit': resolved (replaced with precise terms)
+R1 full scope: PASS (0 files outside allowed)
+R2 scope: PENDING (post-commit verification)
+All CI workflows (R1): SUCCESS

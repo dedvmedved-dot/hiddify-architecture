@@ -1,0 +1,6 @@
+Base: 7aba8e943c3bf8eff204f576ae055ffed0e857b8
+Head: RECORDED_IN_OWNER_REPORT (post-commit)
+Files outside allowed scope: PENDING (post-commit verification)
+Modified pre-existing project files: NONE (pending)
+Deleted pre-existing project files: NONE (pending)
+Scope validation: PENDING (R2 commit push required)
