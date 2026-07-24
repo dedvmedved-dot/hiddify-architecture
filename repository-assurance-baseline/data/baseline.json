@@ -6,7 +6,7 @@
   "pull_request": 8,
   "baseline_source_head": "e0d80abbe0124f5995364b6b44c9e427655dd718",
   "initial_baseline_artifact_commit": "70ec88d6cdbe5c246191efb42afddc52acd46587",
-  "remediation_commit": "POPULATE_AFTER_COMMIT",
+  "remediation_commit": "336420096695702322a4b3bea8db77b8bccc2024",
   "working_tree_before_task": "CLEAN",
   "baseline_artifact_files": 24,
   "baseline_evidence_files": 7,
@@ -19,6 +19,6 @@
     "initial_artifact_generation_time": "2026-07-24T02:07:25Z",
     "initial_artifact_commit_time": "NOT RECORDED",
     "remediation_generation_time": "2026-07-24T03:38:01Z",
-    "remediation_commit_time": "POPULATE_AFTER_COMMIT"
+    "remediation_commit_time": "2026-07-24T03:41:14Z"
   }
 }

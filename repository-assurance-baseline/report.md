@@ -25,7 +25,7 @@ system has been fully cataloged, analyzed, and documented.
 |------|-----|------------|
 | Baseline Source HEAD | `e0d80abbe0124f5995364b6b44c9e427655dd718` | Repository state analyzed in RI-01-T00 |
 | Initial Baseline Artifact Commit | `70ec88d6cdbe5c246191efb42afddc52acd46587` | Commit adding 31 initial baseline artifacts |
-| Remediation Commit | `POPULATE_AFTER_COMMIT` | RI-01-T00-R1 consistency remediation |
+| Remediation Commit | `336420096695702322a4b3bea8db77b8bccc2024` | RI-01-T00-R1 consistency remediation |
 
 ## File Counts
 
@@ -56,7 +56,7 @@ system has been fully cataloged, analyzed, and documented.
 | Initial Artifact Generation Time | `2026-07-24T02:07:25Z` | RI-01-T00 documents generated |
 | Initial Artifact Commit Time | NOT RECORDED | Commit time of `70ec88d6cdbe5c246191efb42afddc52acd46587` (git metadata available) |
 | Remediation Generation Time | `2026-07-24T03:38:01Z` | RI-01-T00-R1 fixes applied |
-| Remediation Commit Time | POPULATE_AFTER_COMMIT | Time of remediation commit |
+| Remediation Commit Time | 336420096695702322a4b3bea8db77b8bccc2024 | Time of remediation commit |
 
 ## Deliverables
 

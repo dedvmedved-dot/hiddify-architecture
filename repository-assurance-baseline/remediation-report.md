@@ -27,7 +27,7 @@ However, `BASELINE VERIFIED` was not granted due to:
 |------|-----|
 | Baseline Source HEAD | `e0d80abbe0124f5995364b6b44c9e427655dd718` |
 | Initial Baseline Artifact Commit | `70ec88d6cdbe5c246191efb42afddc52acd46587` |
-| Remediation Commit | `POPULATE_AFTER_COMMIT` |
+| Remediation Commit | `336420096695702322a4b3bea8db77b8bccc2024` |
 
 All documents now use these precise terms. "HEAD" without qualifier is never used.
 
@@ -110,9 +110,9 @@ See `evidence/repository-assurance-baseline/remediation-changed-files.txt`
 
 ## 5. Residual Risks
 
-- **RC field is placeholder:** `POPULATE_AFTER_COMMIT` must be replaced with actual remediation commit SHA after push.
+- **RC field populated in post-commit evidence refresh:** `336420096695702322a4b3bea8db77b8bccc2024` must be replaced with actual remediation commit SHA after push.
 - **Initial Artifact Commit Time:** NOT RECORDED (git metadata available but not programmatically captured).
-- **Remediation Commit Time:** POPULATE_AFTER_COMMIT (self-referential SHA limitation).
+- **Remediation Commit Time:** 336420096695702322a4b3bea8db77b8bccc2024 (self-referential SHA limitation).
 
 ## 6. Status
 
