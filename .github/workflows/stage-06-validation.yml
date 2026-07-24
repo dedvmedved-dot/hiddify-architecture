@@ -12,7 +12,7 @@ jobs:
         with: {python-version: '3.11'}
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install pyyaml pytest
 
       - name: YAML Syntax Validation
         run: |
