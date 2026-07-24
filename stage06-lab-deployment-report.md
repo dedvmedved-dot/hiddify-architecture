@@ -24,11 +24,13 @@
 
 ### Safety Gate
 
-```
+
+```text
 Status: BLOCKED (exit 1)
 Message: SAFETY GATE: BLOCKED — STAGE06_LAB_DEPLOYMENT_APPROVED is not YES
 Requirement: export STAGE06_LAB_DEPLOYMENT_APPROVED=YES
 ```
+
 
 ### Owner Input Checklist
 
@@ -103,6 +105,7 @@ logging.conf.j2, monitoring.conf.j2, reverse-proxy.conf.j2, wireguard.conf.j2
 ```
 ERROR: The role 'common' was not found in: .../playbooks/roles:...
 ```
+
 
 **Исправление:** добавить в `[defaults]` секцию `ansible.cfg`:
 ```ini
@@ -185,7 +188,7 @@ roles_path = ../roles
 
 ### Key Declarations
 
-```
+```text
 Infrastructure accessed: NO
 Production systems accessed: NO
 Deployment performed: NO
