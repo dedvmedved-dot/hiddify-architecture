@@ -124,13 +124,13 @@ class TestSafetyGateNoMasking:
                 f"Safety gate still masked: {line.strip()}"
             )
 
-    def test_continue_on_error_used(self):
-        """Safety gate step uses continue-on-error for visibility."""
+    def test_expect_exit_code_used_for_safety_gate(self):
+        """Safety gate uses expect_exit_code.sh for strict exit code validation."""
         workflow_path = os.path.join(
             os.path.dirname(__file__), '..', '..', '.github',
             'workflows', 'stage-06-validation.yml'
         )
         with open(workflow_path) as f:
             content = f.read()
-        # continue-on-error should appear NEAR the safety gate step
-        assert 'continue-on-error: true' in content
+        # Safety gate step must use expect_exit_code.sh with expected exit 1
+        assert 'expect_exit_code.sh 1 python3 scripts/stage06_safety_gate.py' in content
