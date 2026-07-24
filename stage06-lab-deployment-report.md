@@ -108,6 +108,7 @@ ERROR: The role 'common' was not found in: .../playbooks/roles:...
 
 
 **Исправление:** добавить в `[defaults]` секцию `ansible.cfg`:
+
 ```ini
 roles_path = ../roles
 ```
