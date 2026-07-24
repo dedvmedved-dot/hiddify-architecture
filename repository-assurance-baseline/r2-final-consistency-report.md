@@ -49,7 +49,7 @@ No SHA values appear in any timestamp field.
 |---------|----------|----------|-------|
 | Initial | 24 | 7 | 31 |
 | After R1 | 25 | 14 | 39 |
-| Current (R2) | 25 | 14 | 39 |
+| Current (R3) | 26 | 20 | 46 |
 
 ## 6. Manifest Coverage Policy
 

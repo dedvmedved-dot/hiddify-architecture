@@ -1,17 +1,14 @@
-Current Package Inventory — RI-01-T00-R2
-Generated: 2026-07-24T04:48:59Z
+Current Package Inventory — RI-01-T00-R3
+Generated: 2026-07-24T07:13:53Z
 
-Initial Package (RI-01-T00):
-  Baseline files: 24
-  Evidence files: 7
-  Total: 31
+Package Counts (Synchronized):
+  Baseline files: 26
+  Evidence files: 20
+  Total: 46
+  Manifest entries (baseline): 26
+  Manifest entries (evidence, non-self-referential): 18
 
-Current Package (after R1 + R2):
-  Baseline files: 25
-  Evidence files: 14
-  Total: 39
-
-Baseline Directory Files (25):
+Baseline Directory (26 files):
 - repository-assurance-baseline/README.md
 - repository-assurance-baseline/acceptance.md
 - repository-assurance-baseline/assurance-topology.md
@@ -26,6 +23,7 @@ Baseline Directory Files (25):
 - repository-assurance-baseline/data/workflows.csv
 - repository-assurance-baseline/gate-catalog.md
 - repository-assurance-baseline/known-limitations.md
+- repository-assurance-baseline/r2-final-consistency-report.md
 - repository-assurance-baseline/recommendations.md
 - repository-assurance-baseline/remediation-report.md
 - repository-assurance-baseline/report.md
@@ -38,20 +36,27 @@ Baseline Directory Files (25):
 - repository-assurance-baseline/validator-catalog.md
 - repository-assurance-baseline/workflow-catalog.md
 
-Evidence Directory Files (14):
+Evidence Directory (20 files):
 - evidence/repository-assurance-baseline/baseline-artifacts.sha256
 - evidence/repository-assurance-baseline/baseline-metadata.txt
 - evidence/repository-assurance-baseline/catalog-summary.txt
 - evidence/repository-assurance-baseline/checksum-verification.txt
+- evidence/repository-assurance-baseline/current-package-inventory.txt
 - evidence/repository-assurance-baseline/evidence-artifacts.sha256
 - evidence/repository-assurance-baseline/evidence-index.md
 - evidence/repository-assurance-baseline/file-integrity.txt
 - evidence/repository-assurance-baseline/markdown-lint-result.txt
 - evidence/repository-assurance-baseline/r1-full-diff-scope.txt
+- evidence/repository-assurance-baseline/r2-changed-files.txt
 - evidence/repository-assurance-baseline/r2-diff-scope.txt
+- evidence/repository-assurance-baseline/r2-metadata.txt
+- evidence/repository-assurance-baseline/r2-validation-summary.txt
 - evidence/repository-assurance-baseline/remediation-changed-files.txt
 - evidence/repository-assurance-baseline/remediation-diff-scope.txt
 - evidence/repository-assurance-baseline/remediation-metadata.txt
 - evidence/repository-assurance-baseline/remediation-validation-summary.txt
 - evidence/repository-assurance-baseline/repository-freeze.txt
 - evidence/repository-assurance-baseline/validation-findings.txt
+
+Note: evidence-artifacts.sha256 excludes itself and baseline-artifacts.sha256
+(20 - 2 = 18 entries).

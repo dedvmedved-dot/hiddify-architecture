@@ -26,7 +26,7 @@ system. Serves as the immutable reference point for RI-01 Repository Inventory.
 | Package | Baseline | Evidence | Total |
 |---------|----------|----------|-------|
 | Initial | 24 | 7 | 31 |
-| Current | 25 | 14 | 39 |
+| Current | 26 | 20 | 46 |
 
 ## Contents
 

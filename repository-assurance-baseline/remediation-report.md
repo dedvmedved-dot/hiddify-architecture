@@ -52,7 +52,7 @@
 |---------|----------|----------|-------|
 | Initial (RI-01-T00) | 24 | 7 | 31 |
 | After R1 | 25 | 14 | 39 |
-| Current (after R2) | 25 | 14 | 39 |
+| Current (after R3) | 26 | 20 | 46 |
 
 ## CI Results (Final R1)
 

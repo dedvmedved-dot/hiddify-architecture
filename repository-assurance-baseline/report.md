@@ -3,7 +3,7 @@
 **Project:** Hiddify Architecture
 **Repository:** dedvmedved-dot/hiddify-architecture
 **Baseline Snapshot Time:** 2026-07-24T02:04:34Z
-**R2 Generation Time:** 2026-07-24T04:48:59Z
+**R3 Synchronization Time:** 2026-07-24T04:48:59Z
 **Baseline Source HEAD:** `e0d80abbe0124f5995364b6b44c9e427655dd718`
 **Branch:** `stage/06-controlled-lab-deployment`
 **Status:** COMPLETE — AWAITING EXTERNAL AUDIT
@@ -38,14 +38,14 @@ analyzed, and documented with consistent metadata throughout all artifacts.
 | R1 Generation Time | `2026-07-24T03:38:01Z` | Hermes session |
 | R1 Implementation Commit Time | `2026-07-24T03:40:52Z` | Git commit metadata |
 | R1 Evidence Refresh Commit Time | `2026-07-24T03:41:22Z` | Git commit metadata |
-| R2 Generation Time | `2026-07-24T04:48:59Z` | Hermes session |
+| R3 Synchronization Time | `2026-07-24T04:48:59Z` | Hermes session |
 
 ## Package Counts
 
 | Package | Baseline Files | Evidence Files | Total |
 |---------|---------------|----------------|-------|
 | Initial (RI-01-T00) | 24 | 7 | 31 |
-| Current (after R2) | 25 | 14 | 39 |
+| Current (after R3) | 26 | 20 | 46 |
 
 ## Checksum Coverage Policy
 

@@ -17,9 +17,9 @@
     "total_files": 31
   },
   "current_package": {
-    "baseline_files": 25,
-    "evidence_files": 14,
-    "total_files": 39
+    "baseline_files": 26,
+    "evidence_files": 20,
+    "total_files": 46
   },
   "baseline_preservation_rule": "COMPLIANT",
   "external_audit_status": "R2_PENDING",
