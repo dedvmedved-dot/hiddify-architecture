@@ -1,0 +1,19 @@
+{
+  "task": "RI-01-T00",
+  "timestamp": "2026-07-24T02:04:34Z",
+  "head_sha": "e0d80abbe0124f5995364b6b44c9e427655dd718",
+  "head_short": "e0d80ab",
+  "branch": "stage/06-controlled-lab-deployment",
+  "repository": "dedvmedved-dot/hiddify-architecture",
+  "pr": 8,
+  "pr_state": "OPEN",
+  "pr_draft": true,
+  "working_tree": "CLEAN",
+  "workflows_count": 7,
+  "validators_count": 17,
+  "test_files_count": 5,
+  "safety_gates_count": 2,
+  "evidence_packages_count": 12,
+  "documentation_files_count": 114,
+  "stages_count": 7
+}

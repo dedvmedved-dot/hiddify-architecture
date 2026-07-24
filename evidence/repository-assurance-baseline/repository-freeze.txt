@@ -1,0 +1,10 @@
+Repository: dedvmedved-dot/hiddify-architecture
+URL: https://github.com/dedvmedved-dot/hiddify-architecture.git
+HEAD: e0d80abbe0124f5995364b6b44c9e427655dd718
+Branch: stage/06-controlled-lab-deployment
+Working tree: CLEAN
+Remotes: 1 (origin)
+Local branches: 2 (main, stage/06-controlled-lab-deployment)
+Remote branches: 11
+PR #8: OPEN, DRAFT
+Timestamp: 2026-07-24T02:07:25Z

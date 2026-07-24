@@ -1,0 +1,10 @@
+status,meaning,formed_by,used_by
+PASS,Check passed,Validators (exit 0),"All validators, CI, evidence"
+FAIL,Check failed,Validators (exit 1),"All validators, CI, evidence"
+BLOCKED,Operation prevented,Safety gates,"Safety gates, deployment evidence"
+SUCCESS,CI job completed,GitHub Actions,CI UI
+ERROR,Unexpected failure,GitHub Actions,CI UI
+WARNING,Non-critical issue,Linters,Lint outputs
+PENDING,Awaiting input,Acceptance docs,Stage acceptance
+SKIPPED,Not executed,GitHub Actions,CI job outputs
+N/A,Not applicable,Evidence files,Evidence declarations

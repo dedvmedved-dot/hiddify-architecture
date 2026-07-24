@@ -1,0 +1,6 @@
+file,lines,test_functions,test_classes
+tests/stage04/test_config.py,135,20,0
+tests/stage05/test_all.py,159,0,0
+tests/stage06/test_readiness.py,48,0,0
+tests/stage06/test_safety_gate.py,137,8,4
+tests/stage06/test_semantic.py,268,20,7

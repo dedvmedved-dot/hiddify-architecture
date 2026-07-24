@@ -1,0 +1,8 @@
+file,name,triggers,jobs,steps_count
+markdown-lint.yml,Markdown Lint,default,lint,4
+repository-validation.yml,Repository Validation,default,validate,10
+secret-scan.yml,Secret Scan,default,gitleaks,2
+shellcheck.yml,ShellCheck,default,shellcheck,4
+stage-04-validation.yml,Stage 04 Offline Validation,default,validate,5
+stage-05-validation.yml,Stage 05 Lab Readiness Validation,default,validate,17
+stage-06-validation.yml,Stage 06 Validation,default,validate,15
