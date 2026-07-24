@@ -24,13 +24,11 @@
 
 ### Safety Gate
 
-
 ```text
 Status: BLOCKED (exit 1)
 Message: SAFETY GATE: BLOCKED — STAGE06_LAB_DEPLOYMENT_APPROVED is not YES
 Requirement: export STAGE06_LAB_DEPLOYMENT_APPROVED=YES
 ```
-
 
 ### Owner Input Checklist
 
