@@ -1,0 +1,22 @@
+R2 Changed Files (from 7aba8e943c3bf8eff204f576ae055ffed0e857b8):
+
+Updated:
+  repository-assurance-baseline/README.md
+  repository-assurance-baseline/acceptance.md
+  repository-assurance-baseline/baseline-summary.md
+  repository-assurance-baseline/branch-state.md
+  repository-assurance-baseline/report.md
+  repository-assurance-baseline/remediation-report.md
+  repository-assurance-baseline/repository-state.md
+  repository-assurance-baseline/known-limitations.md
+  repository-assurance-baseline/data/baseline.json
+  evidence/repository-assurance-baseline/remediation-metadata.txt
+
+New:
+  repository-assurance-baseline/r2-final-consistency-report.md
+  evidence/repository-assurance-baseline/r1-full-diff-scope.txt
+  evidence/repository-assurance-baseline/r2-diff-scope.txt
+  evidence/repository-assurance-baseline/r2-metadata.txt
+  evidence/repository-assurance-baseline/r2-changed-files.txt
+  evidence/repository-assurance-baseline/r2-validation-summary.txt
+  evidence/repository-assurance-baseline/current-package-inventory.txt

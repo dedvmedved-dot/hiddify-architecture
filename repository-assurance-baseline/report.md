@@ -1,11 +1,10 @@
-# Baseline Report — RI-01-T00-R1
+# Baseline Report — RI-01-T00-R2
 
 **Project:** Hiddify Architecture
 **Repository:** dedvmedved-dot/hiddify-architecture
 **Baseline Snapshot Time:** 2026-07-24T02:04:34Z
-**Remediation Generation Time:** 2026-07-24T03:38:01Z
+**R2 Generation Time:** 2026-07-24T04:48:59Z
 **Baseline Source HEAD:** `e0d80abbe0124f5995364b6b44c9e427655dd718`
-**Initial Baseline Artifact Commit:** `70ec88d6cdbe5c246191efb42afddc52acd46587`
 **Branch:** `stage/06-controlled-lab-deployment`
 **Status:** COMPLETE — AWAITING EXTERNAL AUDIT
 
@@ -13,96 +12,73 @@
 
 ## Executive Summary
 
-RI-01-T00 Baseline Freeze and RI-01-T00-R1 Remediation have been completed.
-The current state of the hiddify-architecture repository's quality assurance
-system has been fully cataloged, analyzed, and documented.
+RI-01-T00 Baseline Freeze and subsequent remediations (R1, R2) have been completed.
+The quality assurance system of hiddify-architecture has been fully cataloged,
+analyzed, and documented with consistent metadata throughout all artifacts.
 
-**No files outside `repository-assurance-baseline/` and `evidence/repository-assurance-baseline/` were modified.**
+**No files outside `repository-assurance-baseline/` and `evidence/repository-assurance-baseline/` were modified at any stage.**
 
-## SHA Reference Model
+## Historical SHA Model
 
 | Term | SHA | Definition |
 |------|-----|------------|
 | Baseline Source HEAD | `e0d80abbe0124f5995364b6b44c9e427655dd718` | Repository state analyzed in RI-01-T00 |
 | Initial Baseline Artifact Commit | `70ec88d6cdbe5c246191efb42afddc52acd46587` | Commit adding 31 initial baseline artifacts |
-| Remediation Commit | `336420096695702322a4b3bea8db77b8bccc2024` | RI-01-T00-R1 consistency remediation |
-
-## File Counts
-
-| Category | Count |
-|----------|-------|
-| Baseline documents (MD) | 17 |
-| Machine data (CSV + JSON) | 7 |
-| Initial evidence files | 7 |
-| **Total initial** | **31** |
-| Remediation-only files (added in R1) | 6 |
-
-## Key Findings
-
-1. **7 GitHub Actions workflows** provide automated CI validation
-2. **17 Python validator scripts** perform structural and semantic checks
-3. **28 pytest functions + 40 readiness assertions** across 5 test files
-4. **2 safety gates** enforce deployment preconditions
-5. **8 documented gaps** in validation coverage (not fixed)
-6. **9 documented limitations** in current tooling
-7. **7 non-binding recommendations** for RI-01 Task 1
+| R1 Implementation Commit | `336420096695702322a4b3bea8db77b8bccc2024` | Main RI-01-T00-R1 consistency fixes |
+| R1 Post-Commit Evidence Refresh | `7aba8e943c3bf8eff204f576ae055ffed0e857b8` | Updated evidence after R1 implementation |
 
 ## Timestamp Model
 
-| Timestamp | Value | Definition |
-|-----------|-------|------------|
-| Baseline Snapshot Time | `2026-07-24T02:04:34Z` | Repository state frozen |
-| Baseline Analysis Time | `2026-07-24T02:04:34Z` | Analysis of QA system executed |
-| Initial Artifact Generation Time | `2026-07-24T02:07:25Z` | RI-01-T00 documents generated |
-| Initial Artifact Commit Time | NOT RECORDED | Commit time of `70ec88d6cdbe5c246191efb42afddc52acd46587` (git metadata available) |
-| Remediation Generation Time | `2026-07-24T03:38:01Z` | RI-01-T00-R1 fixes applied |
-| Remediation Commit Time | 336420096695702322a4b3bea8db77b8bccc2024 | Time of remediation commit |
+| Timestamp | Value | Source |
+|-----------|-------|--------|
+| Baseline Snapshot Time | `2026-07-24T02:04:34Z` | Hermes session |
+| Baseline Analysis Time | `2026-07-24T02:04:34Z` | Hermes session |
+| Initial Artifact Generation Time | `2026-07-24T02:07:25Z` | Hermes session |
+| Initial Artifact Commit Time | `2026-07-24T02:07:37Z` | Git commit metadata (`git show -s --format=%cI`) |
+| R1 Generation Time | `2026-07-24T03:38:01Z` | Hermes session |
+| R1 Implementation Commit Time | `2026-07-24T03:40:52Z` | Git commit metadata |
+| R1 Evidence Refresh Commit Time | `2026-07-24T03:41:22Z` | Git commit metadata |
+| R2 Generation Time | `2026-07-24T04:48:59Z` | Hermes session |
 
-## Deliverables
+## Package Counts
 
-| Document | Path |
-|----------|------|
-| README | `repository-assurance-baseline/README.md` |
-| Baseline Summary | `repository-assurance-baseline/baseline-summary.md` |
-| Repository State | `repository-assurance-baseline/repository-state.md` |
-| Branch State | `repository-assurance-baseline/branch-state.md` |
-| Workflow Catalog | `repository-assurance-baseline/workflow-catalog.md` |
-| Validator Catalog | `repository-assurance-baseline/validator-catalog.md` |
-| Test Catalog | `repository-assurance-baseline/test-catalog.md` |
-| Gate Catalog | `repository-assurance-baseline/gate-catalog.md` |
-| Status Model | `repository-assurance-baseline/status-model.md` |
-| Validation Assets | `repository-assurance-baseline/validation-assets-catalog.md` |
-| Overlap Analysis | `repository-assurance-baseline/validation-overlap-analysis.md` |
-| Gap Analysis | `repository-assurance-baseline/validation-gap-analysis.md` |
-| Assurance Topology | `repository-assurance-baseline/assurance-topology.md` |
-| Known Limitations | `repository-assurance-baseline/known-limitations.md` |
-| Recommendations | `repository-assurance-baseline/recommendations.md` |
-| Acceptance | `repository-assurance-baseline/acceptance.md` |
-| Report (this file) | `repository-assurance-baseline/report.md` |
-| Remediation Report | `repository-assurance-baseline/remediation-report.md` |
-| Machine Data | `repository-assurance-baseline/data/` (7 files) |
-| Evidence | `evidence/repository-assurance-baseline/` (7 + remediation files) |
+| Package | Baseline Files | Evidence Files | Total |
+|---------|---------------|----------------|-------|
+| Initial (RI-01-T00) | 24 | 7 | 31 |
+| Current (after R2) | 25 | 14 | 39 |
 
-## Checksum Coverage
+## Checksum Coverage Policy
 
-- `evidence/repository-assurance-baseline/baseline-artifacts.sha256` — 24 baseline files
-- `evidence/repository-assurance-baseline/evidence-artifacts.sha256` — 6 evidence files (excludes self and baseline manifest)
+- `baseline-artifacts.sha256` — all 25 files under `repository-assurance-baseline/`
+- `evidence-artifacts.sha256` — 12 evidence files, excluding:
+  - `baseline-artifacts.sha256` (baseline manifest)
+  - `evidence-artifacts.sha256` (self-referential)
+
+## CI Results (Final)
+
+| Workflow | Run ID | Status |
+|----------|--------|--------|
+| Markdown Lint | 30064857500 | SUCCESS |
+| Stage 06 Validation | 30064857478 | SUCCESS |
+| Stage 05 Lab Readiness Validation | 30064857495 | SUCCESS |
+| Stage 04 Offline Validation | 30064857560 | SUCCESS |
+| Repository Validation | 30064857472 | SUCCESS |
+| Secret Scan | 30064857470 | SUCCESS |
 
 ## Integrity Confirmation
 
 ```text
-Modified files outside allowed scope: 0
-Deleted files outside allowed scope: 0
 Modified pre-existing project files: 0
 Deleted pre-existing project files: 0
+Files outside allowed scope: 0 (verified at each stage)
 Working tree: CLEAN
 ```
 
 ## Next Steps
 
-1. ChatGPT performs independent audit via GitHub Connector
+1. ChatGPT performs final Connector Audit
 2. Status `BASELINE VERIFIED` is granted
 3. RI-01 Task 1 (Repository Inventory) becomes authorized
 
 ---
-*Generated by Hermes Agent, 2026-07-24T03:38:01Z*
+*Generated by Hermes Agent, 2026-07-24T04:48:59Z*

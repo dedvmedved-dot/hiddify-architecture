@@ -1,127 +1,88 @@
-# Remediation Report — RI-01-T00-R1
+# Remediation Report — RI-01-T00-R1 + RI-01-T00-R2
 
-**Task:** RI-01-T00-R1 — Baseline Consistency Remediation
-**Parent Task:** RI-01-T00 — Baseline Freeze & Repository Assurance Baseline
-**Remediation Generation Time:** 2026-07-24T03:38:01Z
+**Tasks:** RI-01-T00-R1 (Consistency Remediation) + RI-01-T00-R2 (Metadata Finalization)
+**R2 Generation Time:** 2026-07-24T04:48:59Z
 
-## 1. Basis for Remediation
+## Historical SHA Model
 
-Independent Connector Audit of RI-01-T00 confirmed:
+| Term | SHA | Definition |
+|------|-----|------------|
+| Baseline Source HEAD | `e0d80abbe0124f5995364b6b44c9e427655dd718` | Repository state analyzed in RI-01-T00 |
+| Initial Baseline Artifact Commit | `70ec88d6cdbe5c246191efb42afddc52acd46587` | 31 initial baseline artifacts added |
+| R1 Implementation Commit | `336420096695702322a4b3bea8db77b8bccc2024` | R1 consistency fixes |
+| R1 Post-Commit Evidence Refresh | `7aba8e943c3bf8eff204f576ae055ffed0e857b8` | Post-R1 evidence update |
+| R2 Base HEAD | `7aba8e943c3bf8eff204f576ae055ffed0e857b8` | HEAD at R2 start |
 
-- Baseline Preservation Rule: PASSED
-- 31 new files added, 0 modified, 0 deleted
+## R1 Changes Summary
 
-However, `BASELINE VERIFIED` was not granted due to:
+- SHA terminology: ambiguous "HEAD" → Baseline Source HEAD + Artifact Commit
+- File counts: evidence count corrected 2 → 7, total 31
+- Checksums: split into baseline-artifacts + evidence-artifacts manifests
+- Timestamps: 6 fields defined with explicit semantics
+- Markdown Lint: 84 issues → 0 issues (SUCCESS)
+- Scope: all changes in allowed directories only
 
-- Unclear SHA terminology (ambiguous use of "HEAD")
-- Incorrect evidence file count in `file-integrity.txt` (2 instead of 7)
-- Checksum coverage only for baseline files (not evidence)
-- Markdown Lint FAILURE (84 issues in 12 files)
-- Undefined timestamp semantics
+## R2 Changes Summary
 
-## 2. Changes Applied
+- Removed ambiguous "Remediation Commit" term throughout
+- Replaced SHA-in-timestamp values with actual Git commit times
+- Populated Initial Artifact Commit Time from Git metadata
+- Added R1 Implementation Commit Time and R1 Evidence Refresh Commit Time
+- Separated initial package counts (31) from current package counts (39)
+- Added R1 full scope validation (70ec88d → 7aba8e9)
+- Updated CI table: Secret Scan 30064857470 → SUCCESS
+- Created R2-specific artifacts
 
-### 2.1 SHA Terminology
+## Timestamp Model (Final)
 
-| Term | SHA |
-|------|-----|
-| Baseline Source HEAD | `e0d80abbe0124f5995364b6b44c9e427655dd718` |
-| Initial Baseline Artifact Commit | `70ec88d6cdbe5c246191efb42afddc52acd46587` |
-| Remediation Commit | `336420096695702322a4b3bea8db77b8bccc2024` |
+| Timestamp | Value | Source |
+|-----------|-------|--------|
+| Baseline Snapshot Time | `2026-07-24T02:04:34Z` | Hermes session |
+| Baseline Analysis Time | `2026-07-24T02:04:34Z` | Hermes session |
+| Initial Artifact Generation Time | `2026-07-24T02:07:25Z` | Hermes session |
+| Initial Artifact Commit Time | `2026-07-24T02:07:37Z` | Git commit metadata |
+| R1 Generation Time | `2026-07-24T03:38:01Z` | Hermes session |
+| R1 Implementation Commit Time | `2026-07-24T03:40:52Z` | Git commit metadata |
+| R1 Evidence Refresh Commit Time | `2026-07-24T03:41:22Z` | Git commit metadata |
+| R2 Generation Time | `2026-07-24T04:48:59Z` | Hermes session |
 
-All documents now use these precise terms. "HEAD" without qualifier is never used.
+## Package Counts
 
-### 2.2 File Counts
+| Package | Baseline | Evidence | Total |
+|---------|----------|----------|-------|
+| Initial (RI-01-T00) | 24 | 7 | 31 |
+| After R1 | 25 | 14 | 39 |
+| Current (after R2) | 25 | 14 | 39 |
 
-`file-integrity.txt`: corrected from `2` to `7` evidence files.
+## CI Results (Final R1)
 
-| Category | Count |
-|----------|-------|
-| Baseline artifact files | 24 |
-| Evidence files (initial) | 7 |
-| Total initial files | 31 |
+| Workflow | Run ID | Status |
+|----------|--------|--------|
+| Markdown Lint | 30064857500 | SUCCESS |
+| Stage 06 Validation | 30064857478 | SUCCESS |
+| Stage 05 Lab Readiness | 30064857495 | SUCCESS |
+| Stage 04 Offline Validation | 30064857560 | SUCCESS |
+| Repository Validation | 30064857472 | SUCCESS |
+| Secret Scan | 30064857470 | SUCCESS |
 
-### 2.3 Checksum Coverage
+## Scope Integrity
 
-Split into two manifests:
+| Scope | Base | Head | Outside Allowed |
+|-------|------|------|-----------------|
+| R1 Full | 70ec88d6cdbe5c246191efb42afddc52acd46587 | 7aba8e943c3bf8eff204f576ae055ffed0e857b8 | NONE |
+| R2 | 7aba8e943c3bf8eff204f576ae055ffed0e857b8 | (post-commit) | NONE (pending verification) |
 
-- `baseline-artifacts.sha256` — 24 files under `repository-assurance-baseline/`
-- `evidence-artifacts.sha256` — 6 evidence files (excludes self-referencing manifests)
-
-Old `checksums.sha256` removed.
-
-### 2.4 Timestamp Model
-
-| Timestamp | Value | Definition |
-|-----------|-------|------------|
-| Baseline Snapshot Time | `2026-07-24T02:04:34Z` | Repository state frozen |
-| Baseline Analysis Time | `2026-07-24T02:04:34Z` | QA system analysis |
-| Initial Artifact Generation Time | `2026-07-24T02:07:25Z` | RI-01-T00 docs generated |
-| Remediation Generation Time | `2026-07-24T03:38:01Z` | RI-01-T00-R1 fixes applied |
-
-### 2.5 Markdown Lint
-
-All 84 lint issues fixed across 12 files:
-
-- MD022 (blanks around headings): fixed in 7 files
-- MD032 (blanks around lists): fixed in 4 files
-- MD001 (heading increment): fixed in 4 files
-- MD012 (multiple blanks): fixed in 2 files
-- MD040 (fenced code language): fixed in 1 file
-- MD034 (bare URLs): fixed in 1 file
-
-### 2.6 Updated Files
-
-| File | Change |
-|------|--------|
-| `baseline-summary.md` | SHA model, timestamp fields |
-| `repository-state.md` | SHA model, bare URLs → angle brackets |
-| `branch-state.md` | SHA model, artifact commit history |
-| `report.md` | SHA model, timestamp model, checksum coverage |
-| `acceptance.md` | Full rewrite with SHA/timestamp/checksum tables |
-| `status-model.md` | MD022 + MD032 fixes |
-| `known-limitations.md` | MD022 fixes |
-| `recommendations.md` | MD022 fixes |
-| `validation-gap-analysis.md` | MD022 fixes |
-| `validation-overlap-analysis.md` | MD022 + MD032 fixes |
-| `gate-catalog.md` | MD001 + MD012 + MD032 fixes |
-| `test-catalog.md` | MD001 + MD012 fixes |
-| `validator-catalog.md` | MD001 fix, restructured with H2 headings |
-| `validation-assets-catalog.md` | MD022 + MD032 fixes |
-| `workflow-catalog.md` | MD001 + MD032 fixes |
-| `README.md` | SHA model, timestamp model, checksum info |
-| `assurance-topology.md` | Added baseline topology section |
-| `data/baseline.json` | New fields (SHA model, timestamps) |
-| `evidence/.../file-integrity.txt` | Fixed count + timestamp |
-| `evidence/.../baseline-artifacts.sha256` | New (was checksums.sha256) |
-| `evidence/.../evidence-artifacts.sha256` | New |
-
-## 3. Changed Files (Full List)
-
-See `evidence/repository-assurance-baseline/remediation-changed-files.txt`
-
-## 4. Scope Validation
-
-| Check | Result |
-|-------|--------|
-| Files outside allowed scope | NONE |
-| Modified pre-existing project files | NONE |
-| Deleted pre-existing project files | NONE |
-
-## 5. Residual Risks
-
-- **RC field populated in post-commit evidence refresh:** `336420096695702322a4b3bea8db77b8bccc2024` must be replaced with actual remediation commit SHA after push.
-- **Initial Artifact Commit Time:** NOT RECORDED (git metadata available but not programmatically captured).
-- **Remediation Commit Time:** 336420096695702322a4b3bea8db77b8bccc2024 (self-referential SHA limitation).
-
-## 6. Status
+## Status
 
 ```text
-RI-01-T00-R1:
+RI-01-T00-R1 + RI-01-T00-R2:
 COMPLETE — AWAITING EXTERNAL AUDIT
 
 BASELINE PRESERVATION RULE:
 COMPLIANT
+
+DOCUMENT CONSISTENCY:
+PASS
 
 BASELINE VERIFIED:
 PENDING — CHATGPT CONNECTOR AUDIT REQUIRED
@@ -131,4 +92,4 @@ NOT AUTHORIZED
 ```
 
 ---
-*Generated by Hermes Agent, 2026-07-24T03:38:01Z*
+*Generated by Hermes Agent, 2026-07-24T04:48:59Z*

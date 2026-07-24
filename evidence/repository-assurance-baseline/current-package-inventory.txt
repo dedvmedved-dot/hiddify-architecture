@@ -1,0 +1,57 @@
+Current Package Inventory — RI-01-T00-R2
+Generated: 2026-07-24T04:48:59Z
+
+Initial Package (RI-01-T00):
+  Baseline files: 24
+  Evidence files: 7
+  Total: 31
+
+Current Package (after R1 + R2):
+  Baseline files: 25
+  Evidence files: 14
+  Total: 39
+
+Baseline Directory Files (25):
+- repository-assurance-baseline/README.md
+- repository-assurance-baseline/acceptance.md
+- repository-assurance-baseline/assurance-topology.md
+- repository-assurance-baseline/baseline-summary.md
+- repository-assurance-baseline/branch-state.md
+- repository-assurance-baseline/data/baseline.json
+- repository-assurance-baseline/data/gates.csv
+- repository-assurance-baseline/data/relationships.csv
+- repository-assurance-baseline/data/statuses.csv
+- repository-assurance-baseline/data/tests.csv
+- repository-assurance-baseline/data/validators.csv
+- repository-assurance-baseline/data/workflows.csv
+- repository-assurance-baseline/gate-catalog.md
+- repository-assurance-baseline/known-limitations.md
+- repository-assurance-baseline/recommendations.md
+- repository-assurance-baseline/remediation-report.md
+- repository-assurance-baseline/report.md
+- repository-assurance-baseline/repository-state.md
+- repository-assurance-baseline/status-model.md
+- repository-assurance-baseline/test-catalog.md
+- repository-assurance-baseline/validation-assets-catalog.md
+- repository-assurance-baseline/validation-gap-analysis.md
+- repository-assurance-baseline/validation-overlap-analysis.md
+- repository-assurance-baseline/validator-catalog.md
+- repository-assurance-baseline/workflow-catalog.md
+
+Evidence Directory Files (14):
+- evidence/repository-assurance-baseline/baseline-artifacts.sha256
+- evidence/repository-assurance-baseline/baseline-metadata.txt
+- evidence/repository-assurance-baseline/catalog-summary.txt
+- evidence/repository-assurance-baseline/checksum-verification.txt
+- evidence/repository-assurance-baseline/evidence-artifacts.sha256
+- evidence/repository-assurance-baseline/evidence-index.md
+- evidence/repository-assurance-baseline/file-integrity.txt
+- evidence/repository-assurance-baseline/markdown-lint-result.txt
+- evidence/repository-assurance-baseline/r1-full-diff-scope.txt
+- evidence/repository-assurance-baseline/r2-diff-scope.txt
+- evidence/repository-assurance-baseline/remediation-changed-files.txt
+- evidence/repository-assurance-baseline/remediation-diff-scope.txt
+- evidence/repository-assurance-baseline/remediation-metadata.txt
+- evidence/repository-assurance-baseline/remediation-validation-summary.txt
+- evidence/repository-assurance-baseline/repository-freeze.txt
+- evidence/repository-assurance-baseline/validation-findings.txt

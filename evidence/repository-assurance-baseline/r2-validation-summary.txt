@@ -1,0 +1,12 @@
+RI-01-T00-R2 Validation Summary
+Generated: 2026-07-24T04:48:59Z
+
+JSON validation (baseline.json): PASS
+CSV validation (6 files): PASS
+SHA-in-timestamp grep: NO MATCHES
+Ambiguous Remediation Commit grep: eliminated
+Markdown Lint: to be verified post-generation
+Checksum baseline-artifacts: to be regenerated
+Checksum evidence-artifacts: to be regenerated
+R1 full scope (70ec88d → 7aba8e9): 0 files outside allowed
+R2 scope: to be verified post-commit

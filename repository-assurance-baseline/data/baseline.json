@@ -1,24 +1,36 @@
 {
   "task_id": "RI-01-T00",
-  "remediation_task_id": "RI-01-T00-R1",
+  "r1_task_id": "RI-01-T00-R1",
+  "r2_task_id": "RI-01-T00-R2",
   "repository": "dedvmedved-dot/hiddify-architecture",
   "branch": "stage/06-controlled-lab-deployment",
   "pull_request": 8,
   "baseline_source_head": "e0d80abbe0124f5995364b6b44c9e427655dd718",
   "initial_baseline_artifact_commit": "70ec88d6cdbe5c246191efb42afddc52acd46587",
-  "remediation_commit": "336420096695702322a4b3bea8db77b8bccc2024",
-  "working_tree_before_task": "CLEAN",
-  "baseline_artifact_files": 24,
-  "baseline_evidence_files": 7,
-  "total_initial_files": 31,
+  "r1_implementation_commit": "336420096695702322a4b3bea8db77b8bccc2024",
+  "r1_post_commit_evidence_refresh": "7aba8e943c3bf8eff204f576ae055ffed0e857b8",
+  "r2_base_head": "7aba8e943c3bf8eff204f576ae055ffed0e857b8",
+  "external_audit_head": "RECORDED_BY_ACCEPTANCE_AUTHORITY",
+  "initial_package": {
+    "baseline_files": 24,
+    "evidence_files": 7,
+    "total_files": 31
+  },
+  "current_package": {
+    "baseline_files": 25,
+    "evidence_files": 14,
+    "total_files": 39
+  },
   "baseline_preservation_rule": "COMPLIANT",
-  "external_audit_status": "REMEDIATION_PENDING",
+  "external_audit_status": "R2_PENDING",
   "timestamps": {
     "baseline_snapshot_time": "2026-07-24T02:04:34Z",
     "baseline_analysis_time": "2026-07-24T02:04:34Z",
     "initial_artifact_generation_time": "2026-07-24T02:07:25Z",
-    "initial_artifact_commit_time": "NOT RECORDED",
-    "remediation_generation_time": "2026-07-24T03:38:01Z",
-    "remediation_commit_time": "2026-07-24T03:41:14Z"
+    "initial_artifact_commit_time": "2026-07-24T02:07:37Z",
+    "r1_generation_time": "2026-07-24T03:38:01Z",
+    "r1_implementation_commit_time": "2026-07-24T03:40:52Z",
+    "r1_evidence_refresh_commit_time": "2026-07-24T03:41:22Z",
+    "r2_generation_time": "2026-07-24T04:48:59Z"
   }
 }

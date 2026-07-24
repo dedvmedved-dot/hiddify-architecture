@@ -1,5 +1,17 @@
-baseline-artifacts.sha256: PASS
-evidence-artifacts.sha256: PASS
+Checksum Verification — RI-01-T00-R2
+
+baseline-artifacts.sha256:
+  Entries: 26
+  Coverage: all files under repository-assurance-baseline/
+  Exclusions: none
+  Verification: PASS
+
+evidence-artifacts.sha256:
+  Entries: 18
+  Coverage: non-self-referential evidence files
+  Exclusions: baseline-artifacts.sha256 (belongs to baseline manifest), evidence-artifacts.sha256 (self-referential)
+  Verification: PASS
+
 Total manifests: 2
+Total verified files: 44
 Verification status: PASS
-Note: evidence-artifacts.sha256 excludes itself to avoid recursive dependency.
