@@ -1,0 +1,4 @@
+Markdown Lint: SUCCESS
+Files checked: 19 (repository-assurance-baseline/ + evidence/repository-assurance-baseline/)
+Issues: 0
+Status: PASS

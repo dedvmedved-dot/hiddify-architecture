@@ -1,0 +1,7 @@
+RI-01-T00-R1 Validation Summary
+===============================
+Markdown Lint: PASS (0 issues)
+Checksum verification: PASS (2 manifests)
+JSON validation: PASS (baseline.json)
+CSV validation: PASS (6 files, all consistent)
+Scope validation: PENDING (post-commit diff check)

@@ -1,9 +1,10 @@
-# Validator Catalog — RI-01-T00
+# Validator Catalog — RI-01-T00-R1
 
-**Freeze Date:** 2026-07-24T02:06:50Z
+**Baseline Snapshot Time:** 2026-07-24T02:04:34Z
+**Remediation Generation Time:** 2026-07-24T03:38:01Z
 **Total Validators:** 17
 
-### 1. generate_lab_deployment_plan.py
+## Validator 1: generate_lab_deployment_plan.py
 
 | Property | Value |
 |----------|-------|
@@ -11,21 +12,19 @@
 | Lines | 33 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0 |
 
-### 2. render_lab_templates.py
+## Validator 2: render_lab_templates.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 05 Template Renderer — renders to temporary directory only. |
+| Description | Stage 05 Template Renderer — renders to temporary directory only |
 | Lines | 76 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | pathlib, sys, |
 | Expected exit codes | 0 (implicit) |
 
-### 3. run_lab_check_mode.py
+## Validator 3: run_lab_check_mode.py
 
 | Property | Value |
 |----------|-------|
@@ -33,10 +32,9 @@
 | Lines | 28 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0 (implicit) |
 
-### 4. run_stage05_simulation.py
+## Validator 4: run_stage05_simulation.py
 
 | Property | Value |
 |----------|-------|
@@ -44,32 +42,29 @@
 | Lines | 23 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0 (implicit) |
 
-### 5. safety_guard.py
+## Validator 5: safety_guard.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 04 Safety Guard — prevents production execution. |
+| Description | Stage 04 Safety Guard — prevents production execution |
 | Lines | 45 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0, 1 |
 
-### 6. stage06_safety_gate.py
+## Validator 6: stage06_safety_gate.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 06 Safety Gate — deployment blocked without owner approval. |
+| Description | Stage 06 Safety Gate — deployment blocked without owner approval |
 | Lines | 33 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0, 1 |
 
-### 7. validate_lab_preflight.py
+## Validator 7: validate_lab_preflight.py
 
 | Property | Value |
 |----------|-------|
@@ -77,118 +72,107 @@
 | Lines | 24 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
 | Expected exit codes | 0 (implicit) |
 
-### 8. validate_stage04.py
+## Validator 8: validate_stage04.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 04 Offline Validation CLI. |
-| Lines | 82 |
-| Functions | 6 |
+| Description | Stage 04 Offline Validation CLI |
+| Lines | 86 |
+| Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 9. validate_stage05_evidence.py
+## Validator 9: validate_stage05_evidence.py
 
 | Property | Value |
 |----------|-------|
 | Description | Stage 05 Evidence Completeness Validator |
-| Lines | 88 |
+| Lines | 68 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 10. validate_stage05_rollback_map.py
+## Validator 10: validate_stage05_rollback_map.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 05 Rollback Map Validator — S05-RB-001 |
-| Lines | 49 |
+| Description | Stage 05 Rollback Map Validator |
+| Lines | 24 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 1 |
+| Expected exit codes | 0, 1 |
 
-### 11. validate_stage05_test_ids.py
+## Validator 11: validate_stage05_test_ids.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 05 Test ID Validator — S05-ID-001 |
-| Lines | 82 |
-| Functions | 4 |
+| Description | Stage 05 Test ID Validator |
+| Lines | 58 |
+| Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 12. validate_stage05_traceability.py
+## Validator 12: validate_stage05_traceability.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 05 Traceability Validator — S05-TRC-001 |
-| Lines | 52 |
+| Description | Stage 05 Traceability Validator |
+| Lines | 30 |
 | Functions | 2 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 1 |
+| Expected exit codes | 0, 1 |
 
-### 13. validate_stage06_evidence.py
+## Validator 13: validate_stage06_evidence.py
 
 | Property | Value |
 |----------|-------|
 | Description | Stage 06 Evidence Completeness Validator |
-| Lines | 51 |
-| Functions | 2 |
+| Lines | 50 |
+| Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 14. validate_stage06_owner_input.py
+## Validator 14: validate_stage06_owner_input.py
 
 | Property | Value |
 |----------|-------|
 | Description | Stage 06 Owner Input Validator |
-| Lines | 19 |
+| Lines | 18 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 1 |
+| Expected exit codes | 0, 1 |
 
-### 15. validate_stage06_semantic.py
+## Validator 15: validate_stage06_semantic.py
 
 | Property | Value |
 |----------|-------|
-| Description | Stage 06 Semantic Evidence Validator. |
-| Lines | 368 |
-| Functions | 15 |
+| Description | Stage 06 Semantic Evidence Validator — 7 content checks |
+| Lines | 317 |
+| Functions | 7 |
 | Classes | 0 |
-| Dependencies | datetime, sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 16. validate_stage06_tests.py
+## Validator 16: validate_stage06_tests.py
 
 | Property | Value |
 |----------|-------|
 | Description | Stage 06 Test ID Validator |
-| Lines | 16 |
+| Lines | 15 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 0 (implicit) |
+| Expected exit codes | 0, 1 |
 
-### 17. validate_stage06_traceability.py
+## Validator 17: validate_stage06_traceability.py
 
 | Property | Value |
 |----------|-------|
 | Description | Stage 06 Traceability Validator |
-| Lines | 21 |
+| Lines | 20 |
 | Functions | 1 |
 | Classes | 0 |
-| Dependencies | sys, |
-| Expected exit codes | 1 |
+| Expected exit codes | 0, 1 |
 
 ---
-*Generated by Hermes Agent, 2026-07-24T02:06:50Z*
+*Generated by Hermes Agent, 2026-07-24T03:38:01Z*

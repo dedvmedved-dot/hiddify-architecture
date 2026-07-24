@@ -1,10 +1,12 @@
-# Validation Assets Catalog — RI-01-T00
+# Validation Assets Catalog — RI-01-T00-R1
 
-**Freeze Date:** 2026-07-24T02:06:50Z
+**Baseline Snapshot Time:** 2026-07-24T02:04:34Z
+**Remediation Generation Time:** 2026-07-24T03:38:01Z
 
 ## Complete Inventory
 
-### GitHub Actions Workflows (7)
+## GitHub Actions Workflows (7)
+
 - `markdown-lint.yml` — Markdown Lint
 - `repository-validation.yml` — Repository Validation
 - `secret-scan.yml` — Secret Scan
@@ -13,67 +15,76 @@
 - `stage-05-validation.yml` — Stage 05 Lab Readiness Validation
 - `stage-06-validation.yml` — Stage 06 Validation
 
-### Python Validators (17)
+## Python Validators (17)
+
 - `generate_lab_deployment_plan.py` — Stage 05 Lab Deployment Plan Generator — S05-PLN-001
-- `render_lab_templates.py` — Stage 05 Template Renderer — renders to temporary directory only.
+- `render_lab_templates.py` — Stage 05 Template Renderer — renders to temporary directory only
 - `run_lab_check_mode.py` — Stage 05 Check-Mode Harness — S05-ANS-001/002
 - `run_stage05_simulation.py` — Stage 05 Integration Simulation — S05-IT-001
-- `safety_guard.py` — Stage 04 Safety Guard — prevents production execution.
-- `stage06_safety_gate.py` — Stage 06 Safety Gate — deployment blocked without owner approval.
+- `safety_guard.py` — Stage 04 Safety Guard — prevents production execution
+- `stage06_safety_gate.py` — Stage 06 Safety Gate — deployment blocked without owner approval
 - `validate_lab_preflight.py` — Stage 05 Preflight Validator
-- `validate_stage04.py` — Stage 04 Offline Validation CLI.
+- `validate_stage04.py` — Stage 04 Offline Validation CLI
 - `validate_stage05_evidence.py` — Stage 05 Evidence Completeness Validator
-- `validate_stage05_rollback_map.py` — Stage 05 Rollback Map Validator — S05-RB-001
-- `validate_stage05_test_ids.py` — Stage 05 Test ID Validator — S05-ID-001
-- `validate_stage05_traceability.py` — Stage 05 Traceability Validator — S05-TRC-001
+- `validate_stage05_rollback_map.py` — Stage 05 Rollback Map Validator
+- `validate_stage05_test_ids.py` — Stage 05 Test ID Validator
+- `validate_stage05_traceability.py` — Stage 05 Traceability Validator
 - `validate_stage06_evidence.py` — Stage 06 Evidence Completeness Validator
 - `validate_stage06_owner_input.py` — Stage 06 Owner Input Validator
-- `validate_stage06_semantic.py` — Stage 06 Semantic Evidence Validator.
+- `validate_stage06_semantic.py` — Stage 06 Semantic Evidence Validator — 7 content checks
 - `validate_stage06_tests.py` — Stage 06 Test ID Validator
 - `validate_stage06_traceability.py` — Stage 06 Traceability Validator
 
-### Test Assets (5)
-- `tests/stage04/test_config.py` (20 test funcs, 135 lines)
-- `tests/stage05/test_all.py` (0 test funcs, 159 lines)
-- `tests/stage06/test_readiness.py` (0 test funcs, 48 lines)
-- `tests/stage06/test_safety_gate.py` (8 test funcs, 137 lines)
-- `tests/stage06/test_semantic.py` (20 test funcs, 268 lines)
+## Test Assets (5)
 
-### Safety Gates (2)
-- `safety_guard.py` (blocks: )
-- `stage06_safety_gate.py` (blocks: STAGE06_LAB_DEPLOYMENT_APPROVED is not YES"), Owner deployment approval not YES"), Environment not confirmed as non-production"))
+- `tests/stage04/test_config.py` (0 test funcs, 83 lines)
+- `tests/stage05/test_all.py` (0 test funcs, 131 lines)
+- `tests/stage06/test_readiness.py` (40 assertions, 50 lines)
+- `tests/stage06/test_semantic.py` (20 test funcs, 250 lines)
+- `tests/stage06/test_safety_gate.py` (8 test funcs, 120 lines)
 
-### Evidence Packages (12)
-- `stage-00` — 6 files
+## Safety Gates (2)
+
+- `safety_guard.py` — Stage 04 production prevention
+- `stage06_safety_gate.py` — Stage 06 deployment authorization
+
+## Evidence Packages (12)
+
+- `stage-00` — 8 files
 - `stage-00-correction-01` — 5 files
 - `stage-00-post-merge` — 5 files
-- `stage-00-reaudit` — 7 files
+- `stage-00-reaudit` — 6 files
 - `stage-01` — 9 files
-- `stage-02` — 1 files
 - `stage-03` — 7 files
-- `stage-04` — 10 files
-- `stage-05` — 21 files
+- `stage-04` — 11 files
+- `stage-05` — 18 files
 - `stage-06` — 43 files
-- `hermes-agent-transition` — 10 files
+- `hermes-agent-transition` — 12 files
 - `hermes-agent-transition-post-merge` — 8 files
+- `repository-assurance-baseline` — RI-01-T00 baseline evidence
 
-### Documentation Files (114)
+## Documentation Files (114)
+
 All located under `docs/`, organized by category:
+
 - `docs/architecture/` — 21 files
-- `docs/requirements/` — 14 files
-- `docs/implementation/` — 21 files
-- `docs/testing/` — 10 files
+- `docs/requirements/` — 12 files
+- `docs/implementation/` — 18 files
+- `docs/testing/` — 9 files
 - `docs/lab/` — 11 files
-- `docs/operations/` — 10 files
+- `docs/operations/` — 9 files
 - `docs/security/` — 6 files
 - `docs/decisions/` — 12 files
 - `docs/project/` — 6 files
+- `docs/audit/` — 2 files
 
-### Ansible Assets (102)
+## Ansible Assets (102)
+
 Roles, playbooks, inventory, templates under `automation/ansible/`
 
-### IaC Assets (8)
+## IaC Assets (8)
+
 Schemas, examples, tests under `iac/`
 
 ---
-*Generated by Hermes Agent, 2026-07-24T02:06:50Z*
+*Generated by Hermes Agent, 2026-07-24T03:38:01Z*

@@ -1,0 +1,5 @@
+baseline-artifacts.sha256: PASS
+evidence-artifacts.sha256: PASS
+Total manifests: 2
+Verification status: PASS
+Note: evidence-artifacts.sha256 excludes itself to avoid recursive dependency.
