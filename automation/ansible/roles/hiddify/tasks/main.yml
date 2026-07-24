@@ -1,0 +1,37 @@
+---
+- name: Hiddify | Safety gate check
+  assert:
+    that:
+      - hiddify_require_lab_environment | bool
+      - hiddify_block_production | bool
+      - hiddify_require_owner_input | bool
+      - hiddify_require_safety_gate | bool
+    fail_msg: "HIDDIFY SAFETY GATE: deployment blocked — safety preconditions not met"
+  tags: [always]
+
+- name: Hiddify | Installation mode
+  debug:
+    msg: "Hiddify installation mode: {{ hiddify_installation_mode }} (deployment_enabled={{ hiddify_deployment_enabled }})"
+  tags: [always]
+
+- name: Hiddify | Preflight checks
+  include_tasks: preflight.yml
+  tags: [preflight]
+
+- name: Hiddify | Install
+  include_tasks: install.yml
+  when: hiddify_deployment_enabled | bool
+  tags: [install]
+
+- name: Hiddify | Configure
+  include_tasks: configure.yml
+  tags: [configure]
+
+- name: Hiddify | Service management
+  include_tasks: service.yml
+  when: hiddify_deployment_enabled | bool
+  tags: [service]
+
+- name: Hiddify | Validate
+  include_tasks: validate.yml
+  tags: [validate]

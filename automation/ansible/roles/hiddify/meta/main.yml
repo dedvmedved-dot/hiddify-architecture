@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  role_name: hiddify
+  description: Hiddify proxy panel deployment
+  author: Hermes Agent
+  license: MIT
+  min_ansible_version: "2.16"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - noble
+        - jammy
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags:
+    - hiddify
+    - proxy
+    - vpn
+    - lab
+dependencies:
+  - role: common
+  - role: system_prerequisites

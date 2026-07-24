@@ -1,0 +1,15 @@
+---
+- name: restart hiddify
+  systemd:
+    name: "{{ hiddify_service_name }}"
+    state: restarted
+    daemon_reload: true
+  when: hiddify_remote_execution_enabled | bool
+  listen: "restart hiddify service"
+
+- name: reload hiddify config
+  systemd:
+    name: "{{ hiddify_service_name }}"
+    state: reloaded
+  when: hiddify_remote_execution_enabled | bool
+  listen: "reload hiddify config"

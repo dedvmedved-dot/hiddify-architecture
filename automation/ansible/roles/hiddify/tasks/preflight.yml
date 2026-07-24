@@ -1,0 +1,59 @@
+---
+- name: Hiddify Preflight | Check OS support
+  assert:
+    that: ansible_distribution in _hiddify_supported_os
+    fail_msg: "Unsupported OS: {{ ansible_distribution }}. Required: {{ _hiddify_supported_os | join(', ') }}"
+  tags: [preflight]
+
+- name: Hiddify Preflight | Check architecture
+  assert:
+    that: ansible_architecture in _hiddify_supported_arch
+    fail_msg: "Unsupported arch: {{ ansible_architecture }}"
+  tags: [preflight]
+
+- name: Hiddify Preflight | Check mandatory variables
+  assert:
+    that:
+      - hiddify_panel_domain != 'example.invalid'
+      - hiddify_panel_admin_password != 'CHANGE_ME'
+      - hiddify_subscription_domain != 'sub.example.invalid'
+    fail_msg: "CHANGE_ME or example.invalid values present — deployment blocked"
+  when: hiddify_installation_mode == 'deploy'
+  tags: [preflight, safety]
+
+- name: Hiddify Preflight | Check placeholders in offline mode
+  debug:
+    msg: "OFFLINE MODE: Placeholders present ({{ hiddify_panel_domain }}, CHANGE_ME password). Deployment blocked until Owner Input received."
+  when: hiddify_installation_mode != 'deploy'
+  tags: [preflight]
+
+- name: Hiddify Preflight | Gather system facts
+  setup:
+    gather_subset:
+      - '!all'
+      - '!min'
+      - distribution
+      - architecture
+      - memory_mb
+      - processor_cores
+      - mounts
+  when: hiddify_remote_execution_enabled | bool
+  tags: [preflight]
+
+- name: Hiddify Preflight | Check RAM (mock — no remote execution)
+  debug:
+    msg: "RAM check: minimum {{ _hiddify_min_ram_mb }} MB required (SKIPPED — offline mode)"
+  when: not (hiddify_remote_execution_enabled | bool)
+  tags: [preflight]
+
+- name: Hiddify Preflight | Check disk (mock)
+  debug:
+    msg: "Disk check: minimum {{ _hiddify_min_disk_gb }} GB required (SKIPPED — offline mode)"
+  when: not (hiddify_remote_execution_enabled | bool)
+  tags: [preflight]
+
+- name: Hiddify Preflight | Check Docker (mock)
+  debug:
+    msg: "Docker runtime check (SKIPPED — offline mode)"
+  when: not (hiddify_remote_execution_enabled | bool)
+  tags: [preflight]

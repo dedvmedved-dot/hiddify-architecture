@@ -1,0 +1,69 @@
+# Stage 06 Owner Input Template — COPY TO owner-input.yml AND FILL IN
+# DO NOT commit real values to Git!
+# All values below are documentation-only examples.
+
+infrastructure:
+  lab_router_ip: "192.0.2.1"            # REPLACE with real IP
+  vps1_ip: "198.51.100.1"              # REPLACE with real IP
+  vps3_ip: "203.0.113.1"               # REPLACE with real IP
+  ssh_port: 22
+  ssh_user: "CHANGE_ME"                 # REPLACE
+  os: "Ubuntu 22.04"
+  arch: "x86_64"
+
+domain_and_dns:
+  primary_domain: "example.invalid"     # REPLACE
+  panel_domain: "panel.example.invalid" # REPLACE
+  subscription_domain: "sub.example.invalid" # REPLACE
+  dns_provider: "CHANGE_ME"            # REPLACE
+  required_dns_records:
+    - type: A
+      name: panel
+      value: "198.51.100.1"
+    - type: A
+      name: sub
+      value: "198.51.100.1"
+  ttl: 300
+  dns_change_approved: false
+
+hiddify:
+  deployment_method: "docker"
+  version: "latest"
+  panel_port: 9000
+  subscription_port: 8443
+  enabled_protocols:
+    - vless
+    - trojan
+  admin_email: "admin@example.invalid"  # REPLACE
+  admin_bootstrap_method: "env_file"
+
+vpn_and_routing:
+  wg_private_key: "CHANGE_ME"          # REPLACE — generate with wg genkey
+  wg_peer_public_key: "CHANGE_ME"      # REPLACE
+  wg_address: "192.0.2.241"
+  wg_port_ru: 51820
+  wg_port_int: 51821
+  routing_policy: "split_tunnel"
+  nat_enabled: true
+
+tls:
+  certificate_method: "acme"
+  acme_provider: "letsencrypt"
+  contact_email: "admin@example.invalid" # REPLACE
+  challenge_method: "http-01"
+
+security:
+  secret_storage: "CHANGE_ME"          # REPLACE — ansible-vault, SOPS, etc.
+  firewall_policy: "default-deny"
+  allowed_management_networks:
+    - "192.168.0.0/24"                  # REPLACE with real management net
+  ssh_host_key_policy: "accept-on-first"
+  backup_encryption: false
+
+approval:
+  lab_environment_confirmed: false
+  production_environment: false
+  no_real_users_connected: false
+  rollback_approved: false
+  maintenance_window_approved: false
+  deployment_approved: false
