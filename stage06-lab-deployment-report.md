@@ -102,7 +102,8 @@ logging.conf.j2, monitoring.conf.j2, reverse-proxy.conf.j2, wireguard.conf.j2
 При запуске `ansible-playbook` из каталога `playbooks/` роли не находятся, так как `roles_path` не задан. Роли находятся в `automation/ansible/roles/`, а playbooks — в `automation/ansible/playbooks/`.
 
 **Ошибка при syntax-check:**
-```
+
+```text
 ERROR: The role 'common' was not found in: .../playbooks/roles:...
 ```
 
